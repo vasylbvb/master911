@@ -1,0 +1,209 @@
+/// Creates a CSS triangle, which can be used for dropdown arrows, dropdown pips, and more. Use this mixin inside a `&::before` or `&::after` selector, to attach the triangle to an existing element.
+///
+/// @param {Number} $triangle-size - Width of the triangle.
+/// @param {Color} $triangle-color - Color of the triangle.
+/// @param {Keyword} $triangle-direction - Direction the triangle points. Can be `up`, `right`, `down`, or `left`.
+@mixin css-triangle(
+  $triangle-size,
+  $triangle-color,
+  $triangle-direction
+) {
+  display: block;
+  width: 0;
+  height: 0;
+
+  border: inset $triangle-size;
+
+  content: '';
+
+  @if ($triangle-direction == down) {
+    border-bottom-width: 0;
+    border-top-style: solid;
+    border-color: $triangle-color transparent transparent;
+  }
+  @if ($triangle-direction == up) {
+    border-top-width: 0;
+    border-bottom-style: solid;
+    border-color: transparent transparent $triangle-color;
+  }
+  @if ($triangle-direction == right) {
+    border-right-width: 0;
+    border-left-style: solid;
+    border-color: transparent transparent transparent $triangle-color;
+  }
+  @if ($triangle-direction == left) {
+    border-left-width: 0;
+    border-right-style: solid;
+    border-color: transparent $triangle-color transparent transparent;
+  }
+}
+
+/// Applies the micro clearfix hack popularized by Nicolas Gallagher. Include this mixin on a container if its children are all floated, to give the container a proper height.
+/// The clearfix is augmented with specific styles to prevent borders in flexbox environments
+/// @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix Hack
+/// @link http://danisadesigner.com/blog/flexbox-clear-fix-pseudo-elements/ Flexbox fix
+@mixin clearfix {
+  &::before,
+  &::after {
+    display: table;
+    content: ' ';
+
+    @if $global-flexbox {
+      flex-basis: 0;
+      order: 1;
+    }
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+/// Makes an element visually hidden, but still accessible to keyboards and assistive devices.
+/// @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility Hiding Content for Accessibility
+/// @link http://hugogiraudel.com/2016/10/13/css-hide-and-seek/
+@mixin element-invisible {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+/// Reverses the CSS output created by the `element-invisible()` mixin.
+@mixin element-invisible-off {
+  position: static !important;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  clip-path: none;
+}
+
+@mixin push--auto {
+  margin: {
+    left:  auto;
+    right: auto;
+  }
+}
+
+@mixin push--ends-p($spacing: $spacing-unit){
+  padding: {
+    top:    $spacing;
+    bottom: $spacing;
+  }
+  @content;
+}
+@mixin push--sides-p($spacing: $spacing-unit){
+  padding: {
+    left:  $spacing;
+    right: $spacing;
+  }
+  @content;
+}
+
+/// Vertically centers the element inside of its first non-static parent,
+/// @link http://www.sitepoint.com/centering-with-sass/ Centering With Sass
+@mixin vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/// Horizontally centers the element inside of its first non-static parent,
+/// @link http://www.sitepoint.com/centering-with-sass/ Centering With Sass
+@mixin horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/// Absolutely centers the element inside of its first non-static parent,
+/// @link http://www.sitepoint.com/centering-with-sass/ Centering With Sass
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin center($width: null, $height: null) {
+  position: absolute;
+  top:      50%;
+  left:     50%;
+
+  @if not $width and not $height {
+    transform: translate(-50%, -50%);
+  } @else if $width and $height {
+    width: $width;
+    height: $height;
+    margin: -($width / 2) #{0 0} -($height / 2);
+  } @else if not $height {
+    width: $width;
+    margin-left: -($width / 2);
+    transform: translateY(-50%);
+  } @else {
+    height:     $height;
+    margin-top: -($height / 2);
+    transform:  translateX(-50%);
+  }
+}
+
+@mixin center-children {
+  display:         flex;
+  justify-content: center;
+  align-items:     center;
+}
+
+@mixin bg-pos($bg-colour, $bg-repeat, $bg-position-x, $bg-position-y, $bg-size) {
+  background-color: $bg-colour;
+  background-repeat: $bg-repeat;
+  background-position: $bg-position-x $bg-position-y;
+  background-size: $bg-size;
+}
+
+@mixin hover-state {
+  &:hover, &:active, &:focus {
+    @content;
+  }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  display:  $display;
+  position: $pos;
+  content:  $content;
+  @content
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder ($color) {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    color: $color;
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    color: $color;
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    color: $color;
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    color: $color;
+    @content;
+  }
+}
