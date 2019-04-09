@@ -1,7 +1,9 @@
 <% var data = {
-title: "Test page"
+title: "Main"
 }; %>
 <%= _.template(require('./../includes/header.html'))(data) %>
+
+<%= _.template(require('./../includes/main-nav.html'))(data) %>
 
 <%= _.template(require('./../includes/main-content.html'))(data) %>
 

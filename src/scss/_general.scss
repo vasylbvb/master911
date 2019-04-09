@@ -1,358 +1,45 @@
 body {
-  font-family: 'Lato-R', sans-serif;
-  color: $dark-grey;
+  font-family: "Rubik", sans-serif;
+  font-size: $global-font-size;
+  color: $m-black;
 }
-/* Text styles */
-.text-style-11 {
-  font-family: 'Lato-B', sans-serif;
-  font-size: rem-calc(28);
+
+h1,
+.title-headline {
+  font-family: "Gilroy", sans-serif;
+  font-size: 4rem;
+  line-height: 1.23;
+  letter-spacing: 3px;
+}
+
+h2,
+.primary-headline {
+  font-size: 2.25rem;
   font-weight: 700;
-  font-stretch: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-align: left;
-  color: $cool-blue;
+  line-height: 1.25;
+  letter-spacing: 2px;
 }
-.text-style-16 {
-  font-family: 'Lato-B', sans-serif;
-  font-size: rem-calc(22);
-  font-weight: 700;
-  font-stretch: normal;
-  line-height: 1.27;
-  letter-spacing: normal;
-  text-align: center;
-  color: $dark-grey;
+
+h3,
+.secondary-headline {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: 2px;
 }
-.text-style-8 {
-  font-family: "Lato-B", sans-serif;
-  font-size: rem-calc(22);
-  font-weight: 700;
-  font-stretch: normal;
-  line-height: 1.27;
-  letter-spacing: normal;
-  text-align: left;
-  color: $white;
-}
-.text-style-6 {
-  font-family: "Lato-B", sans-serif;
-  font-size: rem-calc(22);
-  font-weight: 700;
-  font-stretch: normal;
-  line-height: 1.27;
-  letter-spacing: normal;
-  text-align: left;
-  color: $cool-blue;
-}
-.heading-style-2 {
-  font-family: "Lato-B", sans-serif;
-  font-size: rem-calc(22);
-  font-weight: 700;
-  font-stretch: normal;
-  line-height: 1.27;
-  letter-spacing: normal;
-  text-align: left;
-  color: $dark-grey;
-}
-.heading-style-4 {
-  font-family: "Lato-B-I", sans-serif;
-  font-size: rem-calc(22);
-  font-weight: 700;
-  font-style: italic;
-  font-stretch: normal;
-  line-height: 1.27;
-  letter-spacing: normal;
-  text-align: left;
-  color: $dark-grey;
-}
-.text-style-15 {
-  font-family: "Flamenco-R", cursive;
-  font-size: rem-calc(22);
+
+h4,
+.heading-4 {
+  font-size: 1.25rem;
   font-weight: 400;
-  font-stretch: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-align: right;
-  color: $cool-blue;
+  line-height: 1.25;
+  letter-spacing: 2px;
 }
-.text-style-10 {
-  font-family: "Flamenco-R", cursive;
-  font-size: rem-calc(22);
-  font-weight: 400;
-  font-stretch: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-align: left;
-  color: $cool-blue;
-}
-.heading-style-1-mobile {
-  font-family: "Flamenco-R", cursive;
-  font-size: rem-calc(22);
-  font-weight: 400;
-  font-stretch: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-align: center;
-  color: $dark-grey;
-}
-.heading-style-1 {
-  font-family: "Flamenco-R", cursive;
-  font-size: rem-calc(22);
-  font-weight: 400;
-  font-stretch: normal;
-  line-height: 1;
-  letter-spacing: normal;
-  text-align: left;
-  color: $dark-grey;
-}
-.heading-style-2-tablet-mobile {
-  font-family: "Lato-B", sans-serif;
-  font-size: rem-calc(20);
-  font-weight: 700;
-  font-stretch: normal;
+
+p,
+.content-text {
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
   line-height: 1.4;
-  letter-spacing: normal;
-  text-align: left;
-  color: $dark-grey;
-}
-.heading-style-3 {
-  font-family: "Lato-H", sans-serif;
-  font-size: rem-calc(18);
-  font-weight: 900;
-  font-stretch: normal;
-  line-height: 1.11;
-  letter-spacing: normal;
-  text-align: center;
-  color: $dark-grey;
-}
-.text-style-14 {
-  font-family: "Lato-B", sans-serif;
-  font-size: rem-calc(18);
-  font-weight: 700;
-  font-stretch: normal;
-  line-height: 1.56;
-  letter-spacing: normal;
-  text-align: left;
-  color: $dark-grey;
-}
-.link-style-2 {
-  font-family: "Lato-B", sans-serif;
-  font-size: rem-calc(18);
-  font-weight: 700;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
-  text-align: left;
-  color: $white;
-}
-.link-style-1 {
-  font-family: "Lato-B", sans-serif;
-  font-size: rem-calc(18);
-  font-weight: 700;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: normal;
-  text-align: left;
-  color: $faded-blue-two;
-}
-.text-style-2 {
-  font-family: "Lato-M", sans-serif;
-  font-size: rem-calc(18);
-  font-weight: 500;
-  font-stretch: normal;
-  line-height: 1.22;
-  letter-spacing: normal;
-  text-align: left;
-  color: $dark-grey;
-}
-.text-style-12 {
-  font-family: "Lato-B", sans-serif;
-  font-size: rem-calc(16);
-  font-weight: 700;
-  font-stretch: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: $dark-grey;
-}
-.text-style-17 {
-  font-family: "Lato-M", sans-serif;
-  font-size: rem-calc(16);
-  font-weight: 500;
-  font-stretch: normal;
-  line-height: 1.38;
-  letter-spacing: normal;
-  text-align: center;
-  color: $white;
-}
-.text-style-9 {
-  font-family: "Lato-M", sans-serif;
-  font-size: rem-calc(16);
-  font-weight: 500;
-  font-stretch: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: $white;
-}
-.text-style-7 {
-  font-family: "Lato-M", sans-serif;
-  font-size: rem-calc(16);
-  font-weight: 500;
-  font-stretch: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: $cool-blue;
-}
-.button-style-1 {
-  font-family: "Lato-M", sans-serif;
-  font-size: rem-calc(16);
-  font-weight: 500;
-  font-stretch: normal;
-  line-height: 1.38;
-  letter-spacing: normal;
-  text-align: left;
-  color: $white;
-}
-.text-style-16 {
-  font-family: "Lato-L", sans-serif;
-  font-size: rem-calc(16);
-  font-weight: 300;
-  font-stretch: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: right;
-  color: $dark-grey;
-}
-.text-style-13 {
-  font-family: "Lato-L", sans-serif;
-  font-size: rem-calc(16);
-  font-weight: 300;
-  font-stretch: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: $cool-blue;
-}
-.text-style-4 {
-  font-family: "Lato-L", sans-serif;
-  font-size: rem-calc(16);
-  font-weight: 300;
-  font-stretch: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: $white;
-}
-.text-style-3 {
-  font-family: "Lato-L", sans-serif;
-  font-size: rem-calc(16);
-  font-weight: 300;
-  font-stretch: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: center;
-  color: $white;
-}
-.text-style-1 {
-  font-family: "Lato-L", sans-serif;
-  font-size: rem-calc(16);
-  font-weight: 300;
-  font-stretch: normal;
-  line-height: 1.5;
-  letter-spacing: normal;
-  text-align: left;
-  color: $dark-grey;
-}
-.text-style-5 {
-  font-family: "Lato-M", sans-serif;
-  font-size: rem-calc(14);
-  font-weight: 500;
-  font-stretch: normal;
-  line-height: 1.14;
-  letter-spacing: normal;
-  text-align: center;
-  color: $dark-grey;
-}
-.placeholder-style-1 {
-  font-family: "Lato-M", sans-serif;
-  font-size: rem-calc(14);
-  font-weight: 500;
-  font-stretch: normal;
-  line-height: 1.57;
-  letter-spacing: normal;
-  text-align: left;
-  color: $brown-grey;
-}
-
-.white-bg {
-  background-color: $white;
-}
-
-.pink-bg {
-  background-color: $very-light-pink;
-}
-
-.light-blue-bg {
-  background-color: $pale-blue;
-}
-
-.green-text {
-  color: $sap-green;
-}
-
-button.custom-button,
-a.custom-button {
-  display: inline-block;
-  @include center-children;
-  width: auto;
-  max-width: rem-calc(235);
-  border: none;
-  border-radius: 0.3125rem;
-  background-color: $cool-blue;
-  margin-bottom: 0.25rem;
-  padding: 0.5625rem 1.125rem;
-  font-family: "Lato-M", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: $white;
-  text-align: center;
-  line-height: 1.38rem;
-  transition: $custom-transition-3;
-  &:hover,
-  &:focus {
-    background-color: $ugly-blue;
-    color: $white;
-    text-decoration: underline;
-    text-underline-position: under;
-    -ms-text-underline-position: below;
-  }
-  &.green {
-    background-color: $sap-green;
-    &:hover,
-    &:focus {
-      background-color: darken($sap-green, 5%);
-    }
-  }
-  @include media-breakpoint-down(md) {
-    max-width: rem-calc(220);
-  }
-  @include media-breakpoint-down(sm) {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-.section-title {
-  @include center-children;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  margin: rem-calc(20) 0 rem-calc(25);
-  .icon {
-    display: inline-block;
-    width: rem-calc(32);
-    height: rem-calc(32);
-    margin-right: rem-calc(18);
-  }
+  text-align: justify;
 }

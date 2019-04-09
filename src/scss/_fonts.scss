@@ -1,44 +1,13 @@
 @font-face {
-  font-family: 'Lato-R';
+  font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/Lato-Regular.ttf) format("truetype");
+  src: url("../fonts/Rubik-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Lato-B';
+  font-family: "Gilroy";
   font-style: normal;
-  font-weight: 700;
-  src: url(../fonts/Lato-Bold.ttf) format("truetype");
-}
-@font-face {
-  font-family: 'Lato-B-I';
-  font-style: italic;
-  font-weight: 700;
-  src: url(../fonts/Lato-BoldItalic.ttf) format("truetype");
-}
-@font-face {
-  font-family: 'Lato-H';
-  font-style: normal;
-  font-weight: 900;
-  src: url(../fonts/Lato-Black.ttf) format("truetype");
-}
-@font-face {
-  font-family: 'Lato-M';
-  font-style: normal;
-  font-weight: 500;
-  src: url(../fonts/Lato-Regular.ttf) format("truetype");
-}
-@font-face {
-  font-family: 'Lato-L';
-  font-style: normal;
-  font-weight: 300;
-  src: url(../fonts/Lato-Light.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: 'Flamenco-R';
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/Flamenco-Regular.ttf) format("truetype");
+  font-weight: 800;
+  src: url("../fonts/Gilroy-ExtraBold.ttf") format("truetype");
 }
