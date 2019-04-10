@@ -1,26 +1,51 @@
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<header class="main-nav fixed-top">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg row">
+            <div class="col-12 col-md-6">
+                <a class="navbar-logo" href="/" title="Home">
+                    <img src="img/logo.png" alt="company logo" class="navbar-logo__img-full">
+                    <img src="img/logo-short.png" alt="company logo" class="navbar-logo__img-short">
+                </a>
+                <div class="navbar-location">
+                    <span class="icon"></span>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownLocBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="text">Івано-Франківськ</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownLocBtn">
+                            <a class="dropdown-item" href="javascript:void(0)" data-name="Івано-Франківськ" data-href=""></a>
+                            <a class="dropdown-item" href="javascript:void(0)" data-name="Луцьк" data-href=""></a>
+                            <a class="dropdown-item" href="javascript:void(0)" data-name="Львів" data-href=""></a>
+                            <a class="dropdown-item" href="javascript:void(0)" data-name="Рівне" data-href=""></a>
+                            <a class="dropdown-item" href="javascript:void(0)" data-name="Тернопіль" data-href=""></a>
+                            <a class="dropdown-item" href="javascript:void(0)" data-name="Хмельницький" data-href=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+            <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>-->
+
+        </nav>
+    </div>
 </header>
