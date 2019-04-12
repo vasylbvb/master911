@@ -28,4 +28,14 @@ jQuery(function($) {
         $(this).addClass("active");
         $("#dropdownLocBtn").find(".text").text($(this).text());
     });
+
+    //Header Language Dropdown
+    var languageArr = $(".navbar-lang .dropdown-item");
+
+    $(languageArr).click(function(e) {
+        e.preventDefault();
+        $(languageArr).removeClass("active");
+        $(this).addClass("active");
+        $("#dropdownLang").find(".text").text($(this).text());
+    });
 });
