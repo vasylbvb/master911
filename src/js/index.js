@@ -38,4 +38,28 @@ jQuery(function($) {
         $(this).addClass("active");
         $("#dropdownLang").find(".text").text($(this).text());
     });
+
+    //footer menus toggle
+    var $width = $(window).width();
+
+    if ($width < 992) {
+        var footerTitles = $(".footer-menu__title");
+        $(footerTitles).click(function(e) {
+           e.preventDefault();
+            $(this).parent(".footer-menu").toggleClass("opened");
+        });
+    }
+
+    $(window).resize(function(){
+        var $width = $(window).width();
+        if ($width < 992) {
+            var footerTitles = $(".footer-menu__title");
+            var footerMenus = $(".footer-menu");
+            $(footerMenus).removeClass("opened");
+            $(footerTitles).click(function(e) {
+                e.preventDefault();
+                $(this).parent(".footer-menu").toggleClass("opened");
+            });
+        }
+    });
 });

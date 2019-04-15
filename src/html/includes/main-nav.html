@@ -8,10 +8,11 @@
                         <img src="img/logo-short.png" alt="company logo" class="navbar-logo__img-short">
                     </a>
                     <div class="navbar-location">
-                        <span class="icon"></span>
+
                         <div class="dropdown">
                             <button class="dropdown-toggle" type="button" id="dropdownLocBtn" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
+                                <span class="icon"></span>
                                 <span class="text">Івано-Франківськ</span>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownLocBtn">
@@ -34,10 +35,24 @@
                         </form>
                     </div>
                     <div class="navbar-contact">
-                        <span class="icon"></span>
-                        <div class="text">
-                            <a href="tel:+380674401231" class="text-link">(067)&nbsp;440&nbsp;1231</a>
-                            <span class="text-schedule">Щоденно, 24/7</span>
+                        <div class="dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdownContact" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="icon"></span>
+                                <div class="text">
+                                    <a href="tel:+380674401231" class="text-link">(067)&nbsp;440&nbsp;1231</a>
+                                    <span class="text-schedule">Щоденно, 24/7</span>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownContact">
+                                <button type="button" class="navbar-contact__btn" data-toggle="modal" data-target="#contactModal">
+                                    <span class="icon"></span>
+                                    <span class="text">
+                                        <span class="text-title">Передзвонити мені</span>
+                                        <span class="text-subtitle">Зателефонуємо за 1хв</span>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="navbar-services">

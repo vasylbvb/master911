@@ -29,17 +29,10 @@
       display: inline-flex;
       align-items: center;
       width: auto;
+      min-width: 20%;
       vertical-align: middle;
       margin-right: 1.25rem;
 
-      .icon {
-        display: inline-block;
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-right: 0.75rem;
-        background: transparent url("../img/icons/Location.svg") no-repeat center center;
-        background-size: contain;
-      }
       .dropdown {
         .dropdown-toggle {
           width: auto;
@@ -49,8 +42,15 @@
           border: none;
           font-size: 0.875rem;
 
-          &:focus {
-            outline: none;
+          .icon {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.75rem;
+            background: transparent url("../img/icons/Location.svg") no-repeat center center;
+            background-size: contain;
+            vertical-align: middle;
+            transition: $custom-transition-3;
           }
 
           .text {
@@ -76,14 +76,23 @@
               transform: rotate(180deg);
             }
           }
+
+          &:focus {
+            outline: none;
+
+            .icon {
+              background-image: url("../img/icons/Location-b.svg");
+            }
+          }
         }
 
         .dropdown-menu {
+          width: 100%;
+          max-height: 10rem;
+          padding: 0.875rem 0;
           background-color: $m-white;
           border: none;
           border-radius: 0;
-          padding: 0.875rem 0;
-          max-height: 10rem;
           overflow-y: auto;
 
           .dropdown-item {
@@ -114,6 +123,7 @@
         font-size: 0.875rem;
         color: $m-black;
         line-height: 1.21;
+        transition: $custom-transition-3;
       }
 
       &__btn {
@@ -127,16 +137,20 @@
         vertical-align: middle;
         transition: $custom-transition-3;
 
-        &:hover {
-          transform: scale(0.9);
-        }
-
         .icon {
           display: inline-block;
           width: 1.5rem;
           height: 1.5rem;
           background: transparent url("../img/icons/search-b.svg") no-repeat center center;
           background-size: contain;
+        }
+
+        &:hover {
+          transform: scale(0.9);
+
+          .icon {
+            background-image: url("../img/icons/search-r.svg");
+          }
         }
       }
     }
@@ -149,61 +163,178 @@
       margin-right: auto;
       margin-left: auto;
 
-      .icon {
-        display: inline-block;
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-right: 0.625rem;
-        background: transparent url("../img/icons/Phone.svg") no-repeat center center;
-        background-size: contain;
-        vertical-align: middle;
-      }
+      .dropdown {
+        .dropdown-toggle {
+          width: auto;
+          max-width: 100%;
+          padding: 0 1rem;
+          background-color: transparent;
+          border: none;
+          text-align: left;
 
-      .text {
-        display: inline-block;
-        vertical-align: middle;
+          &:focus {
+            outline: none;
+          }
 
-        * {
-          transition: $custom-transition-3;
-        }
+          .icon {
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.625rem;
+            background: transparent url("../img/icons/Phone.svg") no-repeat center center;
+            background-size: contain;
+            vertical-align: middle;
+          }
 
-        &-link {
-          display: block;
-          margin-bottom: 0.25rem;
-          font-size: 1.125rem;
-          font-weight: 700;
-          color: $m-black;
-          line-height: 1.1;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
+          .text {
+            display: inline-block;
+            vertical-align: middle;
+
+            * {
+              transition: $custom-transition-3;
+            }
+
+            &-link {
+              display: block;
+              margin-bottom: 0.25rem;
+              font-size: 1.125rem;
+              font-weight: 700;
+              color: $m-black;
+              line-height: 1.1;
+              letter-spacing: 0.1em;
+              text-transform: uppercase;
+
+              &:hover {
+                text-decoration: none;
+              }
+            }
+
+            &-schedule {
+              display: block;
+              font-size: 0.625rem;
+              color: $m-red;
+              line-height: 1.2;
+              letter-spacing: 0.1em;
+              text-transform: uppercase;
+            }
+          }
+
+          &:after {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-left: 0;
+            border: none;
+            background: transparent url("../img/icons/arrow_down.svg") no-repeat center center;
+            background-size: contain;
+            vertical-align: middle;
+            transition: $custom-transition-3;
+            transform-origin: center center;
+          }
+
+          &[aria-expanded="true"] {
+            &:after {
+              transform: rotate(180deg);
+            }
+          }
 
           &:hover {
-            text-decoration: none;
+            .icon {
+              background-image: url("../img/icons/Phone-r.svg");
+              animation: ringring 0.3s linear infinite;
+              -webkit-animation: ringring 0.3s linear infinite;
+            }
+
+            .text {
+              &-link {
+                color: $m-red;
+              }
+
+              &-schedule {
+                color: $m-black;
+              }
+            }
+
+            &:after {
+              background-image: url("../img/icons/arrow_down-r.svg");
+            }
           }
         }
 
-        &-schedule {
-          display: block;
-          font-size: 0.625rem;
-          color: $m-red;
-          line-height: 1.2;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
-        }
-      }
+        .dropdown-menu {
+          width: 100%;
+          background-color: $m-white;
+          border: none;
+          border-radius: 0;
+          padding: 1rem;
 
-      &:hover {
-        .icon {
-          animation: ringring 0.3s linear infinite;
-          -webkit-animation: ringring 0.3s linear infinite;
-        }
-        .text {
-          &-link {
-            font-size: 1.25rem;
-          }
+          .navbar-contact__btn {
+            display: flex;
+            align-items: center;
+            width: auto;
+            max-width: 100%;
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            text-align: left;
 
-          &-schedule {
-            font-size: 0.25rem;
+            &:focus {
+              outline: none;
+            }
+
+            .icon {
+              display: inline-block;
+              width: 1.5rem;
+              height: 1.5rem;
+              margin-right: 0.625rem;
+              background: transparent url("../img/icons/Phone-Arrow-r.svg") no-repeat center center;
+              background-size: contain;
+              vertical-align: middle;
+            }
+
+            .text {
+              display: inline-block;
+              vertical-align: middle;
+
+              * {
+                transition: $custom-transition-3;
+              }
+
+              &-title,
+              &-subtitle {
+                display: block;
+                line-height: 1.125rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+              }
+
+              &-title {
+                font-size: 0.8125rem;
+                font-weight: 500;
+                color: $m-black;
+                border-bottom: 1px dashed $m-black;
+              }
+
+              &-subtitle {
+                font-size: 0.625rem;
+                color: $m-red;
+              }
+            }
+
+            &:hover {
+              .icon {
+                animation: ringring 0.3s linear infinite;
+                -webkit-animation: ringring 0.3s linear infinite;
+              }
+              .text {
+                &-title {
+                  color: $m-red;
+                }
+
+                &-subtitle {
+                  color: $m-black;
+                }
+              }
+            }
           }
         }
       }
@@ -251,10 +382,12 @@
 
         &:hover {
           .icon {
-            transform: scale(0.8) rotate(180deg);
+            background-image: url("../img/icons/menu-r.svg");
+            transform: scale(0.8);
           }
 
           .text {
+            color: $m-red;
             transform: scale(1.2);
           }
         }
@@ -298,10 +431,12 @@
           color: $m-black;
 
           .icon {
+            background-image: url("../img/icons/login-r.svg");
             transform: scale(0.8);
           }
 
           .text {
+            color: $m-red;
             transform: scale(1.2);
           }
         }
@@ -328,6 +463,10 @@
             outline: none;
           }
 
+          * {
+            transition: $custom-transition-3;
+          }
+
           .text {
             display: inline-block;
             vertical-align: middle;
@@ -350,6 +489,16 @@
           &[aria-expanded="true"] {
             &:after {
               transform: rotate(180deg);
+            }
+          }
+
+          &:hover {
+            .text {
+              color: $m-red;
+            }
+
+            &:after {
+              background-image: url("../img/icons/arrow_down-r.svg");
             }
           }
         }
