@@ -1,5 +1,5 @@
 .main-nav {
-  padding: 1.5rem 0;
+  padding: $header-padding 0;
   background-color: transparent;
   transition: $custom-transition-5;
 
@@ -33,76 +33,54 @@
       vertical-align: middle;
       margin-right: 1.25rem;
 
-      .dropdown {
-        .dropdown-toggle {
-          width: auto;
-          max-width: 100%;
-          padding: 0;
-          background-color: transparent;
-          border: none;
-          font-size: 0.875rem;
+      &__btn {
+        width: auto;
+        max-width: 100%;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        font-size: 0.875rem;
 
-          .icon {
-            display: inline-block;
-            width: 1.5rem;
-            height: 1.5rem;
-            margin-right: 0.75rem;
-            background: transparent url("../img/icons/Location.svg") no-repeat center center;
-            background-size: contain;
-            vertical-align: middle;
-            transition: $custom-transition-3;
-          }
-
-          .text {
-            display: inline-block;
-            border-bottom: 1px dashed $m-black;
-            vertical-align: middle;
-          }
-
-          &:after {
-            width: 1.5rem;
-            height: 1.5rem;
-            margin-left: 1.25rem;
-            border: none;
-            background: transparent url("../img/icons/arrow_down.svg") no-repeat center center;
-            background-size: contain;
-            vertical-align: middle;
-            transition: $custom-transition-3;
-            transform-origin: center center;
-          }
-
-          &[aria-expanded="true"] {
-            &:after {
-              transform: rotate(180deg);
-            }
-          }
-
-          &:focus {
-            outline: none;
-
-            .icon {
-              background-image: url("../img/icons/Location-b.svg");
-            }
-          }
+        .icon {
+          display: inline-block;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-right: 0.75rem;
+          background: transparent url("../img/icons/Location.svg") no-repeat center center;
+          background-size: contain;
+          vertical-align: middle;
+          transition: $custom-transition-3;
         }
 
-        .dropdown-menu {
-          width: 100%;
-          max-height: 10rem;
-          padding: 0.875rem 0;
-          background-color: $m-white;
+        .text {
+          display: inline-block;
+          border-bottom: 1px dashed $m-black;
+          vertical-align: middle;
+        }
+
+        &:after {
+          display: inline-block;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-left: 1.25rem;
+          content: "";
           border: none;
-          border-radius: 0;
-          overflow-y: auto;
+          background: transparent url("../img/icons/arrow_down.svg") no-repeat center center;
+          background-size: contain;
+          vertical-align: middle;
+          transition: $custom-transition-3;
+          transform-origin: center center;
+        }
 
-          .dropdown-item {
-            padding: 0 0.75rem;
-            margin-bottom: 1rem;
-            font-size: 0.9375rem;
+        &:focus {
+          outline: none;
+        }
 
-            &:last-child {
-              margin-bottom: 0;
-            }
+        &:hover {
+          .icon {
+            background-image: url("../img/icons/Location-r.svg");
+            animation: dropdrop 0.8s linear infinite;
+            -webkit-animation: dropdrop 0.8s linear infinite;
           }
         }
       }
@@ -524,10 +502,98 @@
         }
       }
     }
+
+    &-toggler {
+      margin: -$header-padding-mobile 0;
+      padding: $header-padding-mobile;
+      border-left: 1px solid $m-grey;
+      border-radius: 0;
+      font-size: 0;
+
+      * {
+        transition: $custom-transition-3;
+      }
+
+      .icon {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: transparent no-repeat center center;
+        background-size: contain;
+        vertical-align: middle;
+        position: relative;
+
+        .bars {
+          display: inline-block;
+          width: 100%;
+          height: 3px;
+          background-color: $m-grey-dark;
+          position: absolute;
+          right: 0;
+
+          &:nth-child(1) {
+            top: 0;
+            right: auto;
+            left: 0;
+            transform-origin: left bottom;
+          }
+
+          &:nth-child(2) {
+            width: 80%;
+            top: 50%;
+            transform: translateY(-50%);
+            transform-origin: center center;
+          }
+
+          &:nth-child(3) {
+            bottom: 0;
+            transform-origin: right top;
+          }
+        }
+      }
+
+      &[aria-expanded="true"] {
+        .bars {
+          background-color: $m-red;
+
+          &:nth-child(1) {
+            width: 50%;
+            transform: rotate(42deg);
+          }
+
+          &:nth-child(2) {
+            width: 120%;
+            right: 50%;
+            transform: translate(50%, -50%) rotate(-45deg);
+          }
+
+          &:nth-child(3) {
+            width: 50%;
+            transform: rotate(42deg);
+          }
+        }
+      }
+
+      &.for-search {
+        .icon {
+          background-image: url("../img/icons/search.svg");
+
+          .bars {
+            background-color: transparent;
+          }
+        }
+
+        &[aria-expanded="true"] {
+          .bars {
+            background-color: $m-red;
+          }
+        }
+      }
+    }
   }
 
   &.scrolled {
-    padding: 0.625rem 0;
+    padding: $header-padding-scrolled 0;
     background-color: $m-white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 
@@ -551,37 +617,136 @@
       }
     }
   }
+
+  @include media-breakpoint-down(md) {
+    padding: $header-padding-mobile 0;
+    background-color: $m-white;
+
+    .navbar {
+      min-height: 1.5rem;
+
+      &-logo {
+        margin-right: 1rem;
+
+        img {
+          max-width: 7.75rem;
+        }
+      }
+
+      &-location {
+        margin-right: 0.625rem;
+        margin-left: auto;
+      }
+
+      &-search {
+        display: block;
+        margin-right: 0;
+
+        .form-control {
+          max-width: initial;
+          width: auto;
+        }
+      }
+
+      &-search,
+      &-contact,
+      &-services,
+      &-user,
+      &-lang {
+        padding: 1rem 0;
+      }
+
+      &-services,
+      &-user,
+      &-lang {
+        display: inline-block;
+      }
+    }
+
+    &.scrolled {
+      padding: $header-padding-mobile 0;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .navbar {
+      min-height: 1.5rem;
+
+      &-logo {
+        margin-right: $header-padding-mobile;
+      }
+
+      &-location {
+        min-width: initial;
+        margin-right: $header-padding-mobile;
+
+        &__btn {
+          .icon {
+            margin-right: 0;
+          }
+
+          .text,
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      &-contact {
+        display: flex;
+
+        .dropdown {
+          .dropdown-toggle {
+            padding: 0;
+          }
+          .dropdown-menu {
+            position: static;
+            padding: 1rem 0;
+          }
+        }
+      }
+
+      &-services,
+      &-user,
+      &-lang {
+        margin-right: 0.625rem;
+        margin-left: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .navbar {
+      &-logo {
+        img {
+          max-width: 7rem;
+        }
+      }
+    }
+  }
 }
 
-.dropdown-menu {
-  &::-webkit-scrollbar {
-    width: 8px;
-    background-color: $m-grey-lighter;
-    -webkit-border-radius: 0;
+@keyframes dropdrop {
+  0% {
+    transform: translateY(0);
   }
-
-  &::-webkit-scrollbar:hover {
-    background-color: $m-grey-light;
+  50% {
+    transform: translateY(-3px);
   }
-
-  &::-webkit-scrollbar-thumb:vertical {
-    background: $m-grey-dark;
-    -webkit-border-radius: 5px;
+  100% {
+    transform: translateY(0);
   }
+}
 
-  &::-webkit-scrollbar-thumb:vertical:active {
-    background: $m-grey-dark;
-    -webkit-border-radius: 5px;
+@-webkit-keyframes dropdrop {
+  0% {
+    -webkit-transform: translateY(0);
   }
-
-  &::-o-scrollbar {
-    width: 8px;
+  50% {
+    -webkit-transform: translateY(-3px);
   }
-
-  &::-o-scrollbar-thumb {
-    background: $m-grey-dark;
-    width: 8px;
-    border-radius: 5px;
+  100% {
+    -webkit-transform: translateY(0);
   }
 }
 

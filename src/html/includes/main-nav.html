@@ -7,99 +7,124 @@
                         <img src="img/logo.png" alt="company logo" class="navbar-logo__img-full">
                         <img src="img/logo-short.png" alt="company logo" class="navbar-logo__img-short">
                     </a>
-                    <div class="navbar-location">
 
-                        <div class="dropdown">
-                            <button class="dropdown-toggle" type="button" id="dropdownLocBtn" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                <span class="icon"></span>
-                                <span class="text">Івано-Франківськ</span>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownLocBtn">
-                                <a class="dropdown-item" href="javascript:void(0)" data-name="Івано-Франківськ"
-                                   data-href=""></a>
-                                <a class="dropdown-item" href="javascript:void(0)" data-name="Луцьк" data-href=""></a>
-                                <a class="dropdown-item" href="javascript:void(0)" data-name="Львів" data-href=""></a>
-                                <a class="dropdown-item" href="javascript:void(0)" data-name="Рівне" data-href=""></a>
-                                <a class="dropdown-item" href="javascript:void(0)" data-name="Тернопіль"
-                                   data-href=""></a>
-                                <a class="dropdown-item" href="javascript:void(0)" data-name="Хмельницький"
-                                   data-href=""></a>
-                            </div>
+                    <div class="navbar-location">
+                        <button class="navbar-location__btn" type="button" data-toggle="modal" data-target="#locModal">
+                            <span class="icon"></span>
+                            <span class="text">Івано-Франківськ</span>
+                        </button>
+                    </div>
+                    <button class="navbar-toggler for-search" type="button" data-toggle="collapse"
+                            data-target="#navbarTogglerSearch" aria-controls="navbarTogglerSearch" aria-expanded="false"
+                            aria-label="Toggle search">
+                        <span class="icon">
+                            <span class="bars"></span>
+                            <span class="bars"></span>
+                            <span class="bars"></span>
+                        </span>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerMenu"
+                            aria-controls="navbarTogglerMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icon">
+                            <span class="bars"></span>
+                            <span class="bars"></span>
+                            <span class="bars"></span>
+                        </span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerSearch">
+                        <div class="navbar-search">
+                            <form class="form-inline">
+                                <input class="form-control" type="search" placeholder="Пошук">
+                                <button class="navbar-search__btn" type="submit" title="Пошук"><span
+                                        class="icon"></span><span class="sr-only">Почати пошук</span></button>
+                            </form>
                         </div>
                     </div>
-                    <div class="navbar-search">
-                        <form class="form-inline">
-                            <input class="form-control" type="search" placeholder="Пошук">
-                            <button class="navbar-search__btn" type="submit" title="Пошук"><span class="icon"></span><span class="sr-only">Почати пошук</span></button>
-                        </form>
-                    </div>
-                    <div class="navbar-contact">
-                        <div class="dropdown">
-                            <button class="dropdown-toggle" type="button" id="dropdownContact" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                <span class="icon"></span>
-                                <div class="text">
-                                    <a href="tel:+380674401231" class="text-link">(067)&nbsp;440&nbsp;1231</a>
-                                    <span class="text-schedule">Щоденно, 24/7</span>
-                                </div>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownContact">
-                                <button type="button" class="navbar-contact__btn" data-toggle="modal" data-target="#contactModal">
+                    <div class="collapse navbar-collapse" id="navbarTogglerMenu">
+                        <div class="navbar-contact">
+                            <div class="dropdown">
+                                <button class="dropdown-toggle" type="button" id="dropdownContact"
+                                        data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
                                     <span class="icon"></span>
-                                    <span class="text">
+                                    <div class="text">
+                                        <a href="tel:+380674401231" class="text-link">(067)&nbsp;440&nbsp;1231</a>
+                                        <span class="text-schedule">Щоденно, 24/7</span>
+                                    </div>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownContact">
+                                    <button type="button" class="navbar-contact__btn" data-toggle="modal"
+                                            data-target="#contactModal">
+                                        <span class="icon"></span>
+                                        <span class="text">
                                         <span class="text-title">Передзвонити мені</span>
                                         <span class="text-subtitle">Зателефонуємо за 1хв</span>
                                     </span>
-                                </button>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="navbar-services">
-                        <button type="button" class="navbar-services__btn" data-toggle="modal" data-target="#servicesModal">
-                            <span class="icon"></span>
-                            <span class="text">Послуги</span>
-                        </button>
-                    </div>
-                    <div class="navbar-user">
-                        <a href="#" class="navbar-user__link">
-                            <span class="icon"></span>
-                            <span class="text">Кабінет</span>
-                        </a>
-                    </div>
-                    <div class="navbar-lang">
-                        <div class="dropdown">
-                            <button class="dropdown-toggle" type="button" id="dropdownLang" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                <span class="text">Укр</span>
+                        <div class="navbar-services">
+                            <button type="button" class="navbar-services__btn" data-toggle="modal"
+                                    data-target="#servicesModal">
+                                <span class="icon"></span>
+                                <span class="text">Послуги</span>
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownLang">
-                                <a class="dropdown-item active" href="javascript:void(0)">Укр</a>
-                                <a class="dropdown-item" href="javascript:void(0)">Рус</a>
+                        </div>
+                        <div class="navbar-user">
+                            <a href="#" class="navbar-user__link">
+                                <span class="icon"></span>
+                                <span class="text">Кабінет</span>
+                            </a>
+                        </div>
+                        <div class="navbar-lang">
+                            <div class="dropdown">
+                                <button class="dropdown-toggle" type="button" id="dropdownLang" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">
+                                    <span class="text">Укр</span>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownLang">
+                                    <a class="dropdown-item active" href="javascript:void(0)">Укр</a>
+                                    <a class="dropdown-item" href="javascript:void(0)">Рус</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">Disabled</a>
-                            </li>
-                        </ul>
-
-                    </div>-->
-
                 </nav>
             </div>
         </div>
     </div>
 </header>
+
+<!--Location Modal START-->
+<div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="icon"></span>
+                </button>
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" id="dropdownLocBtn" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <span class="icon"></span>
+                        <span class="text">Івано-Франківськ</span>
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownLocBtn">
+                        <a class="dropdown-item" href="javascript:void(0)" data-name="Івано-Франківськ"
+                           data-href=""></a>
+                        <a class="dropdown-item" href="javascript:void(0)" data-name="Луцьк" data-href=""></a>
+                        <a class="dropdown-item" href="javascript:void(0)" data-name="Львів" data-href=""></a>
+                        <a class="dropdown-item" href="javascript:void(0)" data-name="Рівне" data-href=""></a>
+                        <a class="dropdown-item" href="javascript:void(0)" data-name="Тернопіль"
+                           data-href=""></a>
+                        <a class="dropdown-item" href="javascript:void(0)" data-name="Хмельницький"
+                           data-href=""></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--Location Modal END-->

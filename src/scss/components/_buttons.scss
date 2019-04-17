@@ -92,3 +92,22 @@
     box-shadow: none;
   }
 }
+
+.modal {
+  button.close {
+    float: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+    .icon {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: transparent url("../img/icons/Closed.svg") no-repeat center center;
+      background-size: contain;
+      vertical-align: middle;
+      transition: $custom-transition-3;
+    }
+  }
+}

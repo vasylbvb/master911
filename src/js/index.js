@@ -17,7 +17,7 @@ jQuery(function($) {
     }
 
     //Header Location Dropdown
-    var locationArr = $(".navbar-location .dropdown-item");
+    var locationArr = $("#locModal .dropdown-item");
     $(locationArr).each(function() {
         $(this).text($(this).data("name"));
     });
@@ -27,6 +27,7 @@ jQuery(function($) {
         $(locationArr).removeClass("active");
         $(this).addClass("active");
         $("#dropdownLocBtn").find(".text").text($(this).text());
+        $(".navbar-location__btn").find(".text").text($(this).text());
     });
 
     //Header Language Dropdown

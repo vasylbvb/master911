@@ -1,0 +1,100 @@
+#locModal {
+  .modal-dialog {
+    max-width: 100%;
+    margin: $header-padding-scrolled auto;
+
+    @include media-breakpoint-up(sm) {
+      max-width: 33.75rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: 45rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-width: 60rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: 71.25rem;
+    }
+  }
+
+  .dropdown {
+    padding-right: 1.5rem;
+
+    .dropdown-toggle {
+      width: auto;
+      max-width: 100%;
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      font-size: 0.875rem;
+
+      .icon {
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-right: 0.75rem;
+        background: transparent url("../img/icons/Location.svg") no-repeat center center;
+        background-size: contain;
+        vertical-align: middle;
+        transition: $custom-transition-3;
+      }
+
+      .text {
+        display: inline-block;
+        border-bottom: 1px dashed $m-black;
+        vertical-align: middle;
+      }
+
+      &:after {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-left: 1.25rem;
+        border: none;
+        background: transparent url("../img/icons/arrow_down.svg") no-repeat center center;
+        background-size: contain;
+        vertical-align: middle;
+        transition: $custom-transition-3;
+        transform-origin: center center;
+      }
+
+      &[aria-expanded="true"] {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:focus {
+        outline: none;
+
+        .icon {
+          background-image: url("../img/icons/Location-b.svg");
+        }
+      }
+    }
+
+    .dropdown-menu {
+      width: 100%;
+      max-height: 10rem;
+      padding: 0.875rem 0;
+      background-color: $m-white;
+      border: none;
+      border-radius: 0;
+      overflow-y: auto;
+      position: static !important;
+      transform: translate3d(0, 0, 0) !important;
+
+      .dropdown-item {
+        padding: 0 0.75rem;
+        margin-bottom: 1rem;
+        font-size: 0.9375rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
