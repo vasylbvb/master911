@@ -7,6 +7,8 @@ title: "Main"
 
 <%= _.template(require('./../includes/hero.html'))(data) %>
 
-<%= _.template(require('./../includes/main-content.html'))(data) %>
+<main id="main">
+    <%= _.template(require('./../includes/statistics.html'))(data) %>
+</main>
 
 <%= _.template(require('./../includes/footer.html'))(data) %>

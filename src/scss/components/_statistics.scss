@@ -1,0 +1,56 @@
+.main-statistics {
+  padding: 5.625rem 0;
+  background-color: $m-white;
+
+  &__card {
+    max-width: 90%;
+    margin: 0 0 0 auto;
+
+    &-img {
+      padding-top: 0.625rem;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &-text {
+      .number,
+      .desc {
+        display: block;
+        color: $m-black;
+        word-break: break-all;
+      }
+
+      .number {
+        margin-bottom: 0.625rem;
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .desc {
+        font-size: 1.125rem;
+        line-height: 1.17;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__card {
+      max-width: 100%;
+
+      &-text {
+        .number {
+          margin-bottom: 0.5rem;
+          font-size: 2.25rem;
+        }
+
+        .desc {
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
