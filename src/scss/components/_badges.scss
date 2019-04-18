@@ -1,0 +1,40 @@
+.m-badge {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  min-height: 1.875rem;
+  padding: 0.4375rem 0.625rem 0.3125rem;
+  border: 1px solid $m-grey-light;
+  border-radius: 1.875rem;
+  background-color: $m-grey-light;
+  font-size: 0.75rem;
+  color: $m-black;
+  text-align: center;
+  line-height: 1.33;
+  transition: $custom-transition-3;
+  opacity: 0.6;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: none;
+    border-color: $m-black;
+    background-color: $m-white;
+    color: $m-black;
+    opacity: 1;
+  }
+
+  &.m-badge-white {
+    border-color: $m-white;
+    background-color: $m-white;
+    color: rgba($m-black, 0.6);
+    opacity: 1;
+
+    &:hover {
+      text-decoration: none;
+      border-color: $m-black;
+      background-color: $m-white;
+      color: $m-black;
+    }
+  }
+}
