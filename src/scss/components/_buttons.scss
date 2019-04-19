@@ -1,3 +1,11 @@
+/**
+buttons have got the next classes:
+    m-btn (common styles),
+    m-btn-ptimary (red buttons),
+    m-btn-secondary (transparent bordered buttons),
+    m-btn-small (additional for m-btn-primary and m-btn-secondary smaller sizes)
+**/
+
 .m-btn {
   display: inline-block;
   width: auto;
@@ -37,6 +45,8 @@
   }
 
   &-secondary {
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
     background-color: transparent;
     border-color: $m-black;
     font-size: 0.9375rem;
