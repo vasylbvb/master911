@@ -1,0 +1,165 @@
+.block-order {
+  padding: 3.75rem 0;
+  background-color: $m-white;
+
+  &--inner {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    width: 100%;
+    padding: 2.8125rem 5rem;
+    box-shadow: $m-shadow-cold;
+
+    &-col-1,
+    &-col-2 {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &-col-1 {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+      height: 100%;
+      padding: $spacing-unit $spacing-unit $spacing-unit 0;
+      border-right: 1px solid $m-grey-dark;
+      text-transform: uppercase;
+    }
+
+    &-col-2 {
+      flex: 0 0 66.67%;
+      max-width: 66.67%;
+      padding-left: $spacing-gutter;
+
+      p {
+        margin-bottom: 1rem;
+        text-align: left;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &--inner {
+      align-items: flex-start;
+      padding-right: 3.75rem;
+      padding-bottom: $spacing-gutter;
+      padding-left: 3.75rem;
+
+      &-col-1,
+      &-col-2 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      &-col-1 {
+        padding: $spacing-unit 0 $spacing-gutter;
+        border-right: none;
+        border-bottom: 1px solid $m-grey-dark;
+        text-align: center;
+      }
+
+      &-col-2 {
+        padding-top: $spacing-gutter;
+        padding-left: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 1.875rem 0;
+
+    &--inner {
+      padding: $spacing-unit $spacing-unit 2.8125rem;
+
+      &-col-1 {
+        .secondary-headline {
+          font-size: 1.125rem;
+          line-height: 1.39;
+        }
+      }
+
+      &-col-2 {
+        padding-top: 1rem;
+
+        p {
+          font-size: 1rem;
+        }
+
+        .contact-link {
+          margin-bottom: $spacing-gutter;
+        }
+      }
+    }
+  }
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .icon {
+    display: inline-block;
+    width: 1.875rem;
+    height: 1.875rem;
+    margin-right: 0.625rem;
+    background: transparent url("../img/icons/Phone.svg") no-repeat center center;
+    background-size: contain;
+    vertical-align: middle;
+  }
+
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+
+    * {
+      transition: $custom-transition-3;
+    }
+
+    &-link {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: $m-black;
+      line-height: 1.1;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &-schedule {
+      display: block;
+      font-size: 0.75rem;
+      color: $m-red;
+      line-height: 1.2;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+  }
+
+  &:hover {
+    .icon {
+      background-image: url("../img/icons/Phone-r.svg");
+      animation: ringring 0.3s linear infinite;
+      -webkit-animation: ringring 0.3s linear infinite;
+    }
+
+    .text {
+      &-link {
+        color: $m-red;
+      }
+
+      &-schedule {
+        color: $m-black;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: auto;
+  }
+}
