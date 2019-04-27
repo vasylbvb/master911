@@ -49,6 +49,14 @@ jQuery(function($) {
            e.preventDefault();
             $(this).parent(".footer-menu").toggleClass("opened");
         });
+
+        /*Service steps mobile expanding*/
+        var serviseSteps = $(".block-order-steps__step");
+        $(serviseSteps).click(function(e) {
+            e.preventDefault();
+            $(serviseSteps).removeClass("opened");
+            $(this).addClass("opened");
+        });
     }
 
     $(window).resize(function(){

@@ -23,6 +23,10 @@
       padding: $spacing-unit $spacing-unit $spacing-unit 0;
       border-right: 1px solid $m-grey-dark;
       text-transform: uppercase;
+
+      .secondary-headline {
+        font-weight: 700;
+      }
     }
 
     &-col-2 {
