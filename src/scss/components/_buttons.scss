@@ -4,6 +4,7 @@ buttons have got the next classes:
     m-btn-ptimary (red buttons),
     m-btn-secondary (transparent bordered buttons),
     m-btn-small (additional for m-btn-primary and m-btn-secondary smaller sizes)
+    m-btn-white (additional for m-btn-secondary white font and border)
 **/
 
 .m-btn {
@@ -65,6 +66,24 @@ buttons have got the next classes:
       right: 0;
       transform: translate(60%, -50%);
       transition: $custom-transition-3;
+    }
+
+    &.m-btn-white {
+      border-color: $m-white;
+      color: $m-white !important;
+
+      &:after {
+        background-image: url("../img/icons/Arrow-right-w.svg");
+      }
+
+      &:hover {
+        color: $m-black !important;
+        border-color: $m-black;
+
+        &:after {
+          background-image: url("../img/icons/Arrow-right.svg");
+        }
+      }
     }
 
     &.m-btn-small {

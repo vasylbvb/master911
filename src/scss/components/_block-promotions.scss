@@ -1,0 +1,206 @@
+.block-promotions {
+  padding: 6.875rem 0;
+  background-color: $m-white;
+
+  &__main,
+  &__card {
+    min-height: rem-calc(225);
+    margin-bottom: $spacing-gutter;
+  }
+
+  &__main {
+    padding: 2rem 2.5rem;
+    background-color: $m-red;
+    color: $m-white;
+
+    .primary-headline {
+      margin-bottom: $spacing-unit;
+      text-transform: uppercase;
+    }
+
+    .m-btn {
+      padding-left: 0;
+      border-color: transparent;
+
+      &:hover {
+        padding-left: 1.125rem;
+        border-color: $m-black;
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: $spacing-gutter;
+    color: $m-white;
+    position: relative;
+    background: $m-grey-lighter no-repeat center center;
+    background-size: cover;
+    transition: $custom-transition-3;
+
+    &:before {
+      display: block;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background-color: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    &:hover {
+      outline: $spacing-unit solid $m-red;
+    }
+
+    .card {
+      &-title,
+      &-price,
+      &-discount,
+      &-btn {
+        z-index: 1;
+      }
+
+      &-title {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        line-height: 1.25;
+      }
+
+      &-price {
+        margin-top: auto;
+        margin-bottom: 0.625rem;
+        text-align: right;
+
+        span {
+          display: inline-block;
+          vertical-align: bottom;
+          line-height: 1.2;
+        }
+
+        &--old {
+          margin-right: 0.625rem;
+          font-size: 1.25rem;
+          font-weight: 300;
+          text-decoration: line-through;
+          letter-spacing: 0.05em;
+        }
+
+        &--main {
+          margin-right: 0.25rem;
+          font-size: 1.625rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
+
+        &--curr {
+          font-size: 1.125rem;
+          font-weight: 500;
+          letter-spacing: 1px;
+        }
+      }
+
+      &-discount {
+        display: inline-block;
+        min-width: 3.75rem;
+        min-height: 3.75rem;
+        padding: 0.375rem 0.5rem;
+        background-color: $m-red;
+        font-size: 0;
+        text-align: center;
+        line-height: 1.2;
+        position: absolute;
+        left: -0.875rem;
+        bottom: $spacing-gutter;
+
+        &--text {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 0.5rem;
+          padding-bottom: 0.25rem;
+          font-size: 0.625rem;
+          text-transform: uppercase;
+          position: relative;
+
+          &:after {
+            display: inline-block;
+            width: 75%;
+            height: 1px;
+            content: "";
+            border-top: 1px solid $m-white;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+          }
+        }
+
+        &--num {
+          font-size: 1.25rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
+      }
+
+      &-btn {
+        text-align: right;
+
+        .m-btn {
+          &:hover {
+            background-color: $m-white;
+            border-color: $m-white;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__main,
+    &__card {
+      min-height: rem-calc(185);
+    }
+
+    &__main {
+      padding: 1.5rem $spacing-gutter;
+
+      .primary-headline {
+        font-size: 2.125rem;
+      }
+
+      .m-btn {
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+        min-height: initial;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 3.75rem 0 $spacing-gutter;
+
+    &__main {
+      padding: 3.75rem $spacing-unit $spacing-unit;
+      margin-right: -$spacing-unit;
+      margin-left: -$spacing-unit;
+
+      .primary-headline {
+        font-size: 1.375rem;
+        line-height: 1.36;
+      }
+
+      .m-btn {
+        padding-top: 0.625rem;
+        padding-bottom: 0.625rem;
+        min-height: initial;
+      }
+    }
+  }
+}
