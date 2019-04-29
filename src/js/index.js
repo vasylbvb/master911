@@ -57,6 +57,14 @@ jQuery(function($) {
             $(serviseSteps).removeClass("opened");
             $(this).addClass("opened");
         });
+
+        /*Advantages steps mobile expanding*/
+        var advItems = $(".block-advantages__list-item");
+        $(advItems).click(function(e) {
+            e.preventDefault();
+            $(advItems).removeClass("opened");
+            $(this).addClass("opened");
+        });
     }
 
     $(window).resize(function(){
