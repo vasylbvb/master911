@@ -19,8 +19,9 @@ $header-padding-scrolled: 0.625rem;
 $header-padding-mobile: 0.875rem;
 
 /* Shadows */
-$m-shadow-grey: 0px 4px 16px rgba(0, 0, 0, 0.15);
-$m-shadow-cold: 0px 4px 16px rgba(0, 66, 127, 0.15);
+$m-shadow-grey: 0 4px 16px rgba(0, 0, 0, 0.15);
+$m-small-shadow-grey: 0 0 10px rgba(0, 0, 0, 0.1);
+$m-shadow-cold: 0 4px 16px rgba(0, 66, 127, 0.15);
 
 /* Transitions */
 $custom-transition-3: all 0.3s ease;
