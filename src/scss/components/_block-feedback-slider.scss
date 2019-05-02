@@ -1,0 +1,226 @@
+.block-feedback {
+  padding: 3.75rem 0;
+  background: $m-white url("../img/quotes.svg") no-repeat 13% 10%;
+  background-size: auto;
+
+  .subtitle {
+    margin-bottom: $spacing-gutter*3;
+  }
+
+  &--flexbox {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+  }
+
+  &__decor {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    max-height: rem-calc(290);
+    flex: 0 0 rem-calc(90);
+    max-width: rem-calc(90);
+    position: relative;
+
+    &:before {
+      display: inline-block;
+      width: 3px;
+      height: 100%;
+      content: "";
+      background-color: $m-grey;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    &-img {
+      display: inline-block;
+      width: rem-calc(86);
+      height: rem-calc(86);
+      background: $m-white url("../img/sound.svg") no-repeat center center;
+      background-size: 75%;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+  }
+
+  &__slider {
+    display: inline-block;
+    vertical-align: top;
+    flex: 0 0 calc(100% - #{rem-calc(90)});
+    max-width: calc(100% - #{rem-calc(90)});
+    padding-left: 1.25rem;
+
+    &-slide {
+      max-width: 100%;
+
+      .slide{
+        &-title {
+          margin-bottom: $spacing-unit;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0;
+        }
+
+        &-place {
+          margin-bottom: $spacing-unit;
+          font-size: 0.875rem;
+          text-align: left;
+          line-height: 1.14;
+        }
+
+        &-text {
+          margin-bottom: 1.5rem;
+          font-size: 1.125rem;
+          line-height: 1.4;
+          
+          p {
+            margin-bottom: 0;
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    &-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: row nowrap;
+      width: 100%;
+      padding-top: 0.625rem;
+
+      &-prev,
+      &-next {
+        display: inline-block;
+        vertical-align: middle;
+        width: 2.5rem;
+        height: 2.5rem;
+        border: none;
+        border-radius: 0;
+        background: transparent no-repeat center center;
+        background-size: contain;
+        opacity: 0.5;
+        transition: $custom-transition-3;
+
+        &:hover {
+          opacity: 1;
+        }
+
+      }
+
+      &-prev {
+        background-image: url("../img/icons/Arrow-left-long.png");
+      }
+
+      &-next {
+        background-image: url("../img/icons/Arrow-right.png");
+      }
+
+      &-counter {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 $spacing-unit;
+        font-size: 1rem;
+        font-weight: 300;
+        text-align: center;
+        line-height: 1.25;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    background-position: 1.25rem 1.25rem;
+
+    .subtitle {
+      margin-bottom: $spacing-unit*3;
+    }
+
+    &__decor {
+      max-height: rem-calc(270);
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    background-position: left top;
+    background-size: rem-calc(152);
+
+    &--flexbox {
+      padding-top: $spacing-gutter;
+      position: relative;
+    }
+
+    &__decor {
+      height: 4rem;
+      max-height: 4rem;
+      max-width: 4rem;
+      position: absolute;
+      top: $spacing-gutter;
+      left: 0;
+
+      &:before {
+        left: 100%;
+      }
+
+      &-img {
+        width: 100%;
+        height: 100%;
+        background-size: 60%;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+      }
+    }
+
+    &__slider {
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding-left: 0;
+
+      &-slide {
+        .slide {
+          &-title {
+            margin-bottom: 0.5rem;
+            padding-left: 5rem;
+            font-size: 1.125rem;
+          }
+
+          &-place {
+            margin-bottom: 2rem;
+            padding-left: 5rem;
+            font-size: 0.875rem;
+          }
+
+          &-text {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      &-nav {
+        padding-top: 2.5rem;
+      }
+    }
+  }
+}
+
+#feedbackSlider {
+  .slick-list {
+    margin: 0 -15px;
+  }
+
+  .slick-slide {
+    max-width: 100%;
+  }
+
+  .slick-slide > div {
+    padding: 0 15px;
+  }
+}

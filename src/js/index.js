@@ -170,6 +170,7 @@ jQuery(function($) {
 
 
     /*Sliders start*/
+    //orders slider
     var orderEther = $("#orderEther"),
         counterEther = $(".order-slider__nav-counter");
     $(orderEther).on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
@@ -207,6 +208,26 @@ jQuery(function($) {
             settings: "unslick" // destroys slick
 
         }]
+    });
+
+    //feedback slider
+    var feedbackSlider = $("#feedbackSlider"),
+        counterFeedbacks = $(".block-feedback__slider-nav-counter");
+    $(feedbackSlider).on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+        //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        $(counterFeedbacks).html('<span class="m-text-red">' + i + '</span>/' + slick.slideCount);
+    });
+
+    $(feedbackSlider).slick({
+
+        infinite: true,
+        slidesToShow: 1,
+        autoplay: false,
+        arrows: true,
+        prevArrow: '.block-feedback__slider-nav-prev',
+        nextArrow: '.block-feedback__slider-nav-next'
+
     });
     /*Sliders end*/
 

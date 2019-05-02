@@ -78,7 +78,9 @@ section {
   }
 
   @include media-breakpoint-down(sm) {
-    font-size: 1.375rem;
+    .primary-headline {
+      font-size: 1.375rem;
+    }
   }
 }
 
