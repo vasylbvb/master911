@@ -62,3 +62,30 @@ input {
     color: $m-grey-dark;
   }
 }
+
+
+section {
+  .primary-headline {
+    text-transform: uppercase;
+    margin-bottom: $spacing-unit;
+  }
+
+  .subtitle {
+    margin-bottom: $spacing-unit*3;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    font-size: 1.375rem;
+  }
+}
+
+/* Slider */
+
+.slick-list {
+  .slick-loading & {
+    background: #fff url("../img/ajax-loader.gif") no-repeat center center;
+  }
+}

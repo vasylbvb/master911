@@ -1,6 +1,7 @@
 import jQuery from 'jquery';
 import popper from 'popper.js';
 import bootstrap from 'bootstrap';
+import slick from 'slick-carousel';
 
 jQuery(function($) {
     //Scrollspy for changing header
@@ -167,6 +168,47 @@ jQuery(function($) {
         $(this).parents(".has-children").toggleClass("opened");
     });
 
+
+    /*Sliders start*/
+    var orderEther = $("#orderEther"),
+        counterEther = $(".order-slider__nav-counter");
+    $(orderEther).on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+        //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        $(counterEther).html('<span class="m-text-red">' + i + '</span>/' + slick.slideCount);
+    });
+
+    $(orderEther).slick({
+
+        infinite: false,
+        slidesToShow: 2.5,
+        autoplay: false,
+        arrows: true,
+        prevArrow: '.order-slider__nav-prev',
+        nextArrow: '.order-slider__nav-next',
+
+        responsive: [{
+
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 1.5
+            }
+
+        }, {
+
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1
+            }
+
+        }, {
+
+            breakpoint: 300,
+            settings: "unslick" // destroys slick
+
+        }]
+    });
+    /*Sliders end*/
 
     //footer menus toggle
     var $width = $(window).width();

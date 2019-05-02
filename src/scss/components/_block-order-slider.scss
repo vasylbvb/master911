@@ -1,0 +1,148 @@
+.order-slider {
+  padding: 0 0 3.75rem;
+  background-color: $m-white;
+
+  &__slide {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    max-width: rem-calc(445);
+    min-height: rem-calc(220);
+    margin-bottom: $spacing-unit;
+    padding: $spacing-gutter;
+    background-color: $m-grey-lighter;
+    font-size: 0;
+
+    .slide {
+      &-img {
+        display: inline-block;
+        vertical-align: top;
+        flex: 0 0 13%;
+        max-width: 13%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &-info {
+        display: inline-block;
+        vertical-align: top;
+        flex: 0 0 87%;
+        max-width: 87%;
+        padding-left: $spacing-unit;
+
+        &__title {
+          margin-bottom: $spacing-unit;
+          font-size: 0.875rem;
+          font-weight: 700;
+          line-height: 1.43;
+        }
+
+        &__time {
+          margin-bottom: $spacing-unit;
+          font-size: 0.625rem;
+          color: $m-grey-dark;
+          line-height: 1.5;
+        }
+      }
+
+      &-desc,
+      &-name {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      &-desc {
+        margin-bottom: $spacing-unit;
+        font-size: 0.75rem;
+        text-align: left;
+        line-height: 1.25;
+
+        p {
+          margin-bottom: 0;
+          font-size: inherit;
+          text-align: inherit;
+          line-height: inherit;
+        }
+      }
+
+      &-name {
+        font-size: 0.75rem;
+        color: $m-grey-dark;
+        line-height: 1.25;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      .slide-img {
+        display: none;
+      }
+
+      .slide-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    width: 100%;
+    padding-top: 0.625rem;
+
+    &-prev,
+    &-next {
+      display: inline-block;
+      vertical-align: middle;
+      width: 2.5rem;
+      height: 2.5rem;
+      border: none;
+      border-radius: 0;
+      background: transparent no-repeat center center;
+      background-size: contain;
+      opacity: 0.5;
+      transition: $custom-transition-3;
+
+      &:hover {
+        opacity: 1;
+      }
+
+    }
+
+    &-prev {
+      background-image: url("../img/icons/Arrow-left-long.png");
+    }
+
+    &-next {
+      background-image: url("../img/icons/Arrow-right.png");
+    }
+
+    &-counter {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 $spacing-unit;
+      font-size: 1rem;
+      font-weight: 300;
+      text-align: center;
+      line-height: 1.25;
+    }
+
+    @include media-breakpoint-down(sm) {
+      justify-content: center;
+    }
+  }
+}
+
+#orderEther {
+  .slick-list {
+    margin: 0 -15px;
+  }
+
+  .slick-slide > div {
+    padding: 0 15px;
+  }
+}
