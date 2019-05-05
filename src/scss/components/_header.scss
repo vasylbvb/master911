@@ -175,6 +175,7 @@
             &-link {
               display: block;
               margin-bottom: 0.25rem;
+              font-family: "Rubik-b", sans-serif;
               font-size: 1.125rem;
               font-weight: 700;
               color: $m-black;
@@ -361,12 +362,10 @@
         &:hover {
           .icon {
             background-image: url("../img/icons/menu-r.svg");
-            transform: scale(0.8);
           }
 
           .text {
             color: $m-red;
-            transform: scale(1.2);
           }
         }
       }
@@ -410,12 +409,10 @@
 
           .icon {
             background-image: url("../img/icons/login-r.svg");
-            transform: scale(0.8);
           }
 
           .text {
             color: $m-red;
-            transform: scale(1.2);
           }
         }
       }
@@ -425,6 +422,7 @@
       display: inline-flex;
       align-items: center;
       width: auto;
+      min-height: 2.5rem;
       vertical-align: middle;
       border-left: 1px solid $m-grey-dark;
 
@@ -435,7 +433,8 @@
           padding: 0;
           background-color: transparent;
           border: none;
-          font-size: 0.875rem;
+          font-size: 0.75rem;
+          line-height: 2;
 
           &:focus {
             outline: none;

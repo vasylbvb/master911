@@ -97,4 +97,323 @@
       }
     }
   }
+
+  .region-search {
+    input[type="text"] {
+      border-color: transparent;
+    }
+  }
+}
+
+#servicesModal {
+  .modal-dialog {
+    max-width: 100%;
+    margin: $header-padding-scrolled auto;
+
+    .modal-body {
+      padding: 2rem $spacing-unit;
+    }
+
+    @include media-breakpoint-up(sm) {
+      max-width: 33.75rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: 45rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      max-width: 60rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: 71.25rem;
+    }
+  }
+
+  button.close {
+    top: 2.1875rem;
+    right: 2.1875rem;
+    .icon {
+      display: inline-block;
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .modal-dialog {
+      .modal-body {
+        padding: 1.25rem 0.3125rem;
+      }
+    }
+
+    button.close {
+      top: 1.25rem;
+      right: 1.25rem;
+    }
+  }
+}
+
+.modal-serv {
+  &__heading {
+    margin-bottom: $spacing-gutter;
+    font-size: 1.3125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.32;
+  }
+
+  &__tabs {
+    margin-bottom: 0.625rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid $m-grey-dark;
+
+    .nav-tabs {
+      margin-left: -$spacing-gutter;
+      background-color: $m-grey-lighter;
+      border-bottom: none;
+
+      .nav-link {
+        width: 100%;
+        margin: 0;
+        padding: 1.25rem 1rem 1.125rem $spacing-gutter;
+        border: none;
+        border-radius: 0;
+        font-weight: 700;
+        line-height: 1.25;
+        transition: $custom-transition-3;
+
+        &.active {
+          border: none;
+          border-radius: 0;
+        }
+
+        &.active,
+        &:hover {
+          background-color: $m-grey-light;
+          color: $m-black;
+        }
+      }
+    }
+  }
+
+  &__contact {
+    & > p,
+    & > .text {
+      margin-bottom: 1.75rem;
+      font-size: 0.875rem;
+      text-align: left;
+      line-height: 1.57;
+    }
+
+    .contact-link {
+      margin-bottom: 1.5rem;
+
+      .text {
+        * {
+          transition: $custom-transition-3;
+        }
+
+        &-link {
+          display: block;
+          margin-bottom: 0.25rem;
+          font-family: "Rubik-b", sans-serif;
+          font-size: 1.375rem;
+          font-weight: 700;
+          color: $m-black;
+          line-height: 1.1;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        &-schedule {
+          display: block;
+          font-size: 0.75rem;
+          color: $m-red;
+          line-height: 1.2;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+      }
+
+      &:hover {
+        .text {
+          &-link {
+            color: $m-red;
+          }
+
+          &-schedule {
+            color: $m-black;
+          }
+        }
+      }
+    }
+
+    .m-btn {
+      width: 100%;
+    }
+  }
+
+  &__tab-content {
+    margin-top: rem-calc(57);
+  }
+
+  &__list {
+    &--common {
+      width: 100%;
+
+      & > li {
+        width: 100%;
+        padding: 0.875rem $spacing-gutter 0.8125rem;
+        border-bottom: 1px solid $m-grey;
+        font-size: 1.25rem;
+        line-height: 1.25;
+        position: relative;
+
+        &:first-child {
+          border-top: 1px solid $m-grey;
+        }
+
+        .text {
+          display: inline-block;
+          vertical-align: middle;
+          padding-right: 0.375rem;
+          cursor: pointer;
+          transition: $custom-transition-3;
+
+          &:hover {
+            color: $m-red;
+          }
+        }
+
+        a {
+          color: inherit;
+
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
+        &:after {
+          display: inline-block;
+          vertical-align: middle;
+          width: 0.4375rem;
+          height: 0.4375rem;
+          content: "";
+          border-right: 2px solid $m-red;
+          border-bottom: 2px solid $m-red;
+          transform: rotate(-45deg);
+          transform-origin: center center;
+        }
+
+        &.has-children {
+          .text {
+            padding-right: 1.25rem;
+          }
+
+          &:after {
+            width: 0.875rem;
+            height: 0.875rem;
+            border-right-color: $m-black;
+            border-bottom-color: $m-black;
+            position: absolute;
+            top: 1.125rem;
+            right: $spacing-gutter;
+            transition: $custom-transition-3;
+          }
+
+          .sublist {
+            display: none;
+            flex-flow: row wrap;
+            width: 100%;
+            padding-top: 2.875rem;
+            padding-left: $spacing-gutter;
+
+            li {
+              display: inline-block;
+              flex: 0 0 25%;
+              max-width: 25%;
+              padding-right: $spacing-gutter;
+              font-size: 1rem;
+              line-height: 1.25;
+
+              &:not(:last-child) {
+                margin-bottom: $spacing-gutter;
+              }
+
+              a {
+                display: inline-block;
+                border-bottom: 1px dashed transparent;
+                transition: $custom-transition-3;
+
+                &:hover {
+                  color: $m-red;
+                  border-bottom-color: $m-red;
+                }
+              }
+            }
+          }
+
+          &.opened {
+            .sublist {
+              display: flex;
+            }
+
+            &:after {
+              transform: rotate(135deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &__list {
+      &--common {
+        & > li {
+          &.has-children {
+            .sublist {
+              li {
+                flex: 0 0 50%;
+                max-width: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__heading {
+      margin-top: 5rem;
+    }
+
+    &__tabs {
+      .nav-tabs {
+        margin-left: -1.25rem;
+      }
+    }
+    
+    &__list {
+      &--common {
+        & > li {
+          &.has-children {
+            .sublist {
+              li {
+                flex: 0 0 100%;
+                max-width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

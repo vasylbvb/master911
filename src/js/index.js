@@ -18,18 +18,25 @@ jQuery(function($) {
     }
 
     //Header Location Dropdown
-    var locationArr = $("#locModal .dropdown-item");
-    $(locationArr).each(function() {
-        $(this).text($(this).data("name"));
-    });
 
-    $(locationArr).click(function(e) {
-        e.preventDefault();
-        $(locationArr).removeClass("active");
-        $(this).addClass("active");
-        $("#dropdownLocBtn").find(".text").text($(this).text());
-        $(".navbar-location__btn").find(".text").text($(this).text());
+    $('#locModal').on('hide.bs.modal', function (e) {
+        var getLocInpVal = $(this).find('input[type="text"]').val();
+        if ( getLocInpVal != 0 ) {
+            $(".navbar-location__btn").find(".text").text(getLocInpVal);
+        }
     });
+    // var locationArr = $("#locModal .dropdown-item");
+    // $(locationArr).each(function() {
+    //     $(this).text($(this).data("name"));
+    // });
+    //
+    // $(locationArr).click(function(e) {
+    //     e.preventDefault();
+    //     $(locationArr).removeClass("active");
+    //     $(this).addClass("active");
+    //     $("#dropdownLocBtn").find(".text").text($(this).text());
+    //     $(".navbar-location__btn").find(".text").text($(this).text());
+    // });
 
     //Header Language Dropdown
     var languageArr = $(".navbar-lang .dropdown-item");
@@ -140,7 +147,19 @@ jQuery(function($) {
         });
     }
 
+    autocomplete(document.getElementById("s-nav-loc"), rajCenters);
     autocomplete(document.getElementById("s-loc"), rajCenters);
+
+    var myInp = $("#s-nav-loc");
+    $(myInp).on("input", function(e) {
+        if($(this).val() != 0) {
+            $(this).siblings(".clear-input").show();
+            $(this).siblings("[type='submit']").show();
+        } else {
+            $(this).siblings(".clear-input").hide();
+            $(this).siblings("[type='submit']").hide();
+        }
+    });
 
     var myInp = $("#s-loc");
     $(myInp).on("input", function(e) {
@@ -162,8 +181,15 @@ jQuery(function($) {
     });
     //Location input autocomplete functions end
 
+    //toggle services sublists in services modal
+    var servExpand = $(".modal-serv .has-children .text");
+    $(servExpand).click(function(e) {
+        e.preventDefault();
+       $(this).parents(".has-children").toggleClass("opened");
+    });
+
     //toggle region lists
-    var listHasChild = $("li.has-children");
+    var listHasChild = $(".block-regions li.has-children");
     $(listHasChild).find(".text").click(function() {
         $(this).parents(".has-children").toggleClass("opened");
     });
