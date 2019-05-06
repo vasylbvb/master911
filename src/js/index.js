@@ -188,6 +188,18 @@ jQuery(function($) {
        $(this).parents(".has-children").toggleClass("opened");
     });
 
+    //slide modal columns on mobile
+    var servTabLinks = $(".modal-serv .nav-tabs .nav-link");
+    $(servTabLinks).click(function() {
+        $(this).parents(".row").addClass("slided");
+    });
+
+    var servBackBtn = $(".modal-serv__back-btn");
+    $(servBackBtn).click(function() {
+        $(this).parents(".row").removeClass("slided");
+    });
+
+
     //toggle region lists
     var listHasChild = $(".block-regions li.has-children");
     $(listHasChild).find(".text").click(function() {
