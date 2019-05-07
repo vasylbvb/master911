@@ -1,6 +1,5 @@
 .hero {
   &-wrapper {
-
     background-color: $m-grey-light;
     background-repeat: no-repeat;
     background-position: right -10px;
@@ -15,8 +14,29 @@
     align-items: flex-start;
     justify-content: flex-start;
 
+    &.ver-category {
+      min-height: rem-calc(570);
+      padding-bottom: $spacing-gutter;
+    }
+
+    &__text {
+      margin-bottom: 1.25rem;
+      font-size: 1.125rem;
+      line-height: 1.55;
+
+      p {
+        margin-bottom: 0;
+        font-size: inherit;
+        line-height: inherit;
+      }
+
+      @include media-breakpoint-up(lg) {
+        max-width: rem-calc(730);
+      }
+    }
+
     &__title {
-      margin-bottom: 1.875rem;
+      margin-bottom: 1.25rem;
     }
 
     &__search {
