@@ -2,6 +2,8 @@ import jQuery from 'jquery';
 import popper from 'popper.js';
 import bootstrap from 'bootstrap';
 import slick from 'slick-carousel';
+import "jquery-ui/ui/widgets/datepicker";
+import "jquery-ui/ui/i18n/datepicker-uk";
 
 jQuery(function($) {
     //Scrollspy for changing header
@@ -147,11 +149,21 @@ jQuery(function($) {
         });
     }
 
+    autocomplete(document.getElementById("s-order-loc"), rajCenters);
     autocomplete(document.getElementById("s-nav-loc"), rajCenters);
     autocomplete(document.getElementById("s-loc"), rajCenters);
 
-    var myInp = $("#s-nav-loc");
-    $(myInp).on("input", function(e) {
+    var myInpOrder = $("#s-order-loc");
+    $(myInpOrder).on("input", function(e) {
+        if($(this).val() != 0) {
+            $(this).siblings(".clear-input").show();
+        } else {
+            $(this).siblings(".clear-input").hide();
+        }
+    });
+
+    var myInpNav = $("#s-nav-loc");
+    $(myInpNav).on("input", function(e) {
         if($(this).val() != 0) {
             $(this).siblings(".clear-input").show();
             $(this).siblings("[type='submit']").show();
@@ -199,13 +211,17 @@ jQuery(function($) {
         $(this).parents(".row").removeClass("slided");
     });
 
-
     //toggle region lists
     var listHasChild = $(".block-regions li.has-children");
     $(listHasChild).find(".text").click(function() {
         $(this).parents(".has-children").toggleClass("opened");
     });
 
+    //Initialize tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+
+    //Initialize datepicker
+    $("#client-date").datepicker( $.datepicker.regional[ "uk" ] ).datepicker( "option", "minDate", new Date() );
 
     /*Sliders start*/
     //orders slider

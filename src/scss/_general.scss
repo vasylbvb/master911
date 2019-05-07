@@ -93,3 +93,46 @@ section {
     background: #fff url("../img/ajax-loader.gif") no-repeat center center;
   }
 }
+
+/*Tooltip*/
+.tooltip {
+  &.bs-tooltip-top {
+    .arrow {
+      &:before {
+        border-top-color: $m-red;
+      }
+    }
+  }
+
+  &.bs-tooltip-left {
+    .arrow {
+      &:before {
+        border-left-color: $m-red;
+      }
+    }
+  }
+
+  &.bs-tooltip-bottom {
+    .arrow{
+      &:before {
+        border-bottom-color: $m-red;
+      }
+    }
+  }
+
+  &.bs-tooltip-right {
+    .arrow{
+      &:before {
+        border-right-color: $m-red;
+      }
+    }
+  }
+
+  .tooltip-inner{
+    padding:1.25rem;
+    border-radius: 0;
+    background-color:$m-red;
+    color:#fff;
+    text-align:left;
+  }
+}
