@@ -4,7 +4,7 @@
   width: 100%;
   min-height: 11.875rem;
   margin-bottom: $spacing-gutter;
-  padding: $spacing-gutter;
+  padding: 1.5rem 1.75rem;
   background-color: $m-grey-lighter;
   border: 2px solid $m-grey-light;
   transition: $custom-transition-3;
@@ -18,8 +18,8 @@
     &-img {
       display: inline-block;
       vertical-align: middle;
-      flex: 0 0 33.33%;
-      max-width: 33.33%;
+      flex: 0 0 34%;
+      max-width: 34%;
       padding-right: $spacing-unit/2;
 
       img {
@@ -31,10 +31,11 @@
     &-title {
       display: inline-block;
       vertical-align: middle;
-      flex: 0 0 66.67%;
-      max-width: 66.67%;
+      flex: 0 0 66%;
+      max-width: 66%;
       padding-left: $spacing-unit/2;
       font-size: 1rem;
+      font-weight: 700;
       text-transform: uppercase;
       line-height: 1.375;
 
@@ -51,6 +52,7 @@
 
   &__footer {
     margin-top: $spacing-unit;
+    margin-bottom: 0.25rem;
     font-size: 0.75rem;
     color: $m-grey-dark;
     line-height: 1.25;
@@ -60,13 +62,16 @@
     min-height: 23.125rem;
 
     .m-card__body {
+      margin-top: 0;
       flex-wrap: wrap;
+      align-items: flex-start;
 
       &-img {
         flex: 0 0 50%;
         max-width: 50%;
-        margin-bottom: $spacing-gutter;
+        margin-bottom: 1.25rem;
         padding: 0;
+        vertical-align: top;
       }
 
       &-title {
@@ -76,6 +81,7 @@
         padding: 0;
         font-size: 1.5rem;
         line-height: 1.25;
+        vertical-align: top;
       }
     }
 

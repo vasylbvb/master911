@@ -16,6 +16,7 @@
   }
 
   &__subtitle {
+    margin-bottom: $spacing-gutter;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -25,8 +26,8 @@
   &__list {
     &--main {
       width: 100%;
-      padding-top: $spacing-gutter*2;
-      padding-left: 1.25rem;
+      padding-top: $spacing-unit*3;
+      padding-left: $spacing-gutter;
       margin-bottom: $spacing-unit;
       border-bottom: 1px solid $m-grey;
 
@@ -78,7 +79,7 @@
 
       .sublist {
         display: none;
-        padding-left: 1.25rem;
+        padding-left: $spacing-gutter;
         column-count: 4;
         column-gap: $spacing-gutter;
 
@@ -226,7 +227,6 @@
 
       &--common {
         padding-left: 0;
-        column-count: 1;
       }
     }
   }

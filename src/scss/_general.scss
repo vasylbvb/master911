@@ -48,6 +48,10 @@ p,
   color: $m-red;
 }
 
+.pt-30 {
+  padding-top: $spacing-gutter;
+}
+
 input {
   &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $m-grey-dark;

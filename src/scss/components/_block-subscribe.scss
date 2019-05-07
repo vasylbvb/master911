@@ -8,7 +8,7 @@
 
     .primary-headline {
       text-transform: uppercase;
-      margin-bottom: $spacing-gutter*2;
+      margin-bottom: 3.125rem;
     }
 
     p {
@@ -25,7 +25,7 @@
 
       .nav-link {
         margin-bottom: $spacing-unit;
-        padding: 0 0 0.5rem;
+        padding: 0 0 0.3125rem;
         border: none;
         border-bottom: 2px solid transparent;
         border-radius: 0;
@@ -74,12 +74,17 @@
         flex-flow: row wrap;
         max-width: 100%;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+
+        button {
+          flex: 1 1 0;
+        }
       }
 
       .form-control {
         flex: 1 1 auto;
         height: auto;
+        max-width: rem-calc(380);
         min-height: 3.125rem;
         margin-bottom: 2.375rem;
         padding: 1rem 1.25rem;

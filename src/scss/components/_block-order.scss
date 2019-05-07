@@ -17,10 +17,10 @@
     }
 
     &-col-1 {
-      flex: 0 0 33.33%;
-      max-width: 33.33%;
+      flex: 0 0 38.5%;
+      max-width: 38.5%;
       height: 100%;
-      padding: $spacing-unit $spacing-unit $spacing-unit 0;
+      padding: $spacing-unit;
       border-right: 1px solid $m-grey-dark;
       text-transform: uppercase;
 
@@ -30,15 +30,21 @@
     }
 
     &-col-2 {
-      flex: 0 0 66.67%;
-      max-width: 66.67%;
+      flex: 0 0 61.5%;
+      max-width: 61.5%;
       padding-left: $spacing-gutter;
 
       p {
-        margin-bottom: 1rem;
+        padding-top: 0.625rem;
+        margin-bottom: 0.5rem;
         text-align: left;
       }
     }
+  }
+
+  .m-btn {
+    margin-top: 0.5rem;
+    width: 100%;
   }
 
   @include media-breakpoint-down(md) {
@@ -106,7 +112,7 @@
     display: inline-block;
     width: 1.875rem;
     height: 1.875rem;
-    margin-right: 0.625rem;
+    margin-right: 0.25rem;
     background: transparent url("../img/icons/Phone.svg") no-repeat center center;
     background-size: contain;
     vertical-align: middle;
@@ -122,7 +128,8 @@
 
     &-link {
       display: block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
+      font-family: "Rubik-b", sans-serif;
       font-size: 1.375rem;
       font-weight: 700;
       color: $m-black;

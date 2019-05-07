@@ -235,7 +235,7 @@ jQuery(function($) {
 
     $(orderEther).slick({
 
-        infinite: false,
+        infinite: true,
         slidesToShow: 2.5,
         autoplay: false,
         arrows: true,

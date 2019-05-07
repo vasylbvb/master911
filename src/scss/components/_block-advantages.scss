@@ -29,13 +29,14 @@
 
         .primary-headline {
           padding-top: 1.5rem;
-          margin-bottom: $spacing-unit;
+          margin-bottom: 0;
           text-transform: uppercase;
         }
 
         .m-btn {
           padding-left: 0;
           border-color: transparent;
+          font-weight: 700;
           text-align: left;
 
           &:hover {

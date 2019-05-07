@@ -6,10 +6,10 @@
     width: 100%;
     height: 100%;
     flex-flow: column nowrap;
-    padding: 1.875rem 0;
+    padding: $spacing-gutter 0  $spacing-gutter*2;
 
     .primary-headline {
-      margin-bottom: 2.8125rem;
+      margin-bottom: 2.5rem;
       text-transform: uppercase;
     }
 
@@ -21,6 +21,11 @@
 
     &-btn {
       margin-top: auto;
+
+      .m-btn {
+        min-width: rem-calc(195);
+        font-weight: 700;
+      }
     }
 
     @include media-breakpoint-down(md) {

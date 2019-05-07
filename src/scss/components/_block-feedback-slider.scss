@@ -3,6 +3,15 @@
   background: $m-white url("../img/quotes.svg") no-repeat 13% 10%;
   background-size: auto;
 
+  .primary-headline {
+    margin-bottom: 0.625rem;
+  }
+
+  .m-btn:not(.m-btn-small) {
+    min-width: rem-calc(225);
+    font-weight: 700;
+  }
+
   .subtitle {
     margin-bottom: $spacing-gutter*3;
   }

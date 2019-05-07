@@ -1,5 +1,5 @@
 .block-promotions {
-  padding: 6.875rem 0;
+  padding: 6.875rem 0 5.625rem;
   background-color: $m-white;
 
   &__main,
@@ -9,7 +9,7 @@
   }
 
   &__main {
-    padding: 2rem 2.5rem;
+    padding: 2.75rem 1.875rem 0.625rem 2.75rem;
     background-color: $m-red;
     color: $m-white;
 
