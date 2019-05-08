@@ -67,6 +67,9 @@ input {
   }
 }
 
+main {
+  padding-bottom: $spacing-gutter*2;
+}
 
 section {
   .primary-headline {
@@ -88,6 +91,10 @@ section {
       font-size: 1.375rem;
     }
   }
+}
+
+.cards-section {
+  padding-top: rem-calc(54);
 }
 
 /* Slider */

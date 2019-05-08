@@ -5,6 +5,7 @@ buttons have got the next classes:
     m-btn-secondary (transparent bordered buttons),
     m-btn-small (additional for m-btn-primary and m-btn-secondary smaller sizes)
     m-btn-white (additional for m-btn-secondary white font and border)
+    m-btn-c-more (separate read more button for cards)
 **/
 
 .m-btn {
@@ -151,6 +152,45 @@ buttons have got the next classes:
       background-size: contain;
       vertical-align: middle;
       transition: $custom-transition-3;
+    }
+  }
+}
+
+.m-btn-c-more {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  transition: $custom-transition-3;
+
+  .icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: rem-calc(51);
+    height: 1.25rem;
+    background: transparent url("../img/icons/Arrow-right.svg") no-repeat center center;
+    background-size: cover;
+    transition: inherit;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .icon {
+      background-image: url("../img/icons/Arrow-right-r.svg");
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .icon {
+      width: rem-calc(35);
+      height: 0.875rem;
     }
   }
 }

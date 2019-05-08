@@ -1,0 +1,45 @@
+.breadcrumbs-wrapper {
+  padding: 1.125rem 0 $spacing-gutter;
+
+  .breadcrumb {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 0.75rem;
+    color: $m-grey-dark;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.42;
+
+    &-link {
+      color: inherit;
+      transition: $custom-transition-3;
+
+      &:hover {
+        color: $m-red;
+        text-decoration: none;
+      }
+    }
+
+    &-item {
+      & + .breadcrumb-item::before {
+        color: $m-grey-dark;
+        content: ">";
+      }
+
+      &.active {
+        color: $m-black;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 0.625rem 0;
+
+    .breadcrumb {
+      font-size: 0.625rem;
+      line-height: 1.5;
+    }
+  }
+}

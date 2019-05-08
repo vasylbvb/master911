@@ -6,9 +6,12 @@ title: "Category"
 <%= _.template(require('./../includes/main-nav.html'))(data) %>
 
 <%= _.template(require('./../includes/hero-category.html'))(data) %>
+<%= _.template(require('./../includes/breadcrumbs.html'))(data) %>
 
 <main id="main">
-    <%= _.template(require('./../includes/services.html'))(data) %>
+    <%= _.template(require('./../includes/block-category-cards.html'))(data) %>
+    <%= _.template(require('./../includes/block-order.html'))(data) %>
+    <%= _.template(require('./../includes/block-article.html'))(data) %>
 </main>
 
 <%= _.template(require('./../includes/footer.html'))(data) %>
