@@ -225,6 +225,68 @@ jQuery(function($) {
     //Initialize datepicker
     $("#client-date").datepicker( $.datepicker.regional[ "uk" ] ).datepicker( "option", "minDate", new Date() );
 
+    /*Contact form validation START*/
+    $('#contactModal [type="submit"]').click(function(e){
+        e.preventDefault();
+
+        var nameReg = /^[A-Za-z\u0400-\u04FF]+$/;
+        var numberReg =  /^[0-9]+$/;
+        //var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+        var clientName = $('#client-name');
+        var clientPhone = $('#client-phone');
+        var clientLocs = $('#s-order-loc');
+        var clientDate = $('#client-date');
+        var clientTime = $('#client-time');
+        var clientAgree = $('#client-agree');
+        var clientService = $('#chosen-service');
+
+        var inputs = [clientName, clientPhone, clientLocs, clientDate, clientTime, clientAgree, clientService];
+
+        var inputMessage = ["Введіть правильні дані", "Виберіть дату", "Виберіть час"];
+
+        $('#contactModal .error').remove();
+        $('#contactModal .form-group').removeClass('has-error');
+
+        // if(inputs[0].val() == ""){
+        //     var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+        //     $(inputs[0]).parents(".form-group").addClass("has-error").append(errMsg);
+        // } else if(!nameReg.test(inputs[0].val())){
+        //     var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+        //     $(inputs[0]).parents(".form-group").addClass("has-error").append(errMsg);
+        // }
+
+        if(inputs[1].val() == ""){
+            var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+            $(inputs[1]).parents(".form-group").addClass("has-error").append(errMsg);
+        } else if(!numberReg.test(inputs[1].val())){
+            var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+            $(inputs[1]).parents(".form-group").addClass("has-error").append(errMsg);
+        }
+
+        // if(inputs[2].val() == ""){
+        //     var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+        //     $(inputs[2]).parents(".form-group").addClass("has-error").append(errMsg);
+        // }
+
+        // if(inputs[3].val() == ""){
+        //     var errMsg = $('<span></span>').addClass("error").text(inputMessage[1]);
+        //     $(inputs[3]).parents(".form-group").addClass("has-error").append(errMsg);
+        // }
+
+        // if(inputs[4].val() == ""){
+        //     var errMsg = $('<span></span>').addClass("error").text(inputMessage[2]);
+        //     $(inputs[4]).parents(".form-group").addClass("has-error").append(errMsg);
+        // }
+
+        if( $('#contactModal .error').length == 0 ) {
+            $('#contactModal form')[0].submit();
+        } else {
+            return false;
+        }
+    });
+    /*Contact form validation END*/
+
     /*Sliders start*/
     //orders slider
     var orderEther = $("#orderEther"),
