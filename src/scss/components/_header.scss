@@ -448,13 +448,16 @@
       border-left: 1px solid $m-grey-dark;
 
       .dropdown {
+        min-height: inherit;
+        font-size: 0.75rem;
+
         .dropdown-toggle {
           width: auto;
           max-width: 100%;
+          min-height: inherit;
           padding: 0;
           background-color: transparent;
           border: none;
-          font-size: 0.75rem;
           line-height: 2;
 
           &:focus {
@@ -508,15 +511,19 @@
           padding: 0.875rem 0;
           min-width: initial;
           max-height: 10rem;
+          font-size: inherit;
           overflow-y: auto;
 
           .dropdown-item {
             padding: 0 1rem;
-            font-size: 0.875rem;
             text-transform: uppercase;
 
             &.active {
               display: none;
+            }
+
+            &:hover {
+              color: $m-red;
             }
           }
         }
@@ -536,7 +543,7 @@
 
       .icon {
         display: inline-block;
-        width: 1.5rem;
+        width: 1.625rem;
         height: 1.5rem;
         background: transparent no-repeat center center;
         background-size: contain;
@@ -559,14 +566,13 @@
           }
 
           &:nth-child(2) {
-            width: 80%;
-            top: 50%;
-            transform: translateY(-50%);
+            width: 84%;
+            top: 39%;
             transform-origin: center center;
           }
 
           &:nth-child(3) {
-            bottom: 0;
+            bottom: 11%;
             transform-origin: right top;
           }
         }
@@ -604,6 +610,169 @@
 
       &-search {
         display: block;
+      }
+
+      &-contact {
+        min-height: 2.5rem;
+
+        .dropdown {
+          min-height: inherit;
+
+          .dropdown-toggle {
+            min-height: inherit;
+          }
+        }
+
+        .dropdown.show {
+          margin-top: -$header-padding-scrolled;
+          margin-bottom: -$header-padding-scrolled;
+          padding-top: $header-padding-scrolled;
+          padding-bottom: $header-padding-scrolled;
+          background-color: $m-grey-lighter;
+
+          .dropdown-menu {
+            margin-top: 0;
+            background-color: $m-grey-lighter;
+          }
+        }
+      }
+
+      &-lang {
+        .dropdown.show {
+          margin-top: -$header-padding-scrolled;
+          margin-bottom: -$header-padding-scrolled;
+          padding-top: $header-padding-scrolled;
+          padding-bottom: $header-padding-scrolled;
+          background-color: $m-grey-lighter;
+
+          .dropdown-menu {
+            width: 100%;
+            margin-top: 0;
+            background-color: $m-grey-lighter;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-mob-blocks {
+    display: none;
+    align-items: center;
+    width: 100%;
+    background-color: $m-white;
+    color: $m-white;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1030;
+
+    &__contact,
+    &__order,
+    &__services {
+      display: inline-block;
+      vertical-align: middle;
+      align-self: stretch;
+    }
+
+    &__contact,
+    &__order {
+      flex: 1 1 auto;
+    }
+
+    &__contact {
+      padding: 0.8125rem 0.625rem;
+      background-color: $m-black;
+      min-height: $fixed-tabl-navbar-height;
+      text-align: center;
+
+      .icon {
+        display: inline-block;
+        width: 1.875rem;
+        height: 1.875rem;
+        margin-right: 0.5rem;
+        background: transparent url("../img/icons/Phone-w.svg") no-repeat center center;
+        background-size: cover;
+        vertical-align: middle;
+      }
+
+      .text {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+
+        &-link {
+          display: block;
+          margin-bottom: 0.25rem;
+          font-family: "Rubik-b", sans-serif;
+          font-size: 1.375rem;
+          font-weight: 700;
+          line-height: 1.18;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+
+          &:hover {
+            text-decoration: none;
+            color: $m-white;
+          }
+        }
+
+        &-schedule {
+          display: block;
+          font-size: 0.75rem;
+          line-height: 1.17;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &__order {
+      background-color: $m-red;
+
+      .m-btn {
+        width: 100%;
+        min-width: initial;
+        min-height: $fixed-tabl-navbar-height;
+        padding: 1.5rem 0.625rem;
+      }
+    }
+
+    &__services {
+      background-color: $m-white;
+
+      button {
+        display: inline-block;
+        width: auto;
+        padding: 1.125rem;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        vertical-align: middle;
+        font-size: 0;
+
+        &:focus {
+          outline: none;
+        }
+
+        * {
+          transition: $custom-transition-3;
+        }
+
+        .icon {
+          display: inline-block;
+          width: 2.125rem;
+          height: 2.125rem;
+          background: transparent url("../img/icons/menu.svg") no-repeat center center;
+          background-size: cover;
+          vertical-align: middle;
+        }
+
+        &:hover {
+          .icon {
+            background-image: url("../img/icons/menu-r.svg");
+          }
+        }
       }
     }
   }
@@ -692,6 +861,10 @@
     &.scrolled {
       padding: $header-padding-mobile 0;
     }
+
+    .navbar-mob-blocks {
+       display: flex;
+    }
   }
 
   @include media-breakpoint-down(sm) {
@@ -741,6 +914,51 @@
       &-lang {
         margin-right: 0.625rem;
         margin-left: 0;
+      }
+    }
+
+    .navbar-mob-blocks {
+      &__contact {
+        padding: 0.625rem;
+        min-height: $fixed-mob-navbar-height;
+
+        .icon {
+          display: none;
+        }
+
+        .text {
+          &-link {
+            margin-bottom: 0;
+            font-size: 0.875rem;
+            line-height: 1.2;
+          }
+
+          &-schedule {
+            font-size: 0.625rem;
+            line-height: 1.2;
+          }
+        }
+      }
+
+      &__order {
+        .m-btn {
+          min-height: $fixed-mob-navbar-height;
+          padding-top: 0.875rem;
+          padding-bottom: 0.875rem;
+          font-size: 0.875rem;
+          line-height: 1.29;
+        }
+      }
+
+      &__services {
+        button {
+          padding: 0.8125rem;
+
+          .icon {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+        }
       }
     }
   }

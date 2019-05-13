@@ -326,3 +326,9 @@ li.ui-menu-item {
   background-color: $m-red !important;
   color: #ffffff;
 }
+
+@include media-breakpoint-down(sm) {
+  .excessive-text {
+    display: none;
+  }
+}

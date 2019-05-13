@@ -342,6 +342,14 @@
       display: none;
     }
   }
+
+  @include media-breakpoint-down(md) {
+    padding-bottom: $fixed-tabl-navbar-height;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-bottom: $fixed-mob-navbar-height;
+  }
 }
 
 @keyframes envelopeFly {
