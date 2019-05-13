@@ -147,3 +147,182 @@ section {
     text-align:left;
   }
 }
+
+/*Autocomplete styles*/
+.region-search {
+  position: relative;
+
+  input[type="text"] {
+    width: 100%;
+    min-height: rem-calc(50);
+    padding: 0.875rem 3.125rem 0.875rem 2.75rem;
+    border: 1px solid $m-grey-light;
+    background-color: $m-white;
+    font-size: 0.9375rem;
+    color: $m-black;
+    line-height: 1.33;
+    transition: $custom-transition-3;
+
+    &:hover,
+    &:focus {
+      box-shadow: $m-small-shadow-grey;
+      outline: none;
+
+      & ~ .icon {
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      z-index: 1060;
+      box-shadow: 0 0 0 2000px rgba(0,0,0,.5);
+
+      &:hover {
+        box-shadow: 0 0 0 2000px rgba(0,0,0,.5);
+      }
+    }
+  }
+
+  .clear-input {
+    display: none;
+    width: 1rem;
+    height: 1rem;
+    border: none;
+    border-radius: 0;
+    background: transparent url("../img/icons/Closed-b.svg") no-repeat center center;
+    background-size: 80%;
+    font-size: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    transition: $custom-transition-3;
+    z-index: 2;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  .icon {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent url("../img/icons/Location-b.svg") no-repeat 50%;
+    background-size: contain;
+    font-size: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 50%;
+    left: 0.625rem;
+    transform: translateY(-50%);
+    transition: $custom-transition-3;
+    z-index: 2;
+  }
+
+  &.global-search {
+    .icon {
+      background-image: url("../img/icons/magnifier.svg");
+    }
+  }
+}
+
+.auto-matches {
+  font-weight: 700;
+}
+
+ul.ui-menu {
+  z-index: 1051;
+}
+
+.autocomplete-items,
+ul.ui-menu {
+  max-height: 10rem;
+  border: 1px solid $m-grey-light;
+  border-bottom: none;
+  border-top: none;
+  box-shadow: $m-small-shadow-grey;
+  z-index: 1051;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  //right: 0;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: $m-grey-lighter;
+    -webkit-border-radius: 0;
+  }
+
+  &::-webkit-scrollbar:hover {
+    background-color: $m-grey-light;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    background: $m-grey-dark;
+    -webkit-border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical:active {
+    background: $m-grey-dark;
+    -webkit-border-radius: 5px;
+  }
+
+  &::-o-scrollbar {
+    width: 8px;
+  }
+
+  &::-o-scrollbar-thumb {
+    background: $m-grey-dark;
+    width: 8px;
+    border-radius: 5px;
+  }
+}
+.autocomplete-items div {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  background-color: #fff;
+  color: #7e7e7e;
+
+  strong {
+    color: $m-black;
+  }
+}
+
+li.ui-menu-item {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  background-color: #fff;
+  color: #7e7e7e;
+
+  .auto-matches {
+    color: $m-black;
+  }
+
+  .ui-menu-item-wrapper {
+    display: block;
+  }
+
+  &:hover {
+    background-color: $m-grey-light;
+
+    .ui-menu-item-wrapper {
+      border: none;
+      background-color: transparent;
+      color: inherit;
+    }
+  }
+}
+
+.autocomplete-items div:hover {
+  /*when hovering an item:*/
+  background-color: $m-grey-light;
+}
+.autocomplete-active {
+  /*when navigating through the items using the arrow keys:*/
+  background-color: $m-red !important;
+  color: #ffffff;
+}

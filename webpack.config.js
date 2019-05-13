@@ -116,6 +116,10 @@ const config = {
             {
                 from: "./src/uploads",
                 to: "./uploads"
+            },
+            {
+                from: "./src/js/dbs",
+                to: "./js/dbs"
             }
         ]),
         new webpack.HotModuleReplacementPlugin()

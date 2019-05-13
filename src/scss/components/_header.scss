@@ -6,6 +6,8 @@
   .navbar {
     padding: 0;
     min-height: 2.5rem;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
 
     &-logo {
       display: inline-block;
@@ -45,7 +47,7 @@
           display: inline-block;
           width: 1.5rem;
           height: 1.5rem;
-          margin-right: 0.375rem;
+          margin-right: 0.25rem;
           background: transparent url("../img/icons/Location.svg") no-repeat center center;
           background-size: contain;
           vertical-align: middle;
@@ -56,13 +58,14 @@
           display: inline-block;
           border-bottom: 1px dashed $m-black;
           vertical-align: middle;
+          line-height: 1;
         }
 
         &:after {
           display: inline-block;
           width: 1.5rem;
           height: 1.5rem;
-          margin-left: 1.25rem;
+          margin-left: 1rem;
           content: "";
           border: none;
           background: transparent url("../img/icons/arrow_down.svg") no-repeat center center;
@@ -90,47 +93,66 @@
       display: none;
       margin-right: 1.25rem;
 
-      .form-control {
-        height: auto;
-        max-width: 4.5rem;
-        padding: 0.125rem;
-        border: none;
-        border-radius: 0;
-        border-bottom: 1px solid $m-grey;
-        background-color: transparent;
-        font-size: 0.875rem;
-        color: $m-black;
-        line-height: 1.21;
-        transition: $custom-transition-3;
-      }
-
       &__btn {
         display: inline-block;
+        vertical-align: middle;
         width: auto;
         max-width: 100%;
         padding: 0;
         background-color: transparent;
         border: none;
         font-size: 0;
-        vertical-align: middle;
         transition: $custom-transition-3;
+
+        .text {
+          display: inline-block;
+          vertical-align: middle;
+          height: auto;
+          min-width: 4.5rem;
+          padding: 0.125rem;
+          border: none;
+          border-radius: 0;
+          border-bottom: 1px solid $m-grey;
+          background-color: transparent;
+          font-size: 0.875rem;
+          color: $m-grey-dark;
+          text-align: left;
+          line-height: 1.21;
+          transition: inherit;
+        }
 
         .icon {
           display: inline-block;
+          vertical-align: middle;
           width: 1.5rem;
           height: 1.5rem;
           background: transparent url("../img/icons/search-b.svg") no-repeat center center;
           background-size: contain;
+          transition: inherit;
         }
 
         &:hover {
-          transform: scale(0.9);
+          .text {
+            color: $m-black;
+            border-bottom-color: $m-black;
+          }
 
           .icon {
             background-image: url("../img/icons/search-r.svg");
           }
         }
+
+        &:focus {
+          outline: none;
+        }
       }
+    }
+
+    &-blocks {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      flex-basis: auto;
     }
 
     &-contact {
@@ -422,7 +444,6 @@
       align-items: center;
       width: auto;
       min-height: 2.5rem;
-      margin-right: -$spacing-unit;
       vertical-align: middle;
       border-left: 1px solid $m-grey-dark;
 
@@ -505,7 +526,7 @@
     &-toggler {
       margin: -$header-padding-mobile 0;
       padding: $header-padding-mobile;
-      border-left: 1px solid $m-grey;
+      border-left: 1px solid transparent;
       border-radius: 0;
       font-size: 0;
 
@@ -551,38 +572,8 @@
         }
       }
 
-      &[aria-expanded="true"] {
-        .bars {
-          background-color: $m-red;
-
-          &:nth-child(1) {
-            width: 50%;
-            transform: rotate(42deg);
-          }
-
-          &:nth-child(2) {
-            width: 120%;
-            right: 50%;
-            transform: translate(50%, -50%) rotate(-45deg);
-          }
-
-          &:nth-child(3) {
-            width: 50%;
-            transform: rotate(42deg);
-          }
-        }
-      }
-
-      &.for-search {
+      &:hover {
         .icon {
-          background-image: url("../img/icons/search.svg");
-
-          .bars {
-            background-color: transparent;
-          }
-        }
-
-        &[aria-expanded="true"] {
           .bars {
             background-color: $m-red;
           }
@@ -621,6 +612,22 @@
     padding: $header-padding-mobile 0;
     background-color: $m-white;
 
+    & > .container {
+      max-width: 100%;
+      padding-right: 0;
+      padding-left: 2.5rem;
+
+      & > .row {
+        margin-right: 0;
+        margin-left: 0;
+
+        & > .col-12 {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+
     .navbar {
       min-height: 1.5rem;
 
@@ -639,15 +646,27 @@
 
       &-search {
         display: block;
+        margin-top: -$header-padding-mobile;
         margin-right: 0;
+        margin-bottom: -$header-padding-mobile;
+        padding: $header-padding-mobile;
+        border-left: 1px solid $m-grey;
 
-        .form-control {
-          max-width: initial;
-          width: auto;
+        &__btn {
+          .text {
+            display: none;
+          }
+
+          .icon {
+            background-image: url("../img/icons/search.svg");
+          }
         }
       }
 
-      &-search,
+      &-blocks {
+        display: none;
+      }
+
       &-contact,
       &-services,
       &-user,
@@ -664,6 +683,10 @@
       &-lang {
         margin-right: 0;
       }
+
+      &-toggler {
+        border-left-color: $m-grey;
+      }
     }
 
     &.scrolled {
@@ -672,6 +695,10 @@
   }
 
   @include media-breakpoint-down(sm) {
+    & > .container {
+      padding-left: $spacing-unit;
+    }
+
     .navbar {
       min-height: 1.5rem;
 

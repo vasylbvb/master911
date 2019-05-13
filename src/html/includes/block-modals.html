@@ -1,0 +1,448 @@
+<!--Location Modal START-->
+<div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="region-search" tabindex="1">
+                    <form autocomplete="off" action="javascript:void(0)">
+                        <div class="autocomplete">
+                            <label for="s-nav-loc" class="sr-only">Пошук населеного пункту</label>
+                            <input id="s-nav-loc" type="text" name="s-loc" value="Івано-Франківськ" placeholder="Введіть ваш населений пункт">
+                            <span class="icon"></span>
+                            <button type="button" class="clear-input"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Location Modal END-->
+
+<!--Serch Modal START-->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="region-search global-search" tabindex="1">
+                    <form autocomplete="off" action="javascript:void(0)">
+                        <div class="autocomplete">
+                            <label for="serv-search" class="sr-only">Пошук в послугах</label>
+                            <input id="serv-search" type="text" name="serv-search" value="" placeholder="Пошук...">
+                            <span class="icon"></span>
+                            <button type="button" class="clear-input"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Search Modal END-->
+
+<!--Main Menu Modal START-->
+<div class="modal fade main-menu" id="mainMenuModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-head">
+                            <div class="close-btn-wrapper">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true" class="icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <nav>
+                                <ul class="main-menu__list">
+                                    <li class="main-menu__item"><a href="#" title="Реєстрація">Реєстрація</a></li>
+                                    <li class="main-menu__item"><a href="#" title="Вхід">Вхід</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="modal-footer">
+                            <nav>
+                                <ul class="main-menu__list">
+                                    <li class="main-menu__item"><a href="#" title="Блог">Блог</a></li>
+                                    <li class="main-menu__item"><a href="#" title="Як ми працюємо">Як ми працюємо</a></li>
+                                    <li class="main-menu__item"><a href="#" title="Контакти">Контакти</a></li>
+                                </ul>
+                                <div class="navbar-lang">
+                                    <div class="dropdown">
+                                        <button class="dropdown-toggle" type="button" id="dropdownLang2" data-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                            <span class="text">Укр</span>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownLang">
+                                            <a class="dropdown-item active" href="javascript:void(0)">Укр</a>
+                                            <a class="dropdown-item" href="javascript:void(0)">Рус</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Main Menu Modal END-->
+
+<!--Services Modal START-->
+<div class="modal fade modal-serv" id="servicesModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="icon"></span>
+                </button>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-5 col-lg-3 modal-serv--col1">
+                            <h3 class="modal-serv__heading">Категорії послуги</h3>
+                            <div class="modal-serv__tabs">
+                                <nav>
+                                    <div class="nav nav-tabs" id="serv-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-serv-1-tab" data-toggle="tab" href="#nav-serv-1" role="tab" aria-controls="nav-serv-1" aria-selected="true">
+                                            Благоустрій території
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-serv-2-tab" data-toggle="tab" href="#nav-serv-2" role="tab" aria-controls="nav-serv-2" aria-selected="false">
+                                            Оздоблювальні роботи
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-serv-3-tab" data-toggle="tab" href="#nav-serv-3" role="tab" aria-controls="nav-serv-3" aria-selected="false">
+                                            Техніка
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-serv-4-tab" data-toggle="tab" href="#nav-serv-4" role="tab" aria-controls="nav-serv-4" aria-selected="false">
+                                            Побутові послуги
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-serv-5-tab" data-toggle="tab" href="#nav-serv-5" role="tab" aria-controls="nav-serv-5" aria-selected="false">
+                                            Клінінгові послуги
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-serv-6-tab" data-toggle="tab" href="#nav-serv-6" role="tab" aria-controls="nav-serv-6" aria-selected="false">
+                                            Будівельні роботи
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-serv-7-tab" data-toggle="tab" href="#nav-serv-7" role="tab" aria-controls="nav-serv-7" aria-selected="false">
+                                            Меблеві роботи
+                                        </a>
+                                        <a class="nav-item nav-link" id="nav-serv-8-tab" data-toggle="tab" href="#nav-serv-8" role="tab" aria-controls="nav-serv-8" aria-selected="false">
+                                            Домашній майстер
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="modal-serv__contact">
+                                <p class="text">Телефонуйте прямо зараз, ми підберемо найкращого майстра!</p>
+                                <div class="contact-link">
+                                    <div class="text">
+                                        <a href="tel:+380674401231" class="text-link">(067)&nbsp;440&nbsp;1231</a>
+                                        <span class="text-schedule">Щоденно, 24/7</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="m-btn m-btn-primary" data-toggle="modal" data-target="#contactModal">Замов майстра</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-7 col-lg-9 modal-serv--col2">
+                            <button type="button" class="modal-serv__back-btn">
+                                <img src="img/icons/Arrow-left-long.svg" alt="back button image">
+                                <span>Повернутися</span>
+                            </button>
+                            <div class="tab-content modal-serv__tab-content" id="serv-tabContent">
+                                <!--Tab 1-->
+                                <div class="tab-pane fade show active" id="nav-serv-1" role="tabpanel" aria-labelledby="nav-serv-1-tab">
+                                    <h3 class="modal-serv__heading d-md-none">Благоустрій території</h3>
+                                    <ul class="modal-serv__list--common">
+                                        <li>
+                                            <span class="text">
+                                                <a href="#">Велика побутова техніка</a>
+                                            </span>
+                                        </li>
+                                        <li class="has-children">
+                                            <span class="text">Газове обладнання</span>
+                                            <ul class="sublist">
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--Tab 2-->
+                                <div class="tab-pane fade" id="nav-serv-2" role="tabpanel" aria-labelledby="nav-serv-2-tab">
+                                    <h3 class="modal-serv__heading d-md-none">Оздоблювальні роботи</h3>
+                                    <ul class="modal-serv__list--common">
+                                        <li>
+                                            <span class="text">
+                                                <a href="#">Велика побутова техніка</a>
+                                            </span>
+                                        </li>
+                                        <li class="has-children">
+                                            <span class="text">Газове обладнання</span>
+                                            <ul class="sublist">
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--Tab 3-->
+                                <div class="tab-pane fade" id="nav-serv-3" role="tabpanel" aria-labelledby="nav-serv-3-tab">
+                                    <h3 class="modal-serv__heading d-md-none">Техніка</h3>
+                                    <ul class="modal-serv__list--common">
+                                        <li>
+                                            <span class="text">
+                                                <a href="#">Велика побутова техніка</a>
+                                            </span>
+                                        </li>
+                                        <li class="has-children">
+                                            <span class="text">Газове обладнання</span>
+                                            <ul class="sublist">
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--Tab 4-->
+                                <div class="tab-pane fade" id="nav-serv-4" role="tabpanel" aria-labelledby="nav-serv-4-tab">
+                                    <h3 class="modal-serv__heading d-md-none">Побутові послуги</h3>
+                                    <ul class="modal-serv__list--common">
+                                        <li>
+                                            <span class="text">
+                                                <a href="#">Велика побутова техніка</a>
+                                            </span>
+                                        </li>
+                                        <li class="has-children">
+                                            <span class="text">Газове обладнання</span>
+                                            <ul class="sublist">
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--Tab 5-->
+                                <div class="tab-pane fade" id="nav-serv-5" role="tabpanel" aria-labelledby="nav-serv-5-tab">
+                                    <h3 class="modal-serv__heading d-md-none">Клінінгові послуги</h3>
+                                    <ul class="modal-serv__list--common">
+                                        <li>
+                                            <span class="text">
+                                                <a href="#">Велика побутова техніка</a>
+                                            </span>
+                                        </li>
+                                        <li class="has-children">
+                                            <span class="text">Газове обладнання</span>
+                                            <ul class="sublist">
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--Tab 6-->
+                                <div class="tab-pane fade" id="nav-serv-6" role="tabpanel" aria-labelledby="nav-serv-6-tab">
+                                    <h3 class="modal-serv__heading d-md-none">Будівельні роботи</h3>
+                                    <ul class="modal-serv__list--common">
+                                        <li>
+                                            <span class="text">
+                                                <a href="#">Велика побутова техніка</a>
+                                            </span>
+                                        </li>
+                                        <li class="has-children">
+                                            <span class="text">Газове обладнання</span>
+                                            <ul class="sublist">
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--Tab 7-->
+                                <div class="tab-pane fade" id="nav-serv-7" role="tabpanel" aria-labelledby="nav-serv-7-tab">
+                                    <h3 class="modal-serv__heading d-md-none">Меблеві роботи</h3>
+                                    <ul class="modal-serv__list--common">
+                                        <li>
+                                            <span class="text">
+                                                <a href="#">Велика побутова техніка</a>
+                                            </span>
+                                        </li>
+                                        <li class="has-children">
+                                            <span class="text">Газове обладнання</span>
+                                            <ul class="sublist">
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--Tab 8-->
+                                <div class="tab-pane fade" id="nav-serv-8" role="tabpanel" aria-labelledby="nav-serv-8-tab">
+                                    <h3 class="modal-serv__heading d-md-none">Домашній майстер</h3>
+                                    <ul class="modal-serv__list--common">
+                                        <li>
+                                            <span class="text">
+                                                <a href="#">Велика побутова техніка</a>
+                                            </span>
+                                        </li>
+                                        <li class="has-children">
+                                            <span class="text">Газове обладнання</span>
+                                            <ul class="sublist">
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                                <li><a href="#">Котел</a></li>
+                                                <li><a href="#">Колонка</a></li>
+                                                <li><a href="#">Плита</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="modal-serv__contact d-block d-md-none">
+                                <p class="text">Телефонуйте прямо зараз, ми підберемо найкращого майстра!</p>
+                                <div class="contact-link">
+                                    <div class="text">
+                                        <a href="tel:+380674401231" class="text-link">(067)&nbsp;440&nbsp;1231</a>
+                                        <span class="text-schedule">Щоденно, 24/7</span>
+                                    </div>
+                                </div>
+                                <button type="button" class="m-btn m-btn-primary" data-toggle="modal" data-target="#contactModal">Замов майстра</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Services Modal END-->
+
+<!--Order Modal Start-->
+<div class="modal fade modal-order" id="contactModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="icon"></span>
+                </button>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="modal-order__heading">
+                                Замовити майстра
+                            </h3>
+                            <form action="#" class="modal-order-form" method="post">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group" data-toggle="tooltip" title="Вказана вами приватна інформація буде доступна лише для майстрів!">
+                                            <label for="client-name" class="sr-only">Введіть ім'я</label>
+                                            <input type="text" class="form-control" id="client-name" placeholder="Ім'я" name="client-name">
+                                            <span class="error">Введіть правильні дані</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group has-error">
+                                            <label for="client-phone" class="sr-only">Введіть контактний телефон</label>
+                                            <input type="text" class="form-control" id="client-phone" placeholder="Контактний телефон" name="client-phone">
+                                            <span class="error">Введіть правильні дані</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <div class="region-search">
+                                                <div class="autocomplete">
+                                                    <label for="s-order-loc" class="sr-only">Пошук населеного пункту</label>
+                                                    <input id="s-order-loc" type="text" name="client-loc" placeholder="Введіть ваш населений пункт">
+                                                    <span class="icon"></span>
+                                                    <button type="button" class="clear-input"></button>
+                                                </div>
+                                            </div>
+                                            <span class="error">Введіть правильні дані</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group m-date">
+                                            <label for="client-date">Оберіть дату приїзду майстра</label>
+                                            <input type="text" class="form-control" id="client-date" placeholder="дд/мм/рррр" name="client-date">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 ">
+                                        <div class="form-group m-time" data-toggle="tooltip" title="Оберіть час, який для Вас зручний">
+                                            <label for="client-time" class="sr-only">Виберіть час</label>
+                                            <input type="time" class="form-control" id="client-time" name="client-time">
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input sr-only" type="checkbox" value="" id="client-agree" name="client-agree">
+                                            <label class="form-check-label" for="client-agree">
+                                                Я згідний з правилами сайту
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="chosen-service" id="chosen-service">
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="m-btn m-btn-primary">Замовити</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Order Modal End-->
