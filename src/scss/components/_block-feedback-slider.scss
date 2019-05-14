@@ -59,10 +59,28 @@
       z-index: 2;
 
       &.video {
-        background-image: url("../img/sound.svg");
+        background-image: url("../img/icons/video.svg");
+        background-size: 50%;
 
         &:hover {
-          background-image: url("../img/sound-r.svg");
+          background-image: url("../img/icons/video-r.svg");
+        }
+      }
+
+      &.audio {
+        background-image: url("../img/icons/sound.svg");
+
+        &:hover {
+          background-image: url("../img/icons/sound-r.svg");
+        }
+      }
+
+      &.text {
+        background-image: url("../img/icons/note.svg");
+        background-size: 60%;
+
+        &:hover {
+          background-image: url("../img/icons/note-r.svg");
         }
       }
 
