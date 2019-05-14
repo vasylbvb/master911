@@ -349,6 +349,20 @@ jQuery(function($) {
     });
     /*Sliders end*/
 
+    //Video modal Start
+    $(".block-feedback__decor-btn.video").click(function() {
+        var getSrc = $(this).attr("data-link");
+        $("#videoModal").on('show.bs.modal', function () {
+            $(this).find("iframe").attr("src", getSrc);
+        });
+    });
+
+    $("#videoModal").on('hide.bs.modal', function () {
+        $(this).find("iframe").removeAttr("src");
+    });
+    //Video modal End
+
+
     //footer menus toggle
     var $width = $(window).width();
 
@@ -371,8 +385,8 @@ jQuery(function($) {
         var advItems = $(".block-advantages__list-item");
         $(advItems).click(function(e) {
             e.preventDefault();
-            $(advItems).removeClass("opened");
-            $(this).addClass("opened");
+            //$(advItems).removeClass("opened");
+            $(this).toggleClass("opened");
         });
     }
 

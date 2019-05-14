@@ -1,5 +1,4 @@
 .block-order {
-  padding: 3.75rem 0;
   background-color: $m-white;
 
   &--inner {
@@ -75,8 +74,6 @@
   }
 
   @include media-breakpoint-down(sm) {
-    padding: 1.875rem 0;
-
     &--inner {
       padding: $spacing-unit $spacing-unit 2.8125rem;
 

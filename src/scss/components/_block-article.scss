@@ -1,5 +1,4 @@
 .article-content {
-  padding: $spacing-gutter 0 $spacing-gutter*2;
   background-color: $m-white;
 
   .article-title {
@@ -7,8 +6,6 @@
   }
 
   @include media-breakpoint-down(sm) {
-    padding: 0 0 $spacing-gutter;
-
     .article-title {
       margin-bottom: $spacing-gutter;
       line-height: 1.36;

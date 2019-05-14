@@ -1,5 +1,4 @@
 .block-subscribe {
-  padding: $spacing-gutter*2 0;
   background: $m-grey-lighter url("../img/percent.svg") no-repeat 42% 50%;
   background-size: auto;
 
@@ -74,10 +73,11 @@
         flex-flow: row wrap;
         max-width: 100%;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
+        text-align: center;
 
         button {
-          flex: 1 1 0;
+          flex: 0 0 auto;
         }
       }
 
@@ -168,7 +168,6 @@
   }
 
   @include media-breakpoint-down(md) {
-    padding-top: 2.5rem;
     background-position: 1.125rem 75%;
 
     &__main {
@@ -182,7 +181,6 @@
   }
 
   @include media-breakpoint-down(sm) {
-    padding: 2.5rem 0 $spacing-gutter;
     background-position: 100% 0;
 
     &__main {

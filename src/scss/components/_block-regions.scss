@@ -1,5 +1,4 @@
 .block-regions {
-  padding: 7.5rem 0;
   background-color: $m-white;
 
   .primary-headline {
@@ -189,8 +188,6 @@
   }
 
   @include media-breakpoint-down(md) {
-    padding: 5.625rem 0;
-
     &__list {
       &--common {
         margin-bottom: 0;
@@ -199,8 +196,6 @@
   }
 
   @include media-breakpoint-down(sm) {
-    padding: 3.75rem 0;
-
     .primary-headline {
       margin-bottom: $spacing-gutter;
       font-size: 1.375rem;

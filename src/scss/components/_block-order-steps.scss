@@ -1,5 +1,4 @@
 .block-order-steps {
-  padding: 3.75rem 0;
   background-color: $m-white;
 
   .primary-headline {
@@ -22,8 +21,21 @@
     flex: 0 0 33.33%;
     max-width: 33.33%;
     min-height: rem-calc(240);
+    background-color: $m-white;
     position: relative;
     transition: $custom-transition-3;
+
+    &:nth-child(1) {
+      z-index: 3;
+    }
+
+    &:nth-child(2) {
+      z-index: 2;
+    }
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
 
     &:not(:last-child) {
       &:after {
@@ -160,6 +172,7 @@
     }
 
     &__row {
+      margin: 0;
       flex-flow: column nowrap;
     }
 
@@ -167,6 +180,7 @@
       flex: 0 0 100%;
       max-width: 100%;
       min-height: rem-calc(80);
+      margin-left: 0;
 
       .step--inner {
         &__text {

@@ -1,5 +1,4 @@
 .block-promotions {
-  padding: 6.875rem 0 5.625rem;
   background-color: $m-white;
 
   &__main,
@@ -184,8 +183,6 @@
   }
 
   @include media-breakpoint-down(sm) {
-    padding: 3.75rem 0 $spacing-gutter;
-
     &__main {
       padding: 3.75rem $spacing-unit $spacing-unit;
       margin-right: -$spacing-unit;
