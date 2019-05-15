@@ -219,6 +219,13 @@ jQuery(function($) {
         $("#contactModal").modal("show");
     });
 
+    //toggle pricelist
+    $(".m-card-vertical-v2").click(function (e) {
+        e.preventDefault();
+        $(".m-card-vertical-v2").not($(this)).removeClass("opened");
+        $(this).toggleClass("opened");
+    });
+
     //Initialize tooltips
     $('[data-toggle="tooltip"]').tooltip();
 

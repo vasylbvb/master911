@@ -106,6 +106,14 @@
 
   &-contact-btn {
     margin-bottom: 1.875rem;
+
+    .m-btn {
+      width: 100%;
+    }
+
+    @include media-breakpoint-up(xl) {
+      max-width: 75%;
+    }
   }
 
   &-contacts {
