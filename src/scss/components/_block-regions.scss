@@ -18,6 +18,7 @@
     margin-bottom: $spacing-gutter;
     font-size: 1rem;
     text-transform: uppercase;
+    text-align: left;
     letter-spacing: 2px;
     line-height: 1.25;
   }
@@ -58,7 +59,7 @@
               border-right: 1px solid $m-red;
               border-bottom: 1px solid $m-red;
               transition: $custom-transition-3;
-              transform: rotate(-45deg);
+              transform: translateX(0.375rem) rotate(-45deg);
               transform-origin: center center;
             }
           }
@@ -68,7 +69,7 @@
           padding-bottom: $spacing-gutter;
 
           & > .text::after {
-            transform: rotate(135deg);
+            transform: translateX(0.375rem) rotate(135deg);
           }
           .sublist {
             display: block;
@@ -109,7 +110,7 @@
 
     &--common {
       width: 100%;
-      padding-left: 1.25rem;
+      padding-left: $spacing-gutter;
       margin-bottom: $spacing-unit;
 
       & > li {

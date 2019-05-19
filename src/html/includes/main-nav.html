@@ -14,60 +14,57 @@
                             <span class="text">Івано-Франківськ</span>
                         </button>
                     </div>
-
-                    <div class="navbar-search">
-                        <button class="navbar-search__btn" type="button" type="button" data-toggle="modal" data-target="#searchModal">
-                            <span class="text">Пошук</span>
-                            <span class="icon"></span>
-                        </button>
-                    </div>
-                    <div class="navbar-blocks">
-                        <div class="navbar-contact">
-                            <div class="dropdown">
-                                <button class="dropdown-toggle" type="button" id="dropdownContact"
-                                        data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
+                    <div class="navbar-contact">
+                        <div class="dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdownContact"
+                                    data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="icon"></span>
+                                <div class="text">
+                                    <a href="tel:+380674401231" class="text-link">(067)&nbsp;440&nbsp;1231</a>
+                                    <span class="text-schedule">Щоденно, 24/7</span>
+                                </div>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownContact">
+                                <button type="button" class="navbar-contact__btn" data-toggle="modal"
+                                        data-target="#contactModal">
                                     <span class="icon"></span>
-                                    <div class="text">
-                                        <a href="tel:+380674401231" class="text-link">(067)&nbsp;440&nbsp;1231</a>
-                                        <span class="text-schedule">Щоденно, 24/7</span>
-                                    </div>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownContact">
-                                    <button type="button" class="navbar-contact__btn" data-toggle="modal"
-                                            data-target="#contactModal">
-                                        <span class="icon"></span>
-                                        <span class="text">
+                                    <span class="text">
                                         <span class="text-title">Передзвонити мені</span>
                                         <span class="text-subtitle">Зателефонуємо за 1хв</span>
                                     </span>
-                                    </button>
-                                </div>
+                                </button>
                             </div>
                         </div>
-                        <div class="navbar-services">
-                            <button type="button" class="navbar-services__btn" data-toggle="modal"
-                                    data-target="#servicesModal">
-                                <span class="icon"></span>
-                                <span class="text">Послуги</span>
+                    </div>
+                    <div class="navbar-search">
+                        <button class="navbar-search__btn" type="button" type="button" data-toggle="modal" data-target="#searchModal">
+                            <span class="icon"></span>
+                            <span class="text">Пошук</span>
+                        </button>
+                    </div>
+                    <div class="navbar-services">
+                        <button type="button" class="navbar-services__btn" data-toggle="modal"
+                                data-target="#servicesModal">
+                            <span class="icon"></span>
+                            <span class="text">Послуги</span>
+                        </button>
+                    </div>
+                    <div class="navbar-user">
+                        <a href="#" class="navbar-user__link">
+                            <span class="icon"></span>
+                            <span class="text">Кабінет</span>
+                        </a>
+                    </div>
+                    <div class="navbar-lang">
+                        <div class="dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdownLang" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                <span class="text">Укр</span>
                             </button>
-                        </div>
-                        <div class="navbar-user">
-                            <a href="#" class="navbar-user__link">
-                                <span class="icon"></span>
-                                <span class="text">Кабінет</span>
-                            </a>
-                        </div>
-                        <div class="navbar-lang">
-                            <div class="dropdown">
-                                <button class="dropdown-toggle" type="button" id="dropdownLang" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                    <span class="text">Укр</span>
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownLang">
-                                    <a class="dropdown-item active" href="javascript:void(0)">Укр</a>
-                                    <a class="dropdown-item" href="javascript:void(0)">Рус</a>
-                                </div>
+                            <div class="dropdown-menu" aria-labelledby="dropdownLang">
+                                <a class="dropdown-item active" href="javascript:void(0)">Укр</a>
+                                <a class="dropdown-item" href="javascript:void(0)">Рус</a>
                             </div>
                         </div>
                     </div>

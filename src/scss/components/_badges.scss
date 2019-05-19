@@ -30,6 +30,10 @@ badges have got the next classes:
     opacity: 1;
   }
 
+  &:focus {
+    outline: none;
+  }
+
   &.m-badge-white {
     border-color: $m-white;
     background-color: $m-white;

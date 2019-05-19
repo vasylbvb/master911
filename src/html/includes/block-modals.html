@@ -386,18 +386,18 @@
                             <form action="#" class="modal-order-form" method="post">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div class="form-group" data-toggle="tooltip" title="Вказана вами приватна інформація буде доступна лише для майстрів!">
-                                            <label for="client-name" class="sr-only">Введіть ім'я</label>
-                                            <input type="text" class="form-control" id="client-name" placeholder="Ім'я" name="client-name">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
                                         <div class="form-group">
                                             <label for="client-phone" class="sr-only">Введіть контактний телефон</label>
                                             <input type="text" class="form-control" id="client-phone" placeholder="Контактний телефон" name="client-phone">
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group" data-toggle="tooltip" title="Вказана вами приватна інформація буде доступна лише для майстрів!">
+                                            <label for="client-name" class="sr-only">Введіть ім'я</label>
+                                            <input type="text" class="form-control" id="client-name" placeholder="Ім'я" name="client-name">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
                                         <div class="form-group">
                                             <div class="region-search">
                                                 <div class="autocomplete">
@@ -444,6 +444,35 @@
 </div>
 <!--Order Modal End-->
 
+<!--Order Modal Start-->
+<div class="modal fade modal-order" id="successModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="icon"></span>
+                </button>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="modal-order__text">
+                                <div class="modal-order__text-info">
+                                    <span id="infoName"></span>Ви замовили майстра<span id="infoLoc"></span><span id="infoTime"></span><span id="infoDate"></span>.&nbsp;<span id="infoPhone"></span>
+                                </div>
+                                <div class="modal-order__text-footer">
+                                    <p>Ваш запит відправлено!</p>
+                                    <p>Ми з Вами зв'яжемося протягом 5хв.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Order Modal End-->
+
 <!--Video Modal Start-->
 <div id="videoModal" class="modal fade in" role="dialog">
     <div class="modal-dialog">
@@ -454,3 +483,17 @@
     </div>
 </div>
 <!--Modals Modal End-->
+
+<!--Audio Modal Start-->
+<div id="audioModal" class="modal fade in" role="dialog">
+    <div class="modal-dialog">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-body">
+            <audio controls>
+                <source src="js/dbs/vivaldi-vremena_goda.mp3" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+        </div>
+    </div>
+</div>
+<!--Audio Modal End-->

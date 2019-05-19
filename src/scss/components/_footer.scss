@@ -55,6 +55,7 @@
         top: 0.25rem;
         transform: rotate(-45deg);
         transform-origin: center center;
+        transition: $custom-transition-3;
       }
 
       @include  media-breakpoint-down(md) {
@@ -98,9 +99,9 @@
           transform: rotate(135deg);
         }
       }
-      .footer-menu__list {
-        display: flex;
-      }
+      //.footer-menu__list {
+      //  display: flex;
+      //}
     }
   }
 
@@ -138,10 +139,11 @@
         width: 1.5rem;
         height: 1.5rem;
         margin-right: 0.625rem;
-        background: transparent url("../img/icons/Phone.svg") no-repeat center center;
+        background: transparent url("../img/icons/Phone-r.svg") no-repeat center center;
         background-size: contain;
         vertical-align: middle;
         transform-origin: center center;
+        filter: brightness(0) invert(100%);
       }
 
       .text {
@@ -160,7 +162,7 @@
 
       &:hover {
         .icon {
-          background-image: url("../img/icons/Phone-r.svg");
+          filter: unset;
           animation: ringring 0.3s linear infinite;
           -webkit-animation: ringring 0.3s linear infinite;
         }
@@ -190,10 +192,11 @@
         width: 1.5rem;
         height: 1.5rem;
         margin-right: 0.625rem;
-        background: transparent url("../img/icons/message.svg") no-repeat center center;
+        background: transparent url("../img/icons/message-r.svg") no-repeat center center;
         background-size: contain;
         vertical-align: middle;
         transform-origin: center center;
+        filter: brightness(0) invert(100%);
       }
 
       .text {
@@ -212,9 +215,9 @@
 
       &:hover {
         .icon {
-          background-image: url("../img/icons/message-r.svg");
-          animation: envelopeFly 3s linear infinite;
-          -webkit-animation: envelopeFly 3s linear infinite;
+          filter: unset;
+          animation: ringring 0.3s linear infinite;
+          -webkit-animation: ringring 0.3s linear infinite;
         }
 
         .text {
@@ -260,29 +263,22 @@
           background-size: contain;
           vertical-align: middle;
           transition: $custom-transition-3;
+          filter: brightness(0) invert(100%);
 
           &.facebook {
-            background-image: url("../img/icons/facebook.svg");
-
-            &:hover {
-              background-image: url("../img/icons/facebook-r.svg");
-            }
+            background-image: url("../img/icons/facebook-r.svg");
           }
 
           &.twitter {
-            background-image: url("../img/icons/twitter.svg");
-
-            &:hover {
-              background-image: url("../img/icons/twitter-r.svg");
-            }
+            background-image: url("../img/icons/twitter-r.svg");
           }
 
           &.youtube {
-            background-image: url("../img/icons/youtube.svg");
+            background-image: url("../img/icons/youtube-r.svg");
+          }
 
-            &:hover {
-              background-image: url("../img/icons/youtube-r.svg");
-            }
+          &:hover {
+            filter: unset;
           }
         }
       }

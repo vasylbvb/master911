@@ -31,7 +31,7 @@
       display: inline-flex;
       align-items: center;
       width: auto;
-      min-width: 20%;
+      //min-width: 20%;
       vertical-align: middle;
       margin-right: 1.25rem;
 
@@ -48,10 +48,12 @@
           width: 1.5rem;
           height: 1.5rem;
           margin-right: 0.25rem;
-          background: transparent url("../img/icons/Location.svg") no-repeat center center;
+          background: transparent url("../img/icons/Location-r.svg") no-repeat center center;
           background-size: contain;
           vertical-align: middle;
           transition: $custom-transition-3;
+          filter: grayscale(100%);
+          opacity: 0.6;
         }
 
         .text {
@@ -68,11 +70,13 @@
           margin-left: 1rem;
           content: "";
           border: none;
-          background: transparent url("../img/icons/arrow_down.svg") no-repeat center center;
+          background: transparent url("../img/icons/arrow_down-r.svg") no-repeat center center;
           background-size: contain;
           vertical-align: middle;
           transition: $custom-transition-3;
           transform-origin: center center;
+          filter: grayscale(100%);
+          opacity: 0.6;
         }
 
         &:focus {
@@ -81,78 +85,18 @@
 
         &:hover {
           .icon {
-            background-image: url("../img/icons/Location-r.svg");
+            filter: unset;
+            opacity: 1;
             animation: dropdrop 0.8s linear infinite;
             -webkit-animation: dropdrop 0.8s linear infinite;
           }
-        }
-      }
-    }
 
-    &-search {
-      display: none;
-      margin-right: 1.25rem;
-
-      &__btn {
-        display: inline-block;
-        vertical-align: middle;
-        width: auto;
-        max-width: 100%;
-        padding: 0;
-        background-color: transparent;
-        border: none;
-        font-size: 0;
-        transition: $custom-transition-3;
-
-        .text {
-          display: inline-block;
-          vertical-align: middle;
-          height: auto;
-          min-width: 4.5rem;
-          padding: 0.125rem;
-          border: none;
-          border-radius: 0;
-          border-bottom: 1px solid $m-grey;
-          background-color: transparent;
-          font-size: 0.875rem;
-          color: $m-grey-dark;
-          text-align: left;
-          line-height: 1.21;
-          transition: inherit;
-        }
-
-        .icon {
-          display: inline-block;
-          vertical-align: middle;
-          width: 1.5rem;
-          height: 1.5rem;
-          background: transparent url("../img/icons/search-b.svg") no-repeat center center;
-          background-size: contain;
-          transition: inherit;
-        }
-
-        &:hover {
-          .text {
-            color: $m-black;
-            border-bottom-color: $m-black;
-          }
-
-          .icon {
-            background-image: url("../img/icons/search-r.svg");
+          &:after {
+            filter: unset;
+            opacity: 1;
           }
         }
-
-        &:focus {
-          outline: none;
-        }
       }
-    }
-
-    &-blocks {
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-      flex-basis: auto;
     }
 
     &-contact {
@@ -181,9 +125,11 @@
             width: 1.5rem;
             height: 1.5rem;
             margin-right: 0.25rem;
-            background: transparent url("../img/icons/Phone.svg") no-repeat center center;
+            background: transparent url("../img/icons/Phone-r.svg") no-repeat center center;
             background-size: contain;
             vertical-align: middle;
+            filter: grayscale(100%);
+            opacity: 0.6;
           }
 
           .text {
@@ -224,11 +170,13 @@
             height: 1.25rem;
             margin-left: 0;
             border: none;
-            background: transparent url("../img/icons/arrow_down.svg") no-repeat center center;
+            background: transparent url("../img/icons/arrow_down-r.svg") no-repeat center center;
             background-size: cover;
             vertical-align: middle;
             transition: $custom-transition-3;
             transform-origin: center center;
+            filter: grayscale(100%);
+            opacity: 0.6;
           }
 
           &[aria-expanded="true"] {
@@ -239,7 +187,8 @@
 
           &:hover {
             .icon {
-              background-image: url("../img/icons/Phone-r.svg");
+              filter: unset;
+              opacity: 1;
               animation: ringring 0.3s linear infinite;
               -webkit-animation: ringring 0.3s linear infinite;
             }
@@ -255,7 +204,8 @@
             }
 
             &:after {
-              background-image: url("../img/icons/arrow_down-r.svg");
+              filter: unset;
+              opacity: 1;
             }
           }
         }
@@ -340,8 +290,63 @@
       }
     }
 
+    &-search {
+      display: none;
+      margin-right: 1.25rem;
+
+      &__btn {
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+        max-width: 100%;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        font-size: 0;
+        transition: $custom-transition-3;
+
+        .text {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 0.875rem;
+          color: $m-black;
+          line-height: 1.21;
+          transition: inherit;
+        }
+
+        .icon {
+          display: inline-block;
+          vertical-align: middle;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-right: 0.625rem;
+          background: transparent url("../img/icons/search-r.svg") no-repeat center center;
+          background-size: contain;
+          transition: inherit;
+          transform-origin: center center;
+          filter: grayscale(100%);
+          opacity: 0.6;
+        }
+
+        &:hover {
+          .icon {
+            filter: unset;
+            opacity: 1;
+          }
+
+          .text {
+            color: $m-red;
+          }
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
     &-services {
-      margin: 0 1rem;
+      margin: 0 1rem 0 0;
 
       &__btn {
         display: inline-flex;
@@ -366,10 +371,12 @@
           width: 1.5rem;
           height: 1.5rem;
           margin-right: 0.625rem;
-          background: transparent url("../img/icons/menu.svg") no-repeat center center;
+          background: transparent url("../img/icons/menu-r.svg") no-repeat center center;
           background-size: contain;
           vertical-align: middle;
           transform-origin: center center;
+          filter: grayscale(100%);
+          opacity: 0.6;
         }
 
         .text {
@@ -382,7 +389,8 @@
 
         &:hover {
           .icon {
-            background-image: url("../img/icons/menu-r.svg");
+            filter: unset;
+            opacity: 1;
           }
 
           .text {
@@ -410,10 +418,12 @@
           width: 1.5rem;
           height: 1.5rem;
           margin-right: 0.625rem;
-          background: transparent url("../img/icons/login.svg") no-repeat center center;
+          background: transparent url("../img/icons/login-r.svg") no-repeat center center;
           background-size: contain;
           vertical-align: middle;
           transform-origin: center center;
+          filter: grayscale(100%);
+          opacity: 0.6;
         }
 
         .text {
@@ -429,7 +439,8 @@
           color: $m-black;
 
           .icon {
-            background-image: url("../img/icons/login-r.svg");
+            filter: unset;
+            opacity: 1;
           }
 
           .text {
@@ -480,11 +491,13 @@
             height: 1.5rem;
             margin-left: 0;
             border: none;
-            background: transparent url("../img/icons/arrow_down.svg") no-repeat center center;
+            background: transparent url("../img/icons/arrow_down-r.svg") no-repeat center center;
             background-size: contain;
             vertical-align: middle;
             transition: $custom-transition-3;
             transform-origin: center center;
+            filter: grayscale(100%);
+            opacity: 0.6;
           }
 
           &[aria-expanded="true"] {
@@ -499,7 +512,8 @@
             }
 
             &:after {
-              background-image: url("../img/icons/arrow_down-r.svg");
+              filter: unset;
+              opacity: 1;
             }
           }
         }
@@ -524,6 +538,11 @@
 
             &:hover {
               color: $m-red;
+            }
+
+            &:hover,
+            &:focus {
+              background-color: transparent;
             }
           }
         }
@@ -692,7 +711,7 @@
         height: 1.875rem;
         margin-right: 0.5rem;
         background: transparent url("../img/icons/Phone-w.svg") no-repeat center center;
-        background-size: cover;
+        background-size: contain;
         vertical-align: middle;
       }
 
@@ -777,7 +796,7 @@
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     padding: $header-padding-mobile 0;
     background-color: $m-white;
 
@@ -832,21 +851,12 @@
         }
       }
 
-      &-blocks {
-        display: none;
-      }
-
       &-contact,
       &-services,
       &-user,
       &-lang {
+        display: none;
         padding: 1rem 0;
-      }
-
-      &-services,
-      &-user,
-      &-lang {
-        display: inline-block;
       }
 
       &-lang {
@@ -893,27 +903,6 @@
             display: none;
           }
         }
-      }
-
-      &-contact {
-        display: flex;
-
-        .dropdown {
-          .dropdown-toggle {
-            padding: 0;
-          }
-          .dropdown-menu {
-            position: static;
-            padding: 1rem 0;
-          }
-        }
-      }
-
-      &-services,
-      &-user,
-      &-lang {
-        margin-right: 0.625rem;
-        margin-left: 0;
       }
     }
 

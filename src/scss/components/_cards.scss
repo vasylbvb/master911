@@ -240,7 +240,8 @@ cards have got the next classes:
   }
 
   &:hover {
-    box-shadow: $m-shadow-grey;
+    background-color: $m-white;
+    box-shadow: $m-small-shadow-grey;
   }
 
   &:focus {

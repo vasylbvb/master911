@@ -46,8 +46,8 @@
       display: inline-block;
       width: rem-calc(86);
       height: rem-calc(86);
-      background: $m-white no-repeat center center;
-      background-size: 75%;
+      padding: 0;
+      background: $m-white;
       border: none;
       border-radius: 50%;
       font-size: 0;
@@ -58,29 +58,42 @@
       transition: $custom-transition-3;
       z-index: 2;
 
-      &.video {
-        background-image: url("../img/icons/video.svg");
-        background-size: 50%;
+      .icon {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background: transparent no-repeat center center;
+        background-size: 75%;
+        transition: inherit;
+        filter: grayscale(100%);
+        opacity: 0.3;
+      }
 
-        &:hover {
+      &.video {
+        .icon {
           background-image: url("../img/icons/video-r.svg");
+          background-size: 50%;
+          background-position: 65% 50%;
         }
       }
 
       &.audio {
-        background-image: url("../img/icons/sound.svg");
-
-        &:hover {
+        .icon {
           background-image: url("../img/icons/sound-r.svg");
         }
       }
 
       &.text {
-        background-image: url("../img/icons/note.svg");
-        background-size: 60%;
-
-        &:hover {
+        .icon {
           background-image: url("../img/icons/note-r.svg");
+          background-size: 60%;
+        }
+      }
+
+      &:hover {
+        .icon {
+          filter: unset;
+          opacity: 1;
         }
       }
 
@@ -98,7 +111,7 @@
       max-width: calc(100% - #{rem-calc(90)});
       padding-left: 1.25rem;
 
-      .slide{
+      .slide {
         &-title {
           margin-bottom: $spacing-unit;
           font-weight: 700;
@@ -114,10 +127,13 @@
         }
 
         &-text {
-          margin-bottom: 1.5rem;
+          max-height: rem-calc(175);
+          margin-bottom: 1.25rem;
           font-size: 1.125rem;
           line-height: 1.4;
-          
+          overflow-y: auto;
+          @include scrollbar;
+
           p {
             margin-bottom: 0;
             text-align: left;
@@ -132,7 +148,10 @@
       justify-content: center;
       flex-flow: row nowrap;
       width: 100%;
-      padding-top: 0.625rem;
+
+      @include media-breakpoint-up(md) {
+        padding-left: rem-calc(110);
+      }
 
       &-prev,
       &-next {
@@ -214,7 +233,6 @@
 
     &__slider {
 
-
       &-slide {
         flex: 0 0 100%;
         max-width: 100%;
@@ -234,6 +252,7 @@
           }
 
           &-text {
+            max-height: rem-calc(170);
             margin-bottom: 1rem;
             font-size: 1rem;
           }

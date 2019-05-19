@@ -155,7 +155,26 @@
 
       .step--inner {
         &__text {
-          display: none;
+          //display: none;
+          width: 0;
+          height: rem-calc(210);
+          padding-left: 0;
+          padding-right: 0;
+          opacity: 0;
+          transition: all 0.2s linear;
+          overflow-y: auto;
+        }
+      }
+
+      &.opened {
+        .step--inner {
+          .step--inner__text {
+            //display: block;
+            width: 100%;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            opacity: 1;
+          }
         }
       }
     }
@@ -183,50 +202,60 @@
       margin-left: 0;
 
       .step--inner {
+        display: block;
+        padding: 1.25rem $spacing-unit $spacing-unit;
+        min-height: rem-calc(80);
+
+        &__img {
+          height: rem-calc(64);
+          min-width: initial;
+          width: rem-calc(52);
+          background-color: $m-white;
+          text-align: left;
+          position: absolute;
+          top: 1rem;
+          left: 0;
+        }
+
         &__text {
           display: block;
+          width: 100%;
+          padding: 0;
+          height: auto;
+          opacity: 1;
+        }
+
+        &__title {
+          margin-bottom: 0;
+          padding-left: rem-calc(42);
+          transition: $custom-transition-3;
         }
 
         &__desc {
-          display: none;
+          //display: none;
+          height: 0;
+          overflow: hidden;
+          transition: $custom-transition-3;
         }
       }
 
       &.opened {
         .step--inner {
-          &__title {
+          .step--inner__text {
+            padding: 0;
+          }
+
+          .step--inner__title {
             margin-bottom: 2.5rem;
           }
 
-          &__desc {
-            display: block;
+          .step--inner__desc {
+            //display: block;
+            height: rem-calc(110);
+            min-height: 1px;
+            overflow-y: auto;
           }
         }
-      }
-    }
-
-    .step--inner {
-      display: block;
-      padding: 1.25rem $spacing-unit $spacing-unit;
-
-      &__img {
-        height: rem-calc(64);
-        min-width: initial;
-        width: rem-calc(52);
-        text-align: left;
-        position: absolute;
-        top: 1rem;
-        left: 0;
-      }
-
-      &__text {
-        display: block;
-        min-height: rem-calc(45); /*80-20-15*/
-        padding: 0;
-      }
-
-      &__title {
-        padding-left: rem-calc(37); /*52-15*/
       }
     }
 

@@ -207,3 +207,35 @@
     @content;
   }
 }
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: $m-grey-lighter;
+    -webkit-border-radius: 0;
+  }
+
+  &::-webkit-scrollbar:hover {
+    background-color: $m-grey-light;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    background: $m-grey-dark;
+    -webkit-border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical:active {
+    background: $m-grey-dark;
+    -webkit-border-radius: 5px;
+  }
+
+  &::-o-scrollbar {
+    width: 8px;
+  }
+
+  &::-o-scrollbar-thumb {
+    background: $m-grey-dark;
+    width: 8px;
+    border-radius: 5px;
+  }
+}

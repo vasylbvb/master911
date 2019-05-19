@@ -174,15 +174,6 @@ section,
         opacity: 1;
       }
     }
-
-    &:focus {
-      z-index: 1060;
-      box-shadow: 0 0 0 2000px rgba(0,0,0,.5);
-
-      &:hover {
-        box-shadow: 0 0 0 2000px rgba(0,0,0,.5);
-      }
-    }
   }
 
   .clear-input {

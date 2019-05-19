@@ -7,13 +7,14 @@
   .modal-dialog {
     max-width: 100%;
     margin: $header-padding-scrolled auto;
-
+    padding: 0 $spacing-unit;
     @include media-breakpoint-up(sm) {
       max-width: 33.75rem;
     }
 
     @include media-breakpoint-up(md) {
       max-width: 45rem;
+      padding: 0;
     }
 
     @include media-breakpoint-up(lg) {
@@ -187,14 +188,20 @@
     vertical-align: middle;
     margin-top: 1.25rem;
 
+    @include  media-breakpoint-up(lg) {
+      display: none;
+    }
+
     .dropdown {
+      font-size: 0.75rem;
+
       .dropdown-toggle {
         width: auto;
         max-width: 100%;
         padding: 0;
         background-color: transparent;
         border: none;
-        font-size: 0.75rem;
+
         line-height: 2;
 
         &:focus {
@@ -217,11 +224,13 @@
           height: 1.5rem;
           margin-left: 0;
           border: none;
-          background: transparent url("../img/icons/arrow_down.svg") no-repeat center center;
+          background: transparent url("../img/icons/arrow_down-r.svg") no-repeat center center;
           background-size: contain;
           vertical-align: middle;
           transition: $custom-transition-3;
           transform-origin: center center;
+          filter: grayscale(100%);
+          opacity: 0.6;
         }
 
         &[aria-expanded="true"] {
@@ -236,7 +245,8 @@
           }
 
           &:after {
-            background-image: url("../img/icons/arrow_down-r.svg");
+            filter: unset;
+            opacity: 1;
           }
         }
       }
@@ -248,22 +258,31 @@
         padding: 0.875rem 0;
         min-width: initial;
         max-height: 10rem;
+        font-size: inherit;
         overflow-y: auto;
 
         .dropdown-item {
-          padding: 0 1rem;
-          font-size: 0.875rem;
+          padding: 0 0.875rem;
           text-transform: uppercase;
 
           &.active {
             display: none;
+          }
+
+          &:hover {
+            color: $m-red;
+          }
+
+          &:hover,
+          &:focus {
+            background-color: transparent;
           }
         }
       }
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     .container {
       max-width: 100%;
       padding-right: 0;
@@ -502,6 +521,7 @@
 
         &.has-children {
           .text {
+            width: 100%;
             padding-right: 1.25rem;
           }
 
@@ -682,7 +702,8 @@
   }
 }
 
-#contactModal {
+#contactModal,
+#successModal {
   .modal-dialog {
     max-width: 100%;
     margin-top: $spacing-unit;
@@ -900,6 +921,45 @@
     }
   }
 
+  &__text {
+    text-align: center;
+
+    &-info {
+      padding-top: $spacing-gutter*3;
+      padding-bottom: $spacing-gutter;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      line-height: 1.67;
+      position: relative;
+
+      &:after {
+        display: inline-block;
+        width: 62%;
+        height: 1px;
+        content: "";
+        border-top: 1px solid $m-grey;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    &-footer {
+      padding-top: 2rem;
+      padding-bottom: $spacing-gutter;
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.1;
+
+      p {
+        margin-bottom: 2rem;
+        font-size: inherit;
+        text-align: inherit;
+        line-height: inherit;
+      }
+    }
+  }
 
   @include media-breakpoint-down(sm) {
     &__heading {
@@ -981,5 +1041,11 @@
     iframe {
       height: 200px;
     }
+  }
+}
+
+#audioModal {
+  audio {
+    pointer-events: auto;
   }
 }
