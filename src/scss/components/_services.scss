@@ -34,13 +34,13 @@
 
       .primary-headline,
       &-text {
-        flex: 0 0 58.33%;
-        max-width: 58.33%;
+        flex: 0 0 65%;
+        max-width: 65%;
       }
 
       &-btn {
-        flex: 0 0 41.67%;
-        max-width: 41.67%;
+        flex: 0 0 35%;
+        max-width: 35%;
         padding-left: $spacing-unit;
       }
 
@@ -52,6 +52,7 @@
 
     @include media-breakpoint-down(sm) {
       align-items: flex-start;
+      padding-bottom: 0;
 
       .primary-headline,
       &-text,
@@ -76,7 +77,7 @@
       }
 
       &-btn {
-        text-align: right;
+        margin-top: $spacing-gutter;
         padding-right: $spacing-unit;
       }
     }

@@ -114,6 +114,7 @@ cards have got the next classes:
 
   &-vertical-v2 {
     min-height: rem-calc(370);
+    cursor: pointer;
 
     .m-card__body {
       margin-top: auto;
@@ -178,7 +179,10 @@ cards have got the next classes:
 
       @include media-breakpoint-down(sm) {
         &:after {
-          bottom: 0;
+          width: initial;
+          border-top: 1px solid $m-grey;
+          right: -1px;
+          left: -1px;
         }
       }
     }

@@ -378,9 +378,12 @@
     border-bottom: 1px solid $m-grey-dark;
 
     .nav-tabs {
+      max-height: rem-calc(250);
       margin-left: -$spacing-gutter;
       background-color: $m-grey-lighter;
       border-bottom: none;
+      overflow-y: auto;
+      @include scrollbar;
 
       .nav-link {
         width: 100%;
@@ -494,6 +497,18 @@
           cursor: pointer;
           transition: $custom-transition-3;
 
+          &:after {
+            display: inline-block;
+            vertical-align: middle;
+            width: 0.4375rem;
+            height: 0.4375rem;
+            content: "";
+            border-right: 2px solid $m-red;
+            border-bottom: 2px solid $m-red;
+            transform: rotate(-45deg);
+            transform-origin: center center;
+          }
+
           &:hover {
             color: $m-red;
           }
@@ -507,33 +522,21 @@
           }
         }
 
-        &:after {
-          display: inline-block;
-          vertical-align: middle;
-          width: 0.4375rem;
-          height: 0.4375rem;
-          content: "";
-          border-right: 2px solid $m-red;
-          border-bottom: 2px solid $m-red;
-          transform: rotate(-45deg);
-          transform-origin: center center;
-        }
-
         &.has-children {
           .text {
             width: 100%;
             padding-right: 1.25rem;
-          }
 
-          &:after {
-            width: 0.875rem;
-            height: 0.875rem;
-            border-right-color: $m-black;
-            border-bottom-color: $m-black;
-            position: absolute;
-            top: 1.125rem;
-            right: $spacing-gutter;
-            transition: $custom-transition-3;
+            &:after {
+              width: 0.875rem;
+              height: 0.875rem;
+              border-right-color: $m-black;
+              border-bottom-color: $m-black;
+              position: absolute;
+              top: 1.125rem;
+              right: $spacing-gutter;
+              transition: $custom-transition-3;
+            }
           }
 
           .sublist {
@@ -569,12 +572,13 @@
           }
 
           &.opened {
+            .text {
+              &:after {
+                transform: rotate(135deg);
+              }
+            }
             .sublist {
               display: flex;
-            }
-
-            &:after {
-              transform: rotate(135deg);
             }
           }
         }

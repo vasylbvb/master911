@@ -239,6 +239,22 @@ jQuery(function ($) {
         $("#contactModal").modal("show");
     });
 
+    //pricelist buttons functionality
+    var priceListBtn = $(".m-card-table .item-btn .m-btn");
+    $(priceListBtn).click(function (e) {
+        e.preventDefault();
+        var priceListItem = $(this).parents(".item-btn").siblings(".item-name").find("a").text();
+        $("#contactModal").find("#chosen-service").val(priceListItem).attr("value", priceListItem);
+        $("#contactModal").modal("show");
+    });
+
+    var priceListLinks = $(".m-card-table .item-name a");
+    $(priceListLinks).click(function (e) {
+        e.preventDefault();
+        $("#contactModal").find("#chosen-service").val($(this).text()).attr("value", $(this).text());
+        $("#contactModal").modal("show");
+    });
+
     //regions links functionality
     var regionLinks = $(".block-regions__list--main .sublist li").find("a");
     $(regionLinks).click(function (e) {
@@ -257,6 +273,10 @@ jQuery(function ($) {
         e.preventDefault();
         $(".m-card-vertical-v2").not($(this)).removeClass("opened");
         $(this).toggleClass("opened");
+        var headerHeight = $("header.main-nav").height();
+        if ($(this).hasClass("opened")) {
+            $('html,body').animate({scrollTop: $(this).siblings(".m-card-table").offset().top - headerHeight}, 500);
+        }
     });
 
     //Initialize tooltips
@@ -454,6 +474,22 @@ jQuery(function ($) {
         $(this).find("source").removeAttr("src");
     });
     //Audio modal End
+
+    //Upload more pricelist items Start
+    $(".m-card-table__footer-btn").click(function (e) {
+        e.preventDefault();
+        var i,
+            visTables = $(this).parents(".m-card-table").find("table.outer:visible").length,
+            allTables =$(this).parents(".m-card-table").find("table.outer").length;
+        for(i = visTables + 1; i < (visTables + 4); i++) {
+            $(this).parents(".m-card-table").find("table.outer:nth-child(" + i +")").css("display", "table");
+            if(i == allTables) {
+                $(this).hide();
+                return false;
+            }
+        }
+    });
+    //Upload more pricelist items End
 
 
     //footer menus toggle
