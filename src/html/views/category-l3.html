@@ -1,0 +1,19 @@
+<% var data = {
+title: "Sub category"
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+<%= _.template(require('./../includes/main-nav.html'))(data) %>
+
+<%= _.template(require('./../includes/hero-category3.html'))(data) %>
+<%= _.template(require('./../includes/breadcrumbs3.html'))(data) %>
+
+<main id="main">
+    <%= _.template(require('./../includes/filters.html'))(data) %>
+    <%= _.template(require('./../includes/block-category-cards3.html'))(data) %>
+    <%= _.template(require('./../includes/block-order.html'))(data) %>
+    <%= _.template(require('./../includes/block-article.html'))(data) %>
+</main>
+<%= _.template(require('./../includes/footer-content.html'))(data) %>
+<%= _.template(require('./../includes/block-modals.html'))(data) %>
+<%= _.template(require('./../includes/footer.html'))(data) %>

@@ -489,6 +489,20 @@ jQuery(function ($) {
             }
         }
     });
+
+    $(".m-card-table__footer-btn-v2").click(function (e) {
+        e.preventDefault();
+        var i,
+            visItems = $(this).parents(".m-card-table").find(".column:visible").length,
+            allItems =$(this).parents(".m-card-table").find(".column").length;
+        for(i = visItems + 1; i < (visItems + 5); i++) {
+            $(this).parents(".m-card-table").find(".column:nth-child(" + i +")").css("display", "inline-block");
+            if(i == allItems) {
+                $(this).hide();
+                return false;
+            }
+        }
+    });
     //Upload more pricelist items End
 
 

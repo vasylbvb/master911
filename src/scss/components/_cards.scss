@@ -8,6 +8,9 @@ cards have got the next classes:
     m-btn-white (additional for m-btn-secondary white font and border)
 **/
 
+.cards-section {
+  padding-bottom: $spacing-unit;
+}
 
 .m-card {
   display: flex;

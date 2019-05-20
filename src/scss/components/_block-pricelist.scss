@@ -222,12 +222,95 @@
     }
   }
 
+  .single-pricelist {
+    .outer {
+      width: 100%;
+      .one-column {
+        font-size: 0;
+
+        .column {
+          display: none;
+          vertical-align: middle;
+          width: 100%;
+          padding-right: $spacing-gutter;
+          border-top: 1px solid $m-grey;
+          font-size: 1rem;
+
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4) {
+            display: inline-block;
+          }
+
+          table {
+            width: 100%;
+          }
+
+          .item-name {
+            width: 80%;
+            padding-top: 1rem;
+            padding-bottom: $spacing-unit;
+            padding-left: $spacing-gutter;
+            line-height: 1.25;
+
+            a {
+              display: inline-block;
+              padding-bottom: 2px;
+              border-bottom: 1px dashed transparent;
+              transition: $custom-transition-3;
+              &:hover {
+                text-decoration: none;
+                color: $m-red;
+                border-bottom-color: $m-red;
+              }
+            }
+          }
+
+          .item-append {
+            width: 6%;
+            text-align: right;
+            line-height: 1.25;
+          }
+
+          .item-num {
+            width: 6%;
+            padding-right: 2px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-align: right;
+            line-height: 1.1;
+          }
+
+          .item-curr {
+            width: 6%;
+            font-size: 0.875rem;
+            line-height: 1.43;
+            text-align: left;
+          }
+
+          .item-btn {
+            width: 12%;
+            text-align: center;
+          }
+
+          .m-btn {
+            min-width: rem-calc(95);
+            font-weight: 700;
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+  }
+
   &__footer {
     border-top: 1px solid $m-grey;
     background-color: $m-white;
     z-index: 2;
 
-    &-btn {
+    &-btn,
+    &-btn-v2 {
       width: 100%;
       min-height: 3.75rem;
       border: none;
@@ -291,6 +374,37 @@
         .two-column {
           .column {
             max-width: 100%;
+            padding-right: $spacing-gutter;
+
+            .item-name {
+              width: 70%;
+            }
+
+            .item-append {
+              width: 10%;
+              padding-right: 0.25rem;
+            }
+
+            .item-num {
+              width: 10%;
+            }
+
+            .item-curr {
+              width: 10%;
+            }
+
+            .item-btn {
+              width: 20%;
+            }
+          }
+        }
+      }
+    }
+
+    .single-pricelist {
+      .outer {
+        .one-column {
+          .column {
             padding-right: $spacing-gutter;
 
             .item-name {
@@ -390,8 +504,63 @@
       }
     }
 
+    .single-pricelist {
+      .outer {
+        .one-column {
+          .column {
+            padding: 0.25rem $spacing-unit;
+
+            .item-name {
+              width: 50%;
+              padding-top: 0.5625rem;
+              padding-bottom: 0.5625rem;
+              padding-left: 0;
+              word-break: break-all;
+            }
+
+            .item-append {
+              float: right;
+              width: 100%;
+              font-size: 0.875rem;
+              text-align: right;
+              line-height: 1.43;
+            }
+
+            .item-num {
+              float: right;
+              width: 100%;
+              text-align: right;
+              padding-right: 0;
+              font-size: 1.375rem;
+              line-height: 1.36;
+            }
+
+            .item-curr {
+              float: right;
+              width: 50%;
+              text-align: right;
+              font-size: 0.875rem;
+              line-height: 1.43;
+            }
+
+            .item-btn {
+              width: 50%;
+              text-align: right;
+            }
+
+            .m-btn {
+              min-width: rem-calc(95);
+              font-weight: 700;
+              letter-spacing: 2px;
+            }
+          }
+        }
+      }
+    }
+
     &__footer {
-      &-btn {
+      &-btn,
+      &-btn-v2 {
         font-size: 1rem;
         line-height: 2;
         letter-spacing: 0.05em;
