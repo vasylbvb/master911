@@ -139,9 +139,8 @@
 
           &[aria-expanded="true"] {
             .icon {
-              &:before,
               &:after {
-                transform: translate(-50%, -50%) rotate(360deg);
+                transform: translate(-50%, -50%) rotate(180deg);
               }
             }
           }
@@ -249,14 +248,14 @@
 
           .item-name {
             width: 80%;
-            padding-top: 1rem;
-            padding-bottom: $spacing-unit;
+            padding-top: 0.875rem;
+            padding-bottom: 0.875rem;
             padding-left: $spacing-gutter;
+            font-size: 1.25rem;
             line-height: 1.25;
 
             a {
               display: inline-block;
-              padding-bottom: 2px;
               border-bottom: 1px dashed transparent;
               transition: $custom-transition-3;
               &:hover {
@@ -276,16 +275,16 @@
           .item-num {
             width: 6%;
             padding-right: 2px;
-            font-size: 1.125rem;
+            font-size: 1.5rem;
             font-weight: 700;
             text-align: right;
-            line-height: 1.1;
+            line-height: 1.25;
           }
 
           .item-curr {
             width: 6%;
-            font-size: 0.875rem;
-            line-height: 1.43;
+            font-size: 1rem;
+            line-height: 1.25;
             text-align: left;
           }
 
@@ -451,7 +450,6 @@
         }
 
         .two-column {
-
           .column {
             padding-right: $spacing-unit;
             padding-left: $spacing-unit;
@@ -508,13 +506,14 @@
       .outer {
         .one-column {
           .column {
-            padding: 0.25rem $spacing-unit;
+            padding: 0.25rem 0.875rem;
 
             .item-name {
               width: 50%;
               padding-top: 0.5625rem;
               padding-bottom: 0.5625rem;
               padding-left: 0;
+              font-size: 1rem;
               word-break: break-all;
             }
 
@@ -648,6 +647,32 @@
         right: 0;
         left: auto;
         transform: translate(0, -100%);
+      }
+    }
+  }
+}
+
+.pricelist-section {
+  padding-top: 0.625rem;
+  .m-card-table {
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    background-color: $white;
+    box-shadow: none;
+    position: static;
+    z-index: 1;
+
+    &__head {
+      padding: 0;
+
+      .primary-headline {
+        padding-top: 0;
+        margin-bottom: $spacing-unit*3;
+
+        @include media-breakpoint-down(sm) {
+          margin-bottom: $spacing-gutter;
+        }
       }
     }
   }

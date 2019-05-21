@@ -44,8 +44,12 @@ p,
   text-align: justify;
 }
 
+.m-text-green {
+  color: $m-green !important;
+}
+
 .m-text-red {
-  color: $m-red;
+  color: $m-red !important;
 }
 
 .pt-30 {

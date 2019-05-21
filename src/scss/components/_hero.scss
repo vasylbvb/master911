@@ -154,6 +154,19 @@
         font-size: 1.8125rem;
         letter-spacing: 1px;
       }
+
+      &.ver-category,
+      &.ver-subcategory {
+        .hero-inner__search {
+          margin-bottom: 0.25rem;
+
+          .form-inline {
+            button {
+              width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
-.main-statistics {
+.main-statistics,
+.single-statistics {
   background-color: $m-white;
 
   &__card {
@@ -49,6 +50,53 @@
 
         .desc {
           font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+.single-statistics {
+  &__card {
+    max-width: 90%;
+
+    &-img {
+      img {
+        filter: grayscale(100%);
+        opacity: 0.6;
+      }
+    }
+
+    &-text {
+      .desc {
+        font-size: 1rem;
+        line-height: 1.1875;
+        word-break: normal;
+      }
+
+      .intro {
+        display: inline-block;
+        margin-bottom: 0.25rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 1.17;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__card {
+      max-width: 100%;
+
+      &-text {
+        .desc {
+          font-size: 0.75rem;
+          line-height: 1.17;
+        }
+
+        .intro {
+          font-size: 0.8125rem;
+          line-height: 1.15;
         }
       }
     }

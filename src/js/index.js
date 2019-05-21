@@ -224,6 +224,14 @@ jQuery(function ($) {
         $("#contactModal").modal("show");
     });
 
+    //tags section badges functionality
+    $(".tags-section .m-badge").click(function (e) {
+        e.preventDefault();
+        var badgeText = $(this).text();
+        $("#contactModal").find("#chosen-service").val(badgeText).attr("value", badgeText);
+        $("#contactModal").modal("show");
+    });
+
     //services links modal functionality
     var servModalLinks = $(".modal-serv__list--common > li").not(".has-children").find("a");
     $(servModalLinks).click(function (e) {
@@ -349,6 +357,11 @@ jQuery(function ($) {
         }
     });
     /*Contact form validation END*/
+
+    //close services modal on contact modal opening
+    $("#contactModal").on('show.bs.modal', function () {
+        $("#servicesModal").modal("hide");
+    });
 
     /*Success modal START*/
     $("#successModal").on('show.bs.modal', function () {

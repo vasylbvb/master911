@@ -1,0 +1,16 @@
+.tags-section {
+  .primary-headline {
+    margin-bottom: 2.8125rem;
+  }
+
+  .m-badge {
+    margin-right: $spacing-unit;
+    margin-bottom: $spacing-unit;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .primary-headline {
+      margin-bottom: $spacing-gutter;
+    }
+  }
+}

@@ -113,8 +113,8 @@
   }
 
   &__footer {
-    margin-bottom: rem-calc(55);
-    padding: $spacing-gutter 0;
+    margin-bottom: 0;
+    padding: $spacing-gutter 0 0;
     font-size: 1.125rem;
     font-weight: 700;
     text-transform: uppercase;

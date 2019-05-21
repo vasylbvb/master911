@@ -1,0 +1,128 @@
+.faq-section {
+  background-color: $m-white;
+  .primary-headline {
+    margin-bottom: 2.5rem;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .primary-headline {
+      margin-bottom: $spacing-gutter;
+      padding-left: $spacing-unit;
+    }
+  }
+}
+
+.q-accordion {
+  margin-bottom: $spacing-unit*3;
+  &__item {
+    border-bottom: 1px solid $m-grey;
+    background-color: $m-white;
+
+    &:first-child {
+      border-top: 1px solid $m-grey;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0.875rem $spacing-gutter;
+      border: none;
+      background-color: transparent;
+      font-size: inherit;
+      color: inherit;
+      line-height: inherit;
+      transition: $custom-transition-3;
+
+      * {
+        transition: inherit;
+      }
+
+      .text {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .icon {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        position: relative;
+
+        &:before,
+        &:after {
+          display: inline-block;
+          width: 15px;
+          height: 3px;
+          content: "";
+          background-color: $m-black;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transform-origin: center center;
+          transition: inherit;
+        }
+
+        &:after {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+      }
+
+      &[aria-expanded="true"] {
+        .icon {
+          &:after {
+            transform: translate(-50%, -50%) rotate(180deg);
+          }
+        }
+      }
+
+      &:hover {
+        .text {
+          color: $m-red;
+        }
+
+        .icon {
+          &:before,
+          &:after {
+            background-color: $m-red;
+          }
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-panel {
+      padding: $spacing-unit $spacing-unit*3;
+      font-size: 1.125rem;
+      text-align: justify;
+      line-height: 1.39;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: $spacing-gutter;
+
+    &__item {
+      &-link {
+        padding: 1.0625rem $spacing-unit;
+
+        .text {
+          font-size: 1.125rem;
+          text-align: left;
+          line-height: 1.1;
+        }
+      }
+
+      &-panel {
+        padding: 0 $spacing-gutter 0.3125rem;
+        font-size: 1rem;
+        line-height: 1.25;
+      }
+    }
+  }
+}
