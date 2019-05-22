@@ -69,6 +69,22 @@
     &-form {
       margin: $spacing-unit 0 1.25rem;
 
+      form {
+        position: relative;
+
+        &.has-error {
+          .error {
+            display: block;
+            font-size: 0.75rem;
+            color: $m-red;
+            line-height: 1.67;
+            position: absolute;
+            top: 100%;
+            left: 0;
+          }
+        }
+      }
+
       .form-inline {
         flex-flow: row wrap;
         max-width: 100%;

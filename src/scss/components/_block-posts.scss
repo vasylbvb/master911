@@ -53,6 +53,75 @@
     }
   }
 
+  .m-post-accordion {
+    &__item {
+      padding-left: 1.75rem;
+      border-left: 2px solid $m-grey-dark;
+
+      &.opened {
+        border-left-color: $m-red;
+      }
+      &:not(:last-child) {
+        margin-bottom: 3.25rem;
+      }
+
+      &-title {
+        display: block;
+        width: 100%;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: $m-black;
+        text-align: left;
+        text-transform: uppercase;
+        line-height: 1.25;
+      }
+
+      &-link {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 4.375rem;
+        padding: 0.3125rem 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        text-align: inherit;
+        text-transform: inherit;
+        line-height: inherit;
+        transition: $custom-transition-3;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &-panel {
+        padding-top: $spacing-gutter;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      &__item {
+        padding-left: $spacing-unit;
+
+        &:not(:last-child) {
+          margin-bottom: $spacing-unit;
+        }
+
+        &-title {
+          font-size: 1rem;
+        }
+
+        &-link {
+          min-height: 2.5rem;
+        }
+      }
+    }
+  }
+
   .m-post {
     &__img {
       margin-bottom: 3rem;
@@ -73,12 +142,35 @@
     &__footer {
       padding-top: 0.3125rem;
     }
+
+    @include media-breakpoint-down(lg) {
+      &__img {
+        margin-bottom: $spacing-unit*3;
+        padding-top: rem-calc(290);
+      }
+
+      &__content {
+        font-size: 1.125rem;
+        line-height: 1.39;
+      }
+
+      &__footer {
+        padding-top: 0;
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      &__img {
+        padding-top: rem-calc(260);
+      }
+    }
   }
 
   .contact-block {
     &--outer {
       padding: 1.875rem;
       background-color: $m-grey-lighter;
+      box-shadow: $m-small-shadow-grey;
     }
 
     &--inner {
@@ -103,6 +195,21 @@
         transform: translate(-50%, -50%);
       }
 
+      form {
+        position: relative;
+
+        &.has-error {
+          .error {
+            display: block;
+            font-size: 0.75rem;
+            color: $m-red;
+            line-height: 1.67;
+            position: absolute;
+            top: 100%;
+            left: 0;
+          }
+        }
+      }
       .form-inline {
         flex-flow: row nowrap;
         align-items: center;
@@ -115,7 +222,7 @@
           margin-right: $spacing-gutter;
           height: auto;
           min-height: 3.125rem;
-          padding: 1rem 0.875rem;
+          padding: 0.9375rem 0.875rem;
           border: 1px solid $m-grey;
           border-radius: 0;
           background-color: $m-white;
@@ -134,6 +241,58 @@
         button {
           &:hover {
             box-shadow: $m-shadow-grey;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      &--outer {
+        padding: $spacing-gutter $spacing-unit;
+      }
+
+      &--inner {
+        padding: 2.5rem;
+        border: 2px solid $m-black;
+
+        .heading {
+          padding: 0 $spacing-gutter*2;
+          font-size: 1.25rem;
+          line-height: 1.25;
+        }
+
+        button {
+          width: 100%;
+          padding-right: 0.5rem;
+          padding-left: 0.5rem;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(sm) {
+      &--outer {
+        margin-left: -0.625rem;
+        padding: $spacing-gutter $spacing-unit 1.25rem;
+      }
+
+      &--inner {
+        padding: 3.75rem 1.25rem 1.25rem;
+
+        .heading {
+          padding: 0 $spacing-unit;
+          font-size: 1.25rem;
+          line-height: 1.25;
+          white-space: normal;
+          transform: translate(-50%, -40%);
+        }
+
+        .form-inline {
+          flex-flow: column nowrap;
+
+          .form-control {
+            max-width: 100%;
+            margin-right: 0;
+            margin-bottom: 1.25rem;
           }
         }
       }

@@ -1,0 +1,205 @@
+.price-diagram-section {
+  background: $m-white;
+}
+
+.price-diagram {
+  position: relative;
+  &__text {
+    max-width: 50%;
+
+    .primary-headline {
+      margin-bottom: $spacing-gutter*2;
+    }
+
+    p {
+      margin-bottom: $spacing-gutter;
+      text-align: left;
+    }
+
+    .text-addition {
+      display: inline-block;
+      font-size: 0.875em;
+      font-style: italic;
+      font-weight: 300;
+      color: $m-black;
+      letter-spacing: 1px;
+      line-height: 1.21;
+    }
+  }
+
+  &__figure {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 60%;
+    min-height: rem-calc(244);
+    padding: 2.5rem 0;
+    background: transparent url("../img/chart.svg") no-repeat right bottom/contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    &-col {
+      flex: 0 0 25%;
+      width: 100%;
+      max-width: 25%;
+      text-align: center;
+
+      .price {
+        font-size: 1.375rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        line-height: 1.32;
+
+        .curr {
+          display: inline-block;
+          padding-left: 0.25rem;
+          font-size: 0.6em;
+        }
+
+        .text {
+          display: block;
+          font-size: 1.125rem;
+          line-height: 1.7;
+          font-weight: 400;
+          text-transform: none;
+          letter-spacing: 0.05em;
+          opacity: 0.5;
+        }
+      }
+
+      &:nth-child(1) {
+        flex: 0 0 20%;
+        max-width: 20%;
+      }
+
+      &:nth-child(3) {
+        flex: 0 0 30%;
+        max-width: 30%;
+
+        .price {
+          .num {
+            font-size: 2.25rem;
+            line-height: 1.3;
+          }
+        }
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        align-self: flex-end;
+      }
+    }
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    &__figure {
+      padding-top: 3.75rem;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__text {
+      max-width: 100%;
+
+      p {
+        margin-bottom: 3.125rem;
+      }
+
+      .text-addition {
+        max-width: 40%;
+      }
+    }
+
+    &__figure {
+      width: 100%;
+      position: static;
+      margin-top: -3.125rem;
+      &-col {
+
+        &:nth-child(1) {
+          flex: 0 0 24%;
+          max-width: 24%;
+        }
+        &:nth-child(3) {
+          flex: 0 0 32%;
+          max-width: 32%;
+        }
+
+        &:nth-child(2),
+        &:nth-child(4) {
+          flex: 0 0 22%;
+          max-width: 22%;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &__text {
+      .primary-headline {
+        margin-bottom: $spacing-gutter;
+      }
+
+      p {
+        margin-bottom: $spacing-gutter;
+      }
+
+      .text-addition {
+        max-width: 100%;
+      }
+    }
+
+    &__figure {
+      margin-top: 0;
+      min-height: rem-calc(138);
+      padding: 2.5rem 0 1.25rem;
+
+      &-col {
+        flex: 0 0 25%;
+        width: 100%;
+        max-width: 25%;
+        text-align: center;
+
+        .price {
+          font-size: 0.75rem;
+          line-height: 1.32;
+
+          .text {
+            font-size: 0.625rem;
+            line-height: 1.8;
+          }
+        }
+
+        &:nth-child(1) {
+          flex: 0 0 20%;
+          max-width: 20%;
+        }
+
+        &:nth-child(3) {
+          flex: 0 0 32%;
+          max-width: 32%;
+
+          .price {
+            .num {
+              font-size: 1.25rem;
+              line-height: 1.3;
+            }
+          }
+        }
+
+        &:nth-child(2),
+        &:nth-child(4) {
+          flex: 0 0 24%;
+          max-width: 24%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 767.98px) and (orientation: landscape)  {
+    &__figure {
+      min-height: rem-calc(220);
+    }
+  }
+}

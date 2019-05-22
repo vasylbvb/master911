@@ -287,6 +287,11 @@ jQuery(function ($) {
         }
     });
 
+    //toggle mobile post accordion
+    $(".m-post-accordion__item-link").click(function (e) {
+        $(this).parents(".m-post-accordion__item").toggleClass("opened");
+    });
+
     //Initialize tooltips
     $('[data-toggle="tooltip"]').tooltip();
 
@@ -358,6 +363,73 @@ jQuery(function ($) {
     });
     /*Contact form validation END*/
 
+    /*Call back form validation START*/
+    $('#callBForm [type="submit"]').click(function (e) {
+        e.preventDefault();
+
+        var nameReg = /^[A-Za-z\u0400-\u04FF]+$/;
+        var numberReg = /^[0-9]+$/;
+        //var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+        var clientPhone = $('#call-back-phone');
+
+        var inputs = [clientPhone];
+
+        var inputMessage = ["Введіть правильні дані", "Виберіть дату", "Виберіть час"];
+
+        $('#callBForm .error').remove();
+        $('#callBForm').removeClass('has-error');
+
+        if (inputs[0].val() == "") {
+            var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+            $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
+        } else if (!numberReg.test(inputs[0].val())) {
+            var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+            $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
+        }
+
+        if ($('#callBForm .error').length == 0) {
+            //$('#callBForm')[0].submit(); /*activate in production*/
+            $("#successModal").modal('show');
+        } else {
+            return false;
+        }
+    });
+    /*Call back form validation END*/
+
+    /*Subscribe form validation START*/
+    $('#subscribe-tabContent [type="submit"]').click(function (e) {
+        e.preventDefault();
+
+        var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+        var clientMail = $('#subscribe-tabContent [type="email"]');
+
+        var inputs = [clientMail];
+
+        var inputMessage = ["Введіть правильні дані"];
+
+        $('#subscribe-tabContent .error').remove();
+        $('#subscribe-tabContent form').removeClass('has-error');
+
+
+        if (inputs[0].val() == "") {
+            var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+            $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
+        } else if (!emailReg.test(inputs[0].val())) {
+            var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+            $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
+        }
+
+        if ($('#subscribe-tabContent .error').length == 0) {
+            //$('#contactModal form')[0].submit(); /*activate in production*/
+            $("#successSubModal").modal('show');
+        } else {
+            return false;
+        }
+    });
+    /*Subscribe form validation END*/
+
     //close services modal on contact modal opening
     $("#contactModal").on('show.bs.modal', function () {
         $("#servicesModal").modal("hide");
@@ -374,7 +446,8 @@ jQuery(function ($) {
             clientLoc = $("#s-order-loc").attr('value'),
             clientTime = $("#client-time").val(),
             clientDate = $("#client-date").val(),
-            clientPhone = $("#client-phone").val();
+            clientPhone = $("#client-phone").val(),
+            callBPhone = $("[id*='call-back-phone']").val();
 
         if (clientName != "") {
             $(infoName).html(clientName + ', ');
@@ -394,11 +467,22 @@ jQuery(function ($) {
 
         if (clientPhone != "") {
             $(infoPhone).html('Ваш телефон ' + clientPhone + '.');
+        } else if (callBPhone != "") {
+            $(infoPhone).html('Ваш телефон ' + callBPhone + '.');
         }
-
-        console.log($(clientLoc));
     });
     /*Success modal END*/
+
+    /*Success subscribe modal START*/
+    $("#successSubModal").on('show.bs.modal', function () {
+        var infoDataMail = $('#subscribe-tabContent [type="email"]').val(),
+            infoMail = $('#infoMail');
+
+        if (infoDataMail != "") {
+            $(infoMail).html("Новини про наші акції та знижки будуть надходити на Вашу електронну скриньку " + infoDataMail);
+        }
+    });
+    /*Success subscribe modal END*/
 
     /*Sliders start*/
     //orders slider

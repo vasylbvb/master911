@@ -1,0 +1,23 @@
+<% var data = {
+title: "Single page 2"
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+<%= _.template(require('./../includes/main-nav.html'))(data) %>
+
+<%= _.template(require('./../includes/hero-single.html'))(data) %>
+<%= _.template(require('./../includes/breadcrumbs-single.html'))(data) %>
+
+<main id="main">
+    <%= _.template(require('./../includes/price-diagram-single.html'))(data) %>
+    <%= _.template(require('./../includes/block-order-steps.html'))(data) %>
+    <%= _.template(require('./../includes/statistics-single.html'))(data) %>
+    <%= _.template(require('./../includes/block-faq.html'))(data) %>
+    <%= _.template(require('./../includes/block-subscribe.html'))(data) %>
+    <%= _.template(require('./../includes/block-posts.html'))(data) %>
+    <%= _.template(require('./../includes/block-tags.html'))(data) %>
+    <%= _.template(require('./../includes/block-article.html'))(data) %>
+</main>
+<%= _.template(require('./../includes/footer-content.html'))(data) %>
+<%= _.template(require('./../includes/block-modals.html'))(data) %>
+<%= _.template(require('./../includes/footer.html'))(data) %>

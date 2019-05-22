@@ -3,17 +3,21 @@
         <div class="row">
             <div class="col-12 col-lg-5">
                 <h2 class="primary-headline">Поширені помилки та їх причини</h2>
-                <ul class="nav nav-tabs m-post-tabs" id="postTab" role="tablist">
+                <!--desktop post tabs-->
+                <ul class="nav nav-tabs m-post-tabs d-none d-lg-block" id="postTab" role="tablist">
+                    <!--tab 1-->
                     <li class="nav-item m-post-tabs__item">
                         <a class="nav-link m-post-tabs__link active" id="m-post-tab-1" data-toggle="tab" href="#m-post-pane-1"
                            role="tab" aria-controls="m-post-pane-1" aria-selected="true">Запуск і налогодження роботи
                             котлів</a>
                     </li>
+                    <!--tab 2-->
                     <li class="nav-item m-post-tabs__item">
                         <a class="nav-link m-post-tabs__link" id="m-post-tab-2" data-toggle="tab" href="#m-post-pane-2"
                            role="tab" aria-controls="m-post-pane-2" aria-selected="false">Шум, міні-вибухи при роботі
                             газової колонки</a>
                     </li>
+                    <!--tab 3-->
                     <li class="nav-item m-post-tabs__item">
                         <a class="nav-link m-post-tabs__link" id="m-post-tab-3" data-toggle="tab" href="#m-post-pane-3"
                            role="tab" aria-controls="m-post-pane-3" aria-selected="false">Включення розпалювання під час
@@ -22,7 +26,9 @@
                 </ul>
             </div>
             <div class="col-12 col-lg-7 d-none d-lg-block">
+                <!--desktop post tab panels-->
                 <div class="tab-content m-post-panes" id="postTabContent">
+                    <!--tab 1 content-->
                     <div class="tab-pane m-post-pane fade show active" id="m-post-pane-1" role="tabpanel"
                          aria-labelledby="m-post-tab-1">
                         <article class="m-post">
@@ -48,6 +54,7 @@
                             </div>
                         </article>
                     </div>
+                    <!--tab 2 content-->
                     <div class="tab-pane m-post-pane fade" id="m-post-pane-2" role="tabpanel"
                          aria-labelledby="m-post-tab-2">
                         <article class="m-post">
@@ -73,6 +80,7 @@
                             </div>
                         </article>
                     </div>
+                    <!--tab 3 content-->
                     <div class="tab-pane m-post-pane fade" id="m-post-pane-3" role="tabpanel"
                          aria-labelledby="m-post-tab-3">
                         <article class="m-post">
@@ -97,6 +105,116 @@
                                 </div>
                             </div>
                         </article>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 d-lg-none">
+                <!--mobile post accordion-->
+                <div id="postsAccordion" class="m-post-accordion">
+                    <!--mobile accordion item 1-->
+                    <div class="m-post-accordion__item opened">
+                        <h4 class="m-post-accordion__item-title" id="post-title-1">
+                            <button class="m-post-accordion__item-link" data-toggle="collapse" data-target="#post-collapse-1"
+                                    aria-expanded="true" aria-controls="post-collapse-1">
+                                <span class="text">Запуск і налогодження роботи котлів</span>
+                            </button>
+                        </h4>
+                        <div id="post-collapse-1" class="collapse show" aria-labelledby="post-title-1">
+                            <div class="m-post-accordion__item-panel">
+                                <article class="m-post">
+                                    <div class="m-post__img" style="background-image:url('img/placeholder2.jpg');"></div>
+                                    <div class="m-post__content">
+                                        <p>1. Як правило, відмови обладнання трапляються найчастіше в осінній період, на самому
+                                            початку опалювального сезону. Власнику котла після неодноразових спроб просто не
+                                            вдається запалити гніт і запустити його в дію. Найчастіше користувач котла для
+                                            усунення неполадки береться самостійним чином за прочищення гніту і труби,
+                                            безпосередньо підводить газ.</p>
+                                    </div>
+                                    <div class="m-post__footer">
+                                        <div class="contact-block--outer">
+                                            <div class="contact-block--inner">
+                                                <h4 class="heading">Замовляй діагностику</h4>
+                                                <form action="#" method="post" id="callBForm" class="form-inline" name="call-back-form">
+                                                    <label for="call-back-phone" class="sr-only">Ввести номер телефону</label>
+                                                    <input class="form-control" id="call-back-phone" type="text" placeholder="(067) 123-45-67">
+                                                    <button class="m-btn m-btn-primary" type="submit" title="Замовити зараз">Замовити зараз</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <!--mobile accordion item 2-->
+                    <div class="m-post-accordion__item">
+                        <h4 class="m-post-accordion__item-title" id="post-title-2">
+                            <button class="m-post-accordion__item-link" data-toggle="collapse" data-target="#post-collapse-2"
+                                    aria-expanded="false" aria-controls="post-collapse-2">
+                                <span class="text">Шум, міні-вибухи при роботі газової колонки</span>
+                            </button>
+                        </h4>
+                        <div id="post-collapse-2" class="collapse" aria-labelledby="post-title-2">
+                            <div class="m-post-accordion__item-panel">
+                                <article class="m-post">
+                                    <div class="m-post__img" style="background-image:url('img/placeholder2.jpg');"></div>
+                                    <div class="m-post__content">
+                                        <p>2. Як правило, відмови обладнання трапляються найчастіше в осінній період, на самому
+                                            початку опалювального сезону. Власнику котла після неодноразових спроб просто не
+                                            вдається запалити гніт і запустити його в дію. Найчастіше користувач котла для
+                                            усунення неполадки береться самостійним чином за прочищення гніту і труби,
+                                            безпосередньо підводить газ.</p>
+                                    </div>
+                                    <div class="m-post__footer">
+                                        <div class="contact-block--outer">
+                                            <div class="contact-block--inner">
+                                                <h4 class="heading">Замовляй діагностику</h4>
+                                                <form action="#" method="post" id="callBForm" class="form-inline" name="call-back-form">
+                                                    <label for="call-back-phone" class="sr-only">Ввести номер телефону</label>
+                                                    <input class="form-control" id="call-back-phone" type="text" placeholder="(067) 123-45-67">
+                                                    <button class="m-btn m-btn-primary" type="submit" title="Замовити зараз">Замовити зараз</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <!--mobile accordion item 3-->
+                    <div class="m-post-accordion__item">
+                        <h4 class="m-post-accordion__item-title" id="post-title-3">
+                            <button class="m-post-accordion__item-link" data-toggle="collapse" data-target="#post-collapse-3"
+                                    aria-expanded="false" aria-controls="post-collapse-3">
+                                <span class="text">Включення розпалювання під час роботи котла</span>
+                            </button>
+                        </h4>
+                        <div id="post-collapse-3" class="collapse" aria-labelledby="post-title-3">
+                            <div class="m-post-accordion__item-panel">
+                                <article class="m-post">
+                                    <div class="m-post__img" style="background-image:url('img/placeholder2.jpg');"></div>
+                                    <div class="m-post__content">
+                                        <p>3. Як правило, відмови обладнання трапляються найчастіше в осінній період, на самому
+                                            початку опалювального сезону. Власнику котла після неодноразових спроб просто не
+                                            вдається запалити гніт і запустити його в дію. Найчастіше користувач котла для
+                                            усунення неполадки береться самостійним чином за прочищення гніту і труби,
+                                            безпосередньо підводить газ.</p>
+                                    </div>
+                                    <div class="m-post__footer">
+                                        <div class="contact-block--outer">
+                                            <div class="contact-block--inner">
+                                                <h4 class="heading">Замовляй діагностику</h4>
+                                                <form action="#" method="post" id="callBForm" class="form-inline" name="call-back-form">
+                                                    <label for="call-back-phone" class="sr-only">Ввести номер телефону</label>
+                                                    <input class="form-control" id="call-back-phone" type="text" placeholder="(067) 123-45-67">
+                                                    <button class="m-btn m-btn-primary" type="submit" title="Замовити зараз">Замовити зараз</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
