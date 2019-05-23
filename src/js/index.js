@@ -395,6 +395,38 @@ jQuery(function ($) {
             return false;
         }
     });
+
+    $('#postsAccordion [type="submit"]').click(function (e) {
+        e.preventDefault();
+
+        var nameReg = /^[A-Za-z\u0400-\u04FF]+$/;
+        var numberReg = /^[0-9]+$/;
+        //var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+        var clientPhone = $(this).parents('form').find('#call-back-phone');
+
+        var inputs = [clientPhone];
+
+        var inputMessage = ["Введіть правильні дані", "Виберіть дату", "Виберіть час"];
+
+        $('#postsAccordion .error').remove();
+        $('#postsAccordion form').removeClass('has-error');
+
+        if (inputs[0].val() == "") {
+            var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+            $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
+        } else if (!numberReg.test(inputs[0].val())) {
+            var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+            $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
+        }
+
+        if ($('#postsAccordion .error').length == 0) {
+            //$(this).parents('form')[0].submit(); /*activate in production*/
+            $("#successModal").modal('show');
+        } else {
+            return false;
+        }
+    });
     /*Call back form validation END*/
 
     /*Subscribe form validation START*/
@@ -422,7 +454,7 @@ jQuery(function ($) {
         }
 
         if ($('#subscribe-tabContent .error').length == 0) {
-            //$('#contactModal form')[0].submit(); /*activate in production*/
+            //$('#subscribe-tabContent form')[0].submit(); /*activate in production*/
             $("#successSubModal").modal('show');
         } else {
             return false;

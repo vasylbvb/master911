@@ -1,0 +1,88 @@
+.ui-datepicker.ui-widget.ui-widget-content {
+  border: 1px solid $m-grey-light;
+  border-radius: 0.375rem;
+  background-color: $m-white;
+  font-family: "Rubik", sans-serif;
+
+  .ui-datepicker-header {
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+    color: $m-black;
+    font-weight: 400;
+  }
+
+  .ui-datepicker-next,
+  .ui-datepicker-prev {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0;
+    border: none;
+    background: transparent no-repeat center center/contain;
+    top: 0.5rem;
+    transition: $custom-transition-3;
+
+    &:hover {
+      background-color: $m-grey-lighter;
+    }
+
+    .ui-icon {
+      display: none;
+    }
+  }
+
+  .ui-datepicker-next {
+    right: 1rem;
+    background-image: url('../img/icons/chevron-right.png');
+  }
+
+  .ui-datepicker-prev {
+    left: 1rem;
+    background-image: url('../img/icons/chevron-left.png');
+  }
+
+  .ui-datepicker-title {
+    font-size: 0.9375rem;
+    line-height: 1.33;
+  }
+
+  .ui-datepicker-calendar {
+    thead {
+      border-bottom: 1px dashed $m-grey;
+      th{
+        span {
+          font-size: 0.75rem;
+          font-weight: 700;
+          color: $m-grey-dark;
+          line-height: 1.33;
+        }
+      }
+    }
+    .ui-state-default {
+      width: 2rem;
+      height: 2rem;
+      padding: 0.4375rem 0.1875rem;
+      background-color: transparent;
+      border-color: transparent;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      color: $m-black;
+      text-align: center;
+      line-height: 1.33;
+      transition: $custom-transition-3;
+
+      &.ui-state-highlight,
+      &.ui-state-hover {
+        border-color: $m-red;
+        color: $m-red;
+      }
+
+      &.ui-state-active {
+        border-color: $m-red;
+        background-color: $m-red;
+        color: $m-white;
+      }
+    }
+  }
+}
