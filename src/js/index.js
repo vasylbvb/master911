@@ -507,7 +507,7 @@ jQuery(function ($) {
 
             breakpoint: 992,
             settings: {
-                slidesToShow: 1.5
+                slidesToShow: 2
             }
 
         }, {

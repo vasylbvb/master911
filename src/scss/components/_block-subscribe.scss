@@ -79,7 +79,7 @@
             color: $m-red;
             line-height: 1.67;
             position: absolute;
-            top: 100%;
+            top: 3.75rem;
             left: 0;
           }
         }
@@ -120,6 +120,14 @@
 
       @include media-breakpoint-up(md) {
         margin: 3.75rem 0;
+
+        form {
+          &.has-error {
+            .error {
+              left: 1.25rem;
+            }
+          }
+        }
 
         .form-inline {
           flex-flow: row nowrap;

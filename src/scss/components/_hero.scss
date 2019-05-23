@@ -74,11 +74,48 @@
         }
       }
 
+      &-price {
+        margin-right: 4.375rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        line-height: 1.42;
+
+        & > span {
+          display: inline-block;
+          vertical-align: baseline;
+        }
+
+        .price-num {
+          display: inline-block;
+          padding: 0 $spacing-unit;
+          font-size: 4rem;
+          font-weight: 700;
+          line-height: 1;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        &-price {
+          margin-right: 2.5rem;
+        }
+      }
+
       @include media-breakpoint-down(sm) {
         .form-inline {
           button {
             min-width: initial;
             flex: 0 0 auto;
+          }
+        }
+
+        &-price {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 2.25rem;
+
+          .price-num {
+            font-size: 3rem;
+            padding: 0 0.625rem;
           }
         }
       }
@@ -164,6 +201,18 @@
             button {
               width: 100%;
             }
+
+            .form-control + button {
+              width: auto;
+            }
+          }
+        }
+      }
+
+      &.ver-single {
+        .hero-inner__search {
+          .form-inline {
+            flex-wrap: wrap;
           }
         }
       }
