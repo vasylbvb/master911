@@ -219,3 +219,12 @@
     }
   }
 }
+
+.promotions {
+  .hero {
+    &-wrapper {
+      background-color: $m-red;
+      color: $m-white;
+    }
+  }
+}

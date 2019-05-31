@@ -964,6 +964,230 @@
   }
 }
 
+@include media-breakpoint-up(xl) {
+  .promotions {
+    .main-nav {
+      &:not(.scrolled) {
+        color: $m-white;
+
+        .navbar {
+          &-logo {
+            img {
+              filter: brightness(0) invert(1);
+            }
+          }
+
+          &-location {
+            &__btn {
+              .icon {
+                filter: brightness(0) invert(1);
+              }
+
+              .text {
+                color: $m-white;
+                border-bottom: 1px dashed $m-white;
+              }
+
+              &:after {
+                filter: brightness(0) invert(1);
+              }
+
+              &:hover {
+                .icon {
+                  filter: brightness(0) invert(1);
+                  opacity: 1;
+                }
+
+                &:after {
+                  filter: brightness(0) invert(1);
+                  opacity: 1;
+                }
+              }
+            }
+          }
+
+          &-contact {
+            .dropdown {
+              .dropdown-toggle {
+                color: $m-white;
+
+                .icon {
+                  filter: brightness(0) invert(1);
+                }
+
+                .text {
+                  &-link {
+                    color: $m-white;
+                  }
+
+                  &-schedule {
+                    color: $m-white;
+                  }
+                }
+
+                &:after {
+                  filter: brightness(0) invert(1);
+                }
+
+                &:hover {
+                  .icon {
+                    filter: brightness(0) invert(1);
+                    opacity: 1;
+                  }
+
+                  .text {
+                    &-link {
+                      color: $m-white;
+                    }
+
+                    &-schedule {
+                      color: $m-white;
+                    }
+                  }
+
+                  &:after {
+                    filter: brightness(0) invert(1);
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+
+          &-search {
+            display: none;
+            margin-right: 1.25rem;
+
+            &__btn {
+              color: $m-white;
+
+              .text {
+                color: $m-white;
+              }
+
+              .icon {
+                filter: brightness(0) invert(1);
+              }
+
+              &:hover {
+                .icon {
+                  filter: brightness(0) invert(1);
+                  opacity: 1;
+                }
+
+                .text {
+                  color: $m-white;
+                }
+              }
+            }
+          }
+
+          &-services {
+
+            &__btn {
+              color: $m-white;
+
+              .icon {
+                filter: brightness(0) invert(1);
+              }
+
+              .text {
+                color: $m-white;
+              }
+
+              &:hover {
+                .icon {
+                  filter: brightness(0) invert(1);
+                  opacity: 1;
+                }
+
+                .text {
+                  color: $m-white;
+                }
+              }
+            }
+          }
+
+          &-user {
+            color: $m-white;
+
+            &__link {
+              color: inherit;
+
+              .icon {
+                filter: brightness(0) invert(1);
+              }
+
+              .text {
+                color: $m-white;
+              }
+
+              &:hover {
+                color: $m-white;
+
+                .icon {
+                  filter: brightness(0) invert(1);
+                  opacity: 1;
+                }
+
+                .text {
+                  color: $m-white;
+                }
+              }
+            }
+          }
+
+          &-lang {
+            border-left: 1px solid $m-white;
+
+            .dropdown {
+              .dropdown-toggle {
+                color: $m-white;
+
+                .text {
+                  color: inherit;
+                }
+
+                &:after {
+                  filter: brightness(0) invert(1);
+                }
+
+                &:hover {
+                  .text {
+                    color: $m-white;
+                  }
+
+                  &:after {
+                    filter: brightness(0) invert(1);
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+
+          &-toggler {
+            .icon {
+              .bars {
+                background-color: $m-white;
+              }
+            }
+
+            &:hover {
+              .icon {
+                .bars {
+                  background-color: $m-white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
 @keyframes dropdrop {
   0% {
     transform: translateY(0);

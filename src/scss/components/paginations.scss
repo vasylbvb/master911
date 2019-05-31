@@ -1,0 +1,44 @@
+.pagination {
+  display: flex;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0;
+
+  .paginate_button {
+    display: inline-block;
+    margin: 0.3125rem;
+    min-width: 1.5rem;
+    min-height: 1.25rem;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    font-weight: 300;
+    color: $m-black;
+    text-align: center;
+    line-height: 1.125;
+    transition: $custom-transition-3;
+
+    a {
+      color: inherit;
+      transition: inherit;
+
+      &:hover {
+        color: $m-red;
+        text-decoration: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &.active {
+      color: $m-red;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+}

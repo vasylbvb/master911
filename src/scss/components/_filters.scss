@@ -69,6 +69,7 @@
         position: relative;
         transition: $custom-transition-3;
         cursor: pointer;
+        white-space: nowrap;
 
         &:after {
           display: inline-block;
@@ -131,6 +132,41 @@
       padding-left: $spacing-unit;
       margin-right: -$spacing-unit;
       padding-right: $spacing-unit;
+    }
+  }
+}
+
+.promotions {
+  .filters {
+    &-title,
+    &-row {
+      background-color: transparent;
+    }
+
+    &-list {
+      &__item {
+        label {
+          &:hover {
+            color: $m-black;
+            &:after {
+              border-top-color: $m-black;
+            }
+          }
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+          &:checked {
+            & + label {
+              color: $m-red;
+
+              &:after {
+                border-top-color: $m-red;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

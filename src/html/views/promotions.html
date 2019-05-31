@@ -1,0 +1,18 @@
+<% var data = {
+title: "Promotions"
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+<%= _.template(require('./../includes/main-nav.html'))(data) %>
+
+<%= _.template(require('./../includes/hero-promotions.html'))(data) %>
+<%= _.template(require('./../includes/breadcrumbs-promotions.html'))(data) %>
+
+<main id="main">
+    <%= _.template(require('./../includes/filters-promotions.html'))(data) %>
+    <%= _.template(require('./../includes/block-promotions-cards.html'))(data) %>
+    <%= _.template(require('./../includes/block-pagination.html'))(data) %>
+</main>
+<%= _.template(require('./../includes/footer-content.html'))(data) %>
+<%= _.template(require('./../includes/block-modals.html'))(data) %>
+<%= _.template(require('./../includes/footer.html'))(data) %>

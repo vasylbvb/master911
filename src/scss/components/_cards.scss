@@ -17,6 +17,7 @@ cards have got the next classes:
   flex-direction: column;
   width: 100%;
   min-height: 11.875rem;
+  height: calc(100% - #{$spacing-gutter});
   margin-bottom: $spacing-gutter;
   padding: 1.5rem 1.75rem;
   background-color: $m-grey-lighter;
@@ -78,6 +79,7 @@ cards have got the next classes:
 
     .m-card__body {
       margin-top: 0;
+      height: 100%;
       flex-wrap: wrap;
       align-items: flex-start;
 
@@ -92,6 +94,7 @@ cards have got the next classes:
       &-title {
         flex: 0 0 78%;
         max-width: 78%;
+        margin-top: auto;
         margin-bottom: $spacing-unit;
         padding: 0;
         font-size: 1.5rem;
@@ -300,6 +303,7 @@ cards have got the next classes:
   }
 
   @include media-breakpoint-down(sm) {
+    height: calc(100% - #{$spacing-unit});
     margin-bottom: $spacing-unit;
 
     &__body {
