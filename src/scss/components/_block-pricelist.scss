@@ -15,7 +15,7 @@
   }
 
   &__bridge {
-    width: calc(33.333% - #{20px});
+    width: calc(33.334% - #{20px});
     height: calc(#{$spacing-gutter} + 2px);
     background-color: $m-white;
     position: absolute;
@@ -97,11 +97,6 @@
             display: inline-block;
             vertical-align: middle;
             border-bottom: 1px dashed transparent;
-
-            &:hover {
-              border-bottom-color: $m-red;
-              color: $m-red;
-            }
           }
 
           .icon {
@@ -128,19 +123,26 @@
             &:after {
               transform: translate(-50%, -50%) rotate(90deg);
             }
-
-            &:hover {
-              &:before,
-              &:after {
-                background-color: $m-red;
-              }
-            }
           }
 
           &[aria-expanded="true"] {
             .icon {
               &:after {
                 transform: translate(-50%, -50%) rotate(180deg);
+              }
+            }
+          }
+
+          &:hover {
+            .text {
+              border-bottom-color: $m-red;
+              color: $m-red;
+            }
+
+            .icon {
+              &:before,
+              &:after {
+                background-color: $m-red;
               }
             }
           }
@@ -208,7 +210,7 @@
 
           .item-btn {
             width: 30%;
-            text-align: left;
+            text-align: center;
           }
 
           .m-btn {

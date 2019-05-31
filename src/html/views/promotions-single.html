@@ -1,0 +1,16 @@
+<% var data = {
+title: "Promotions single"
+}; %>
+<%= _.template(require('./../includes/header.html'))(data) %>
+
+<%= _.template(require('./../includes/main-nav.html'))(data) %>
+
+<%= _.template(require('./../includes/hero-promotions-single.html'))(data) %>
+<%= _.template(require('./../includes/breadcrumbs-promotions-single.html'))(data) %>
+
+<main id="main">
+    <%= _.template(require('./../includes/block-article-promotions.html'))(data) %>
+</main>
+<%= _.template(require('./../includes/footer-content.html'))(data) %>
+<%= _.template(require('./../includes/block-modals.html'))(data) %>
+<%= _.template(require('./../includes/footer.html'))(data) %>
