@@ -195,6 +195,10 @@
   }
 
   @include media-breakpoint-down(sm) {
+    &-wrapper {
+      background-position: 100% 100%;
+    }
+
     &-inner {
       min-height: rem-calc(470);
       padding: 5rem 0 0.625rem;
@@ -207,7 +211,7 @@
       &.ver-category,
       &.ver-subcategory {
         .hero-inner__search {
-          margin-bottom: 0.25rem;
+          //margin-bottom: 0.25rem;
 
           .form-inline {
             button {

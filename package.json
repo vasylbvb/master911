@@ -12,6 +12,7 @@
   "author": "Vasyl Bats",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^9.5.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
@@ -37,5 +38,9 @@
     "jquery-ui": "^1.12.1",
     "popper.js": "^1.15.0",
     "slick-carousel": "^1.8.1"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }

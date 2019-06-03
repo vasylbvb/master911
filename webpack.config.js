@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const autoprefixer = require('autoprefixer');
 
 function generateHtmlPlugins(templateDir) {
     const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -68,6 +69,7 @@ const config = {
                             ident: "postcss",
                             sourceMap: true,
                             plugins: () => [
+                                autoprefixer(),
                                 require("cssnano")({
                                     preset: [
                                         "default",

@@ -208,13 +208,29 @@
 
   @include media-breakpoint-down(sm) {
     background-position: 100% 0;
+    background-size: rem-calc(166) rem-calc(174);
 
     &__main {
+      padding-top: 0.75rem;
       padding-bottom: $spacing-gutter;
 
       .primary-headline {
         font-size: 1.375rem;
         margin-bottom: 1.5rem;
+      }
+
+      p {
+        text-align: left;
+      }
+    }
+
+    &__forms {
+      .nav-tabs {
+        .nav-link {
+          &:not(:last-child) {
+            margin-right: $spacing-gutter*2;
+          }
+        }
       }
     }
   }

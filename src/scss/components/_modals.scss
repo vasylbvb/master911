@@ -537,6 +537,13 @@
               right: $spacing-gutter;
               transition: $custom-transition-3;
             }
+
+            &:hover {
+              &:after {
+                border-right-color: $m-red;
+                border-bottom-color: $m-red;
+              }
+            }
           }
 
           .sublist {

@@ -119,6 +119,7 @@ cards have got the next classes:
   }
 
   &-vertical-v2 {
+    height: auto;
     min-height: rem-calc(370);
     cursor: pointer;
 
@@ -354,6 +355,7 @@ cards have got the next classes:
     }
 
     &-vertical-v2 {
+      height: auto;
       min-height: rem-calc(180);
       padding: $spacing-unit;
 

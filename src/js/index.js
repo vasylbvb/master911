@@ -281,9 +281,9 @@ jQuery(function ($) {
         e.preventDefault();
         $(".m-card-vertical-v2").not($(this)).removeClass("opened");
         $(this).toggleClass("opened");
-        var headerHeight = $("header.main-nav").height();
+        var headerHeight = $("header.main-nav").outerHeight();
         if ($(this).hasClass("opened")) {
-            $('html,body').animate({scrollTop: $(this).siblings(".m-card-table").offset().top - headerHeight}, 500);
+            $('html,body').animate({scrollTop: $(this).siblings(".m-card-table").offset().top - headerHeight*1.1}, 500);
         }
     });
 
