@@ -54,6 +54,12 @@ cards have got the next classes:
       font-weight: 700;
       text-transform: uppercase;
       line-height: 1.375;
+      white-space: normal;
+      -ms-word-break: break-all;
+      word-break: break-all;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto;
 
       a {
         color: $m-black;
