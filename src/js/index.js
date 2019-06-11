@@ -150,10 +150,10 @@ jQuery(function ($) {
         open: function () {
             $("ul.ui-menu").width($(this).innerWidth());
         },
-        select: function (event, ui) {
-            var checkInpVal = $(myInpOrder).val(ui.item.value);
-            $(myInpOrder).attr("value", ui.item.value);
-        }
+        // select: function (event, ui) {
+        //     var checkInpVal = $(myInpOrder).val(ui.item.value);
+        //     $(myInpOrder).attr("value", ui.item.value);
+        // }
     });
 
     $(searchServ).autocomplete({
