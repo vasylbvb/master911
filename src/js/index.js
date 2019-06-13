@@ -150,10 +150,11 @@ jQuery(function ($) {
         open: function () {
             $("ul.ui-menu").width($(this).innerWidth());
         },
-        // select: function (event, ui) {
-        //     var checkInpVal = $(myInpOrder).val(ui.item.value);
-        //     $(myInpOrder).attr("value", ui.item.value);
-        // }
+        select: function (event, ui) {
+            event.preventDefault();
+            var checkInpVal = $(myInpOrder).val(ui.item.value);
+            $(myInpOrder).attr("value", ui.item.value);
+        }
     });
 
     $(searchServ).autocomplete({
@@ -190,6 +191,21 @@ jQuery(function ($) {
     searchInpFunc(myInpOrder);
     searchInpFunc(searchServ);
     //Location input autocomplete functions end
+
+    //put masks on phone inputs
+    $("#contactModal").find("#client-phone").attr("value", "+380");
+    $("#callBModal").find("#client-cb-phone").attr("value", "+380");
+    $('[id*="callBForm"]').find('[id*="call-back-phone"]').attr("value", "+380");
+    $("#postsAccordion").find('[id*="call-back-phone"]').attr("value", "+380");
+
+    //focus some certain input on modal opening
+    $("#searchModal").on('shown.bs.modal', function () {
+        $(this).find("#serv-search").focus();
+    });
+
+    $("#locModal").on('shown.bs.modal', function () {
+        $(this).find("#s-nav-loc").focus();
+    });
 
     //toggle services sublists in services modal
     var servExpand = $(".modal-serv .has-children .text");
@@ -248,8 +264,8 @@ jQuery(function ($) {
     });
 
     //pricelist buttons functionality
-    var priceListBtn = $(".m-card-table .item-btn .m-btn");
-    $(priceListBtn).click(function (e) {
+    var priceListOrdBtn = $(".m-card-table .item-btn .m-order-btn");
+    $(priceListOrdBtn).click(function (e) {
         e.preventDefault();
         var priceListItem = $(this).parents(".item-btn").siblings(".item-name").find("a").text();
         $("#contactModal").find("#chosen-service").val(priceListItem).attr("value", priceListItem);
@@ -261,6 +277,14 @@ jQuery(function ($) {
         e.preventDefault();
         $("#contactModal").find("#chosen-service").val($(this).text()).attr("value", $(this).text());
         $("#contactModal").modal("show");
+    });
+
+    var priceListCbBtn = $(".m-card-table .item-btn .m-callb-btn");
+    $(priceListCbBtn).click(function (e) {
+        e.preventDefault();
+        var priceListItem = $(this).parents(".item-btn").siblings(".item-name").find("a").text();
+        $("#callBModal").find("#chosen-cb-service").val(priceListItem).attr("value", priceListItem);
+        $("#callBModal").modal("show");
     });
 
     //regions links functionality
@@ -296,14 +320,14 @@ jQuery(function ($) {
     $('[data-toggle="tooltip"]').tooltip();
 
     //Initialize datepicker
-    $("#client-date").datepicker($.datepicker.regional["uk"]).datepicker("option", "minDate", new Date());
+    $("#client-date").datepicker($.datepicker.regional["uk"]).datepicker("option", "minDate", new Date()).datepicker("option", "onClose", function(dateText, inst) { $(this).prop("disabled", false); }).datepicker("option", "beforeShow", function(input, inst) { $(this).prop("disabled", true); });
 
     /*Contact form validation START*/
     $('#contactModal [type="submit"]').click(function (e) {
         e.preventDefault();
 
         var nameReg = /^[A-Za-z\u0400-\u04FF]+$/;
-        var numberReg = /^[0-9]+$/;
+        var numberReg = /^[0-9\+]+$/;
         //var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
         var clientName = $('#client-name');
@@ -329,7 +353,7 @@ jQuery(function ($) {
         //     $(inputs[0]).parents(".form-group").addClass("has-error").append(errMsg);
         // }
 
-        if (inputs[1].val() == "") {
+        if (inputs[1].val().length <= 4) {
             var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
             $(inputs[1]).parents(".form-group").addClass("has-error").append(errMsg);
         } else if (!numberReg.test(inputs[1].val())) {
@@ -363,56 +387,69 @@ jQuery(function ($) {
     });
     /*Contact form validation END*/
 
-    /*Call back form validation START*/
-    $('#callBForm [type="submit"]').click(function (e) {
+    /*Call back modal form validation START*/
+    $('#callBModal [type="submit"]').click(function (e) {
         e.preventDefault();
 
         var nameReg = /^[A-Za-z\u0400-\u04FF]+$/;
-        var numberReg = /^[0-9]+$/;
+        var numberReg = /^[0-9\+]+$/;
         //var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
-        var clientPhone = $('#call-back-phone');
+        var clientCbName = $('#client-cb-name');
+        var clientCbPhone = $('#client-cb-phone');
 
-        var inputs = [clientPhone];
+        var inputs = [clientCbName, clientCbPhone];
 
-        var inputMessage = ["Введіть правильні дані", "Виберіть дату", "Виберіть час"];
+        var inputMessage = ["Введіть правильні дані"];
 
-        $('#callBForm .error').remove();
-        $('#callBForm').removeClass('has-error');
+        $('#callBModal .error').remove();
+        $('#callBModal .form-group').removeClass('has-error');
 
-        if (inputs[0].val() == "") {
+        // if(inputs[0].val() == ""){
+        //     var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+        //     $(inputs[0]).parents(".form-group").addClass("has-error").append(errMsg);
+        // } else if(!nameReg.test(inputs[0].val())){
+        //     var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
+        //     $(inputs[0]).parents(".form-group").addClass("has-error").append(errMsg);
+        // }
+
+        if (inputs[1].val().length <= 4) {
             var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
-            $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
-        } else if (!numberReg.test(inputs[0].val())) {
+            $(inputs[1]).parents(".form-group").addClass("has-error").append(errMsg);
+        } else if (!numberReg.test(inputs[1].val())) {
             var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
-            $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
+            $(inputs[1]).parents(".form-group").addClass("has-error").append(errMsg);
         }
 
-        if ($('#callBForm .error').length == 0) {
-            //$('#callBForm')[0].submit(); /*activate in production*/
+        if ($('#callBModal .error').length == 0) {
+            //$('#callBModal form')[0].submit(); /*activate in production*/
+            $("#callBModal").modal('hide');
+            /*deactivate in production*/
             $("#successModal").modal('show');
         } else {
             return false;
         }
     });
+    /*Call back modal form validation END*/
 
-    $('#postsAccordion [type="submit"]').click(function (e) {
+    /*Call back form validation START*/
+    $('[id*="callBForm"] [type="submit"]').click(function (e) {
         e.preventDefault();
 
         var nameReg = /^[A-Za-z\u0400-\u04FF]+$/;
-        var numberReg = /^[0-9]+$/;
+        var numberReg = /^[0-9\+]+$/;
         //var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
-        var clientPhone = $(this).parents('form').find('#call-back-phone');
+        var clientPhone = $(this).parents("form").find('[id*="call-back-phone"]');
 
         var inputs = [clientPhone];
 
-        var inputMessage = ["Введіть правильні дані", "Виберіть дату", "Виберіть час"];
+        var inputMessage = ["Введіть правильні дані"];
 
-        $('#postsAccordion .error').remove();
-        $('#postsAccordion form').removeClass('has-error');
+        $(this).parents("form").find(".error").remove();
+        $(this).parents("form").removeClass("has-error");
 
-        if (inputs[0].val() == "") {
+        if (inputs[0].val().length <= 4) {
             var errMsg = $('<span></span>').addClass("error").text(inputMessage[0]);
             $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
         } else if (!numberReg.test(inputs[0].val())) {
@@ -420,8 +457,8 @@ jQuery(function ($) {
             $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
         }
 
-        if ($('#postsAccordion .error').length == 0) {
-            //$(this).parents('form')[0].submit(); /*activate in production*/
+        if ( $(this).parents("form").find(".error").length == 0) {
+            //$(this).parents("form")[0].submit(); /*activate in production*/
             $("#successModal").modal('show');
         } else {
             return false;
@@ -479,7 +516,16 @@ jQuery(function ($) {
             clientTime = $("#client-time").val(),
             clientDate = $("#client-date").val(),
             clientPhone = $("#client-phone").val(),
-            callBPhone = $("[id*='call-back-phone']").val();
+            clientCbPhone = $("#client-cb-phone").val(),
+            callBPhones = $('[id*="call-back-phone"]'),
+            callBPhone = "";
+
+        for(var i = 0; i < callBPhones.length; i++) {
+            var curr = $(callBPhones[i]).val();
+            if(curr.length > 4) {
+                callBPhone = curr;
+            }
+        }
 
         if (clientName != "") {
             $(infoName).html(clientName + ', ');
@@ -497,11 +543,14 @@ jQuery(function ($) {
             $(infoDate).html(' ' + clientDate);
         }
 
-        if (clientPhone != "") {
+        if (clientPhone.length > 4) {
             $(infoPhone).html('Ваш телефон ' + clientPhone + '.');
-        } else if (callBPhone != "") {
+        } else if (clientCbPhone.length > 4) {
+            $(infoPhone).html('Ваш телефон ' + clientCbPhone + '.');
+        } else if (callBPhone.length > 0) {
             $(infoPhone).html('Ваш телефон ' + callBPhone + '.');
         }
+        console.log(callBPhone);
     });
     /*Success modal END*/
 

@@ -153,6 +153,7 @@
         }
       }
 
+      .one-column,
       .two-column {
         font-size: 0;
         padding-bottom: 0.5rem;
@@ -163,7 +164,6 @@
           width: 100%;
           padding-right: $spacing-gutter;
           padding-left: $spacing-gutter;
-          max-width: 50%;
           font-size: 1rem;
 
           table {
@@ -187,13 +187,13 @@
           }
 
           .item-append {
-            width: 10%;
+            width: 5%;
             text-align: right;
             line-height: 1.25;
           }
 
           .item-num {
-            width: 15%;
+            width: 10%;
             padding-right: 2px;
             font-size: 1.125rem;
             font-weight: 700;
@@ -202,14 +202,14 @@
           }
 
           .item-curr {
-            width: 15%;
+            width: 5%;
             font-size: 0.875rem;
             line-height: 1.43;
             text-align: left;
           }
 
           .item-btn {
-            width: 30%;
+            width: 20%;
             text-align: center;
           }
 
@@ -218,6 +218,12 @@
             font-weight: 700;
             letter-spacing: 2px;
           }
+        }
+      }
+
+      .two-column {
+        .column {
+          max-width: 50%;
         }
       }
     }
@@ -249,7 +255,7 @@
           }
 
           .item-name {
-            width: 80%;
+            width: 60%;
             padding-top: 0.875rem;
             padding-bottom: 0.875rem;
             padding-left: $spacing-gutter;
@@ -269,13 +275,13 @@
           }
 
           .item-append {
-            width: 6%;
+            width: 7%;
             text-align: right;
             line-height: 1.25;
           }
 
           .item-num {
-            width: 6%;
+            width: 10%;
             padding-right: 2px;
             font-size: 1.5rem;
             font-weight: 700;
@@ -284,14 +290,14 @@
           }
 
           .item-curr {
-            width: 6%;
+            width: 7%;
             font-size: 1rem;
             line-height: 1.25;
             text-align: left;
           }
 
           .item-btn {
-            width: 12%;
+            width: 16%;
             text-align: center;
           }
 
@@ -372,13 +378,14 @@
 
     .m-accordion {
       .outer {
+        .one-column,
         .two-column {
           .column {
             max-width: 100%;
             padding-right: $spacing-gutter;
 
             .item-name {
-              width: 70%;
+              width: 50%;
             }
 
             .item-append {
@@ -409,7 +416,7 @@
             padding-right: $spacing-gutter;
 
             .item-name {
-              width: 70%;
+              width: 50%;
             }
 
             .item-append {
@@ -451,10 +458,14 @@
           }
         }
 
+        .one-column,
         .two-column {
           .column {
-            padding-right: $spacing-unit;
-            padding-left: $spacing-unit;
+            padding: 0.625rem $spacing-unit;
+
+            &:not(:last-child) {
+              border-bottom: 1px solid $m-grey-lighter;
+            }
 
             .item-name {
               width: 50%;
@@ -466,6 +477,7 @@
             .item-append {
               float: right;
               width: 100%;
+              padding-right: 0;
               font-size: 0.875rem;
               text-align: right;
               line-height: 1.43;
@@ -482,14 +494,15 @@
 
             .item-curr {
               float: right;
-              width: 50%;
+              width: 100%;
               text-align: right;
               font-size: 0.875rem;
               line-height: 1.43;
             }
 
             .item-btn {
-              width: 50%;
+              float: right;
+              width: 100%;
               text-align: right;
             }
 
@@ -497,6 +510,12 @@
               min-width: rem-calc(95);
               font-weight: 700;
               letter-spacing: 2px;
+            }
+
+            &:after {
+              display: table;
+              content: "";
+              clear: both;
             }
           }
         }
@@ -520,6 +539,7 @@
             .item-append {
               float: right;
               width: 100%;
+              padding-right: 0;
               font-size: 0.875rem;
               text-align: right;
               line-height: 1.43;
@@ -536,14 +556,15 @@
 
             .item-curr {
               float: right;
-              width: 50%;
+              width: 100%;
               text-align: right;
               font-size: 0.875rem;
               line-height: 1.43;
             }
 
             .item-btn {
-              width: 50%;
+              float: right;
+              width: 100%;
               text-align: right;
             }
 
@@ -551,6 +572,12 @@
               min-width: rem-calc(95);
               font-weight: 700;
               letter-spacing: 2px;
+            }
+
+            &:after {
+              display: table;
+              content: "";
+              clear: both;
             }
           }
         }

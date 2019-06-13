@@ -374,11 +374,11 @@
 
   &__tabs {
     margin-bottom: 0.625rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid $m-grey-dark;
+    //padding-bottom: 2.5rem;
+    //border-bottom: 1px solid $m-grey-dark;
 
     .nav-tabs {
-      max-height: rem-calc(250);
+      max-height: rem-calc(500);
       margin-left: -$spacing-gutter;
       background-color: $m-grey-lighter;
       border-bottom: none;
@@ -555,9 +555,9 @@
 
             li {
               display: inline-block;
-              flex: 0 0 25%;
-              max-width: 25%;
-              padding-right: $spacing-gutter;
+              flex: 0 0 100%;
+              max-width: 100%;
+              //padding-right: $spacing-gutter;
               font-size: 1rem;
               line-height: 1.25;
 
@@ -619,23 +619,6 @@
 
     &:focus {
       outline: none;
-    }
-  }
-
-  @include media-breakpoint-down(md) {
-    &__list {
-      &--common {
-        & > li {
-          &.has-children {
-            .sublist {
-              li {
-                flex: 0 0 50%;
-                max-width: 50%;
-              }
-            }
-          }
-        }
-      }
     }
   }
 
@@ -723,6 +706,7 @@
 }
 
 #contactModal,
+#callBModal,
 #successModal {
   .modal-dialog {
     max-width: 100%;
