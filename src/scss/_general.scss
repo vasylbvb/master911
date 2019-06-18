@@ -4,6 +4,12 @@ body {
   color: $m-black;
 }
 
+/* Apply CSS to iOS affected versions only */
+body.iosBugFixCaret.modal-open {
+  position: fixed;
+  width: 100%;
+}
+
 h1,
 .title-headline {
   font-family: "Gilroy", sans-serif;

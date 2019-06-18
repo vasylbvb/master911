@@ -9,6 +9,7 @@ import "jquery-ui/ui/widgets/datepicker";
 import "jquery-ui/ui/i18n/datepicker-uk";
 import locations from "../js/dbs/locations.json";
 import services from "../js/dbs/services.json";
+import IMask from "imask";
 
 jQuery(function ($) {
     //Scrollspy for changing header
@@ -28,6 +29,37 @@ jQuery(function ($) {
             header.removeClass("scrolled");
         }
     }
+
+    // Detect ios 11_x_x affected
+    // NEED TO BE UPDATED if new versions are affected
+    (function iOS_CaretBug() {
+
+        var ua = navigator.userAgent,
+            scrollTopPosition,
+            iOS = /iPad|iPhone|iPod/.test(ua),
+            iOS11 = /OS 11_0|OS 11_1|OS 11_2/.test(ua);
+
+        // ios 11 bug caret position
+        if ( iOS && iOS11 ) {
+
+            $(document.body).on('show.bs.modal', function(e) {
+                // Get scroll position before moving top
+                scrollTopPosition = $(document).scrollTop();
+
+                // Add CSS to body "position: fixed"
+                $("body").addClass("iosBugFixCaret");
+            });
+
+            $(document.body).on('hide.bs.modal', function(e) {
+                // Remove CSS to body "position: fixed"
+                $("body").removeClass("iosBugFixCaret");
+
+                //Go back to initial position in document
+                $(document).scrollTop(scrollTopPosition);
+            });
+
+        }
+    })();
 
     //Header Location Dropdown
 
@@ -115,9 +147,13 @@ jQuery(function ($) {
     $(myInpNav).autocomplete({
         source: locations.locations,
         highlightClass: "auto-matches",
-        open: function () {
+        open: function (event, ui) {
             $("ul.ui-menu").width($(this).innerWidth());
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+                $('.ui-autocomplete').off('menufocus hover mouseover');
+            }
         },
+        appendTo: $(myInpNav).parents(".region-search"),
         select: function (event, ui) {
             var checkInpVal = $(myInpNav).val(ui.item.value);
             $(myInpNav).attr("value", ui.item.value);
@@ -133,9 +169,13 @@ jQuery(function ($) {
     $(myInp).autocomplete({
         source: locations.locations,
         highlightClass: "auto-matches",
-        open: function () {
+        open: function (event, ui) {
             $("ul.ui-menu").width($(this).innerWidth());
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+                $('.ui-autocomplete').off('menufocus hover mouseover');
+            }
         },
+        appendTo: $(myInp).parents(".region-search"),
         select: function (event, ui) {
             var checkInpVal = $(myInp).val(ui.item.value);
             $(myInp).attr("value", ui.item.value);
@@ -147,9 +187,13 @@ jQuery(function ($) {
     $(myInpOrder).autocomplete({
         source: locations.locations,
         highlightClass: "auto-matches",
-        open: function () {
+        open: function (event, ui) {
             $("ul.ui-menu").width($(this).innerWidth());
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+                $('.ui-autocomplete').off('menufocus hover mouseover');
+            }
         },
+        appendTo: $(myInpOrder).parents(".region-search"),
         select: function (event, ui) {
             event.preventDefault();
             var checkInpVal = $(myInpOrder).val(ui.item.value);
@@ -160,9 +204,13 @@ jQuery(function ($) {
     $(searchServ).autocomplete({
         source: services.services,
         highlightClass: "auto-matches",
-        open: function () {
+        open: function (event, ui) {
             $("ul.ui-menu").width($(this).innerWidth());
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+                $('.ui-autocomplete').off('menufocus hover mouseover');
+            }
         },
+        appendTo: $(searchServ).parents(".region-search"),
         select: function (event, ui) {
             $(searchServ).val(ui.item.value);
             $(searchServ).attr("value", ui.item.value);
@@ -175,9 +223,13 @@ jQuery(function ($) {
     $(searchServBig).autocomplete({
         source: services.services,
         highlightClass: "auto-matches",
-        open: function () {
+        open: function (event, ui) {
             $("ul.ui-menu").width($(this).innerWidth());
+            if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+                $('.ui-autocomplete').off('menufocus hover mouseover');
+            }
         },
+        appendTo: $(searchServBig).parents(".region-search"),
         select: function (event, ui) {
             $(searchServBig).val(ui.item.value);
             $(searchServBig).attr("value", ui.item.value);
@@ -193,10 +245,50 @@ jQuery(function ($) {
     //Location input autocomplete functions end
 
     //put masks on phone inputs
-    $("#contactModal").find("#client-phone").attr("value", "+380");
-    $("#callBModal").find("#client-cb-phone").attr("value", "+380");
-    $('[id*="callBForm"]').find('[id*="call-back-phone"]').attr("value", "+380");
-    $("#postsAccordion").find('[id*="call-back-phone"]').attr("value", "+380");
+    //$("#contactModal").find("#client-phone").attr("value", "+380");
+    //$("#callBModal").find("#client-cb-phone").attr("value", "+380");
+    //$('[id*="callBForm"]').find('[id*="call-back-phone"]').attr("value", "+380");
+    //$("#postsAccordion").find('[id*="call-back-phone"]').attr("value", "+380");
+    var pElems1 = $("#contactModal #client-phone"),
+        pElems2 = $("#callBModal #client-cb-phone"),
+        pElems3 = $('[id*="callBForm"] [id*="call-back-phone"]'),
+        pElems4 = $('#postsAccordion [id*="call-back-phone"]');
+
+    Array.prototype.forEach.call(pElems1, function(element) {
+        var phoneMask = new IMask(element, {
+            mask: '+{38}(000)000-00-00',
+            placeholder: {
+                show: 'always'
+            }
+        });
+    });
+
+    Array.prototype.forEach.call(pElems2, function(element) {
+        var phoneMask = new IMask(element, {
+            mask: '+{38}(000)000-00-00',
+            placeholder: {
+                show: 'always'
+            }
+        });
+    });
+
+    Array.prototype.forEach.call(pElems3, function(element) {
+        var phoneMask = new IMask(element, {
+            mask: '+{38}(000)000-00-00',
+            placeholder: {
+                show: 'always'
+            }
+        });
+    });
+
+    Array.prototype.forEach.call(pElems4, function(element) {
+        var phoneMask = new IMask(element, {
+            mask: '+{38}(000)000-00-00',
+            placeholder: {
+                show: 'always'
+            }
+        });
+    });
 
     //focus some certain input on modal opening
     $("#searchModal").on('shown.bs.modal', function () {
