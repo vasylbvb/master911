@@ -20,13 +20,13 @@ jQuery(function ($) {
         listenToScroll()
     };
     const header = $('header.main-nav');
-    const sticky = header.scrollTop() + 70;
+    const sticky = header.scrollTop() + 140;
 
     function listenToScroll() {
         if (window.pageYOffset > sticky) {
-            header.addClass("scrolled");
+            header.addClass("fixed-top scrolled");
         } else {
-            header.removeClass("scrolled");
+            header.removeClass("fixed-top scrolled");
         }
     }
 

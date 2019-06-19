@@ -1,7 +1,12 @@
 .main-nav {
   padding: $header-padding 0;
   background-color: transparent;
-  transition: $custom-transition-5, padding-right 0s linear;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  transition: $custom-transition-5, padding-right 0s linear, transform 0s linear;
+  z-index: 1030;
 
   .navbar {
     padding: 0;
@@ -611,6 +616,10 @@
     padding: $header-padding-scrolled 0;
     background-color: $m-white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-100%);
+    position: fixed;
+    top: -100%;
+    animation: slidedown 0.8s linear 0.5s forwards;
 
     .navbar {
       &-logo {
@@ -1187,6 +1196,27 @@
   }
 }
 
+@keyframes slidedown {
+  0% {
+    transform: translateY(-100%);
+    top: 0;
+  }
+  100% {
+    transform: translateY(0);
+    top: 0;
+  }
+}
+
+@-webkit-keyframes slidedown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    top: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    top: 0;
+  }
+}
 
 @keyframes dropdrop {
   0% {

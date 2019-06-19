@@ -162,7 +162,6 @@
           padding-right: 0;
           opacity: 0;
           transition: all 0.3s ease-out;
-          overflow-y: auto;
         }
       }
 
@@ -222,6 +221,7 @@
           width: 100%;
           padding: 0;
           height: auto;
+          overflow-y: auto;
           opacity: 1;
         }
 
