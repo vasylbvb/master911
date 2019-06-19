@@ -412,7 +412,7 @@ jQuery(function ($) {
     $('[data-toggle="tooltip"]').tooltip();
 
     //Initialize datepicker
-    $("#client-date").datepicker($.datepicker.regional["uk"]).datepicker("option", "minDate", new Date()).datepicker("option", "onClose", function(dateText, inst) { $(this).prop("disabled", false); }).datepicker("option", "beforeShow", function(input, inst) { $(this).prop("disabled", true); });
+    $("#client-date").datepicker($.datepicker.regional["uk"]).datepicker("option", "minDate", new Date()).datepicker("option", "onClose", function(dateText, inst) { $(this).prop("readonly", false); }).datepicker("option", "beforeShow", function(input, inst) { $(this).prop("readonly", true); });
 
     /*Contact form validation START*/
     $('#contactModal [type="submit"]').click(function (e) {

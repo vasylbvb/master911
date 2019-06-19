@@ -336,6 +336,12 @@
     @include media-breakpoint-up(xl) {
       max-width: 71.25rem;
     }
+
+    @include media-breakpoint-between(md, lg) {
+      .modal-content {
+        min-height: calc(100vh - 1.25rem);
+      }
+    }
   }
 
   button.close {
