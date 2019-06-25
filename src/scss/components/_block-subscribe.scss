@@ -227,8 +227,12 @@
     &__forms {
       .nav-tabs {
         .nav-link {
+          margin-bottom: $spacing-gutter;
           &:not(:last-child) {
-            margin-right: $spacing-gutter*2;
+            margin-right: $spacing-unit*5;
+          }
+          &:nth-child(even) {
+            margin-right: 0.625rem;
           }
         }
       }

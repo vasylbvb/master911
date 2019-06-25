@@ -345,12 +345,13 @@ cards have got the next classes:
         &-title {
           flex: 0 0 66%;
           max-width: 66%;
+          margin-top: 0;
           margin-bottom: 1.25rem;
           padding-left: $spacing-unit/2;
           font-size: 1rem;
           line-height: 1.56;
           vertical-align: middle;
-          letter-spacing: 2px;
+          letter-spacing: 0.5px;
         }
       }
       .m-btn-c-more {
