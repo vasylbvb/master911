@@ -784,6 +784,35 @@ jQuery(function ($) {
     });
     //Upload more pricelist items End
 
+    //Feedback cards functionality START
+    var fCards = $(".feedback-card");
+    $(fCards).each(function() {
+        var quoteH = $(this).find(".feedback-card__quote").outerHeight();
+        if(quoteH >= 60) {
+            $(this).find(".feedback-card__btn-more").show();
+        }
+
+        var ratingNum = $(this).find(".feedback-card__rate").attr("data-rate");
+        for(var i = 1; i<= ratingNum; i++) {
+            $(this).find(".feedback-card__rate ul li:nth-child(" + i + ")").addClass("active");
+        }
+    });
+
+    $(".feedback-card__btn-more").click(function(e) {
+       e.preventDefault();
+       $(this).siblings(".feedback-card__quote").css("max-height", "initial");
+       $(this).siblings(".feedback-card__btn-less").show();
+       $(this).hide();
+    });
+
+    $(".feedback-card__btn-less").click(function(e) {
+        e.preventDefault();
+        $(this).siblings(".feedback-card__quote").css("max-height", "3.75rem");
+        $(this).siblings(".feedback-card__btn-more").show();
+        $(this).hide();
+    });
+
+    //Feedback cards functionality END
 
     //footer menus toggle
     var $width = $(window).width();

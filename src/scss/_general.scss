@@ -117,6 +117,23 @@ section,
   }
 }
 
+/*Masonry layout*/
+.masonry {
+  max-width: 100%;
+  column-count: 2;
+  column-gap: $spacing-gutter;
+  column-fill: auto;
+
+  .masonry-brick {
+    padding-bottom: 2.5rem;
+    break-inside: avoid;
+  }
+
+  @include media-breakpoint-down(sm) {
+    column-count: 1;
+  }
+}
+
 /*Tooltip*/
 .tooltip {
   &.bs-tooltip-top {
