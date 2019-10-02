@@ -40,9 +40,9 @@ jQuery(function ($) {
             iOS11 = /OS 11_0|OS 11_1|OS 11_2/.test(ua);
 
         // ios 11 bug caret position
-        if ( iOS && iOS11 ) {
+        if (iOS && iOS11) {
 
-            $(document.body).on('show.bs.modal', function(e) {
+            $(document.body).on('show.bs.modal', function (e) {
                 // Get scroll position before moving top
                 scrollTopPosition = $(document).scrollTop();
 
@@ -50,7 +50,7 @@ jQuery(function ($) {
                 $("body").addClass("iosBugFixCaret");
             });
 
-            $(document.body).on('hide.bs.modal', function(e) {
+            $(document.body).on('hide.bs.modal', function (e) {
                 // Remove CSS to body "position: fixed"
                 $("body").removeClass("iosBugFixCaret");
 
@@ -81,6 +81,11 @@ jQuery(function ($) {
     //     $("#dropdownLocBtn").find(".text").text($(this).text());
     //     $(".navbar-location__btn").find(".text").text($(this).text());
     // });
+
+    //Make phone link clickable in the dropdown button
+    $("#dropdownContact a").click(function (e) {
+        e.stopPropagation();
+    });
 
     //Header Language Dropdown
     var languageArr = $(".navbar-lang .dropdown-item");
@@ -254,7 +259,7 @@ jQuery(function ($) {
         pElems3 = $('[id*="callBForm"] [id*="call-back-phone"]'),
         pElems4 = $('#postsAccordion [id*="call-back-phone"]');
 
-    Array.prototype.forEach.call(pElems1, function(element) {
+    Array.prototype.forEach.call(pElems1, function (element) {
         var phoneMask = new IMask(element, {
             mask: '+{38}(000)000-00-00',
             placeholder: {
@@ -263,7 +268,7 @@ jQuery(function ($) {
         });
     });
 
-    Array.prototype.forEach.call(pElems2, function(element) {
+    Array.prototype.forEach.call(pElems2, function (element) {
         var phoneMask = new IMask(element, {
             mask: '+{38}(000)000-00-00',
             placeholder: {
@@ -272,7 +277,7 @@ jQuery(function ($) {
         });
     });
 
-    Array.prototype.forEach.call(pElems3, function(element) {
+    Array.prototype.forEach.call(pElems3, function (element) {
         var phoneMask = new IMask(element, {
             mask: '+{38}(000)000-00-00',
             placeholder: {
@@ -281,7 +286,7 @@ jQuery(function ($) {
         });
     });
 
-    Array.prototype.forEach.call(pElems4, function(element) {
+    Array.prototype.forEach.call(pElems4, function (element) {
         var phoneMask = new IMask(element, {
             mask: '+{38}(000)000-00-00',
             placeholder: {
@@ -399,7 +404,7 @@ jQuery(function ($) {
         $(this).toggleClass("opened");
         var headerHeight = $("header.main-nav").outerHeight();
         if ($(this).hasClass("opened")) {
-            $('html,body').animate({scrollTop: $(this).siblings(".m-card-table").offset().top - headerHeight*1.1}, 500);
+            $('html,body').animate({scrollTop: $(this).siblings(".m-card-table").offset().top - headerHeight * 1.1}, 500);
         }
     });
 
@@ -412,7 +417,11 @@ jQuery(function ($) {
     $('[data-toggle="tooltip"]').tooltip();
 
     //Initialize datepicker
-    $("#client-date").datepicker($.datepicker.regional["uk"]).datepicker("option", "minDate", new Date()).datepicker("option", "onClose", function(dateText, inst) { $(this).prop("readonly", false); }).datepicker("option", "beforeShow", function(input, inst) { $(this).prop("readonly", true); });
+    $("#client-date").datepicker($.datepicker.regional["uk"]).datepicker("option", "minDate", new Date()).datepicker("option", "onClose", function (dateText, inst) {
+        $(this).prop("readonly", false);
+    }).datepicker("option", "beforeShow", function (input, inst) {
+        $(this).prop("readonly", true);
+    });
 
     /*Contact form validation START*/
     $('#contactModal [type="submit"]').click(function (e) {
@@ -549,7 +558,7 @@ jQuery(function ($) {
             $(inputs[0]).parents("form").addClass("has-error").append(errMsg);
         }
 
-        if ( $(this).parents("form").find(".error").length == 0) {
+        if ($(this).parents("form").find(".error").length == 0) {
             //$(this).parents("form")[0].submit(); /*activate in production*/
             $("#successModal").modal('show');
         } else {
@@ -596,6 +605,24 @@ jQuery(function ($) {
         $("#servicesModal").modal("hide");
     });
 
+    //Add tip input about the chosen service
+    $("#contactModal").on('shown.bs.modal', function () {
+        var chosenServText = $(this).find("#chosen-service").attr("value");
+        if (chosenServText.length > 0) {
+            $(this).find(".chosen-block").remove();
+            var addServBlock = $("<div></div>").addClass("col-12 chosen-block"),
+                addServFGroup = $("<div></div>").addClass("form-group"),
+                addServLabel = $("<label></label>").attr("for", "chosenServInp").text("Обраний вид послуги:"),
+                addServInput = $("<input>").attr({
+                    "type": "text",
+                    "id": "chosenServInp"
+                }).prop("disabled", true).val(chosenServText);
+            $(addServFGroup).append(addServLabel).append(addServInput);
+            $(addServBlock).append(addServFGroup);
+            $(this).find(".m-time").parent(".col-12").after(addServBlock);
+        }
+    });
+
     /*Success modal START*/
     $("#successModal").on('show.bs.modal', function () {
         var infoName = $("#infoName"),
@@ -612,9 +639,9 @@ jQuery(function ($) {
             callBPhones = $('[id*="call-back-phone"]'),
             callBPhone = "";
 
-        for(var i = 0; i < callBPhones.length; i++) {
+        for (var i = 0; i < callBPhones.length; i++) {
             var curr = $(callBPhones[i]).val();
-            if(curr.length > 4) {
+            if (curr.length > 4) {
                 callBPhone = curr;
             }
         }
@@ -748,8 +775,7 @@ jQuery(function ($) {
     // Hack to enable multiple modals by making sure the .modal-open class
     // is set to the <body> when there is at least one modal open left
     $('body').on('hidden.bs.modal', function () {
-        if($('.modal.show').length > 0)
-        {
+        if ($('.modal.show').length > 0) {
             $('body').addClass('modal-open');
         }
     });
@@ -759,10 +785,10 @@ jQuery(function ($) {
         e.preventDefault();
         var i,
             visTables = $(this).parents(".m-card-table").find("table.outer:visible").length,
-            allTables =$(this).parents(".m-card-table").find("table.outer").length;
-        for(i = visTables + 1; i < (visTables + 4); i++) {
-            $(this).parents(".m-card-table").find("table.outer:nth-child(" + i +")").css("display", "table");
-            if(i == allTables) {
+            allTables = $(this).parents(".m-card-table").find("table.outer").length;
+        for (i = visTables + 1; i < (visTables + 4); i++) {
+            $(this).parents(".m-card-table").find("table.outer:nth-child(" + i + ")").css("display", "table");
+            if (i == allTables) {
                 $(this).hide();
                 return false;
             }
@@ -773,10 +799,10 @@ jQuery(function ($) {
         e.preventDefault();
         var i,
             visItems = $(this).parents(".m-card-table").find(".column:visible").length,
-            allItems =$(this).parents(".m-card-table").find(".column").length;
-        for(i = visItems + 1; i < (visItems + 5); i++) {
-            $(this).parents(".m-card-table").find(".column:nth-child(" + i +")").css("display", "inline-block");
-            if(i == allItems) {
+            allItems = $(this).parents(".m-card-table").find(".column").length;
+        for (i = visItems + 1; i < (visItems + 5); i++) {
+            $(this).parents(".m-card-table").find(".column:nth-child(" + i + ")").css("display", "inline-block");
+            if (i == allItems) {
                 $(this).hide();
                 return false;
             }
@@ -786,26 +812,26 @@ jQuery(function ($) {
 
     //Feedback cards functionality START
     var fCards = $(".feedback-card");
-    $(fCards).each(function() {
+    $(fCards).each(function () {
         var quoteH = $(this).find(".feedback-card__quote").outerHeight();
-        if(quoteH >= 60) {
+        if (quoteH >= 60) {
             $(this).find(".feedback-card__btn-more").show();
         }
 
         var ratingNum = $(this).find(".feedback-card__rate").attr("data-rate");
-        for(var i = 1; i<= ratingNum; i++) {
+        for (var i = 1; i <= ratingNum; i++) {
             $(this).find(".feedback-card__rate ul li:nth-child(" + i + ")").addClass("active");
         }
     });
 
-    $(".feedback-card__btn-more").click(function(e) {
-       e.preventDefault();
-       $(this).siblings(".feedback-card__quote").css("max-height", "initial");
-       $(this).siblings(".feedback-card__btn-less").show();
-       $(this).hide();
+    $(".feedback-card__btn-more").click(function (e) {
+        e.preventDefault();
+        $(this).siblings(".feedback-card__quote").css("max-height", "initial");
+        $(this).siblings(".feedback-card__btn-less").show();
+        $(this).hide();
     });
 
-    $(".feedback-card__btn-less").click(function(e) {
+    $(".feedback-card__btn-less").click(function (e) {
         e.preventDefault();
         $(this).siblings(".feedback-card__quote").css("max-height", "3.75rem");
         $(this).siblings(".feedback-card__btn-more").show();
@@ -822,7 +848,7 @@ jQuery(function ($) {
         $(footerTitles).click(function (e) {
             e.preventDefault();
             $(this).parent(".footer-menu").toggleClass("opened");
-            if($(this).parent(".footer-menu").hasClass("opened")) {
+            if ($(this).parent(".footer-menu").hasClass("opened")) {
                 $(this).siblings(".footer-menu__list").fadeIn().css("display", "flex");
             } else {
                 $(this).siblings(".footer-menu__list").fadeOut();

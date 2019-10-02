@@ -31,6 +31,20 @@ cards have got the next classes:
     align-items: center;
     margin-top: auto;
 
+    & > a {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      color: $m-black;
+
+      &:hover {
+        text-decoration: none;
+        color: $m-black;
+      }
+    }
+
     &-img {
       display: inline-block;
       vertical-align: middle;
@@ -84,6 +98,11 @@ cards have got the next classes:
       flex-wrap: wrap;
       align-items: flex-start;
 
+      & > a {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+
       &-img {
         flex: 0 0 78%;
         max-width: 78%;
@@ -113,9 +132,10 @@ cards have got the next classes:
 
     .m-btn-c-more {
       display: none;
+      padding: 1.875rem 1.25rem;
       position: absolute;
-      right: 1.25rem;
-      bottom: 1.875rem;
+      right: 0;
+      bottom: 0;
     }
   }
 
@@ -128,6 +148,11 @@ cards have got the next classes:
       margin-top: auto;
       flex-wrap: wrap;
       align-items: flex-end;
+
+      & > a {
+        flex-wrap: wrap;
+        align-items: flex-end;
+      }
 
       &-img {
         flex: 0 0 45%;
@@ -156,9 +181,10 @@ cards have got the next classes:
     }
 
     .m-btn-c-more {
+      padding: 1.875rem 1.25rem;
       position: absolute;
-      right: 1.25rem;
-      bottom: 1.875rem;
+      right: 0;
+      bottom: 0;
       transform-origin: center center;
     }
 
@@ -203,6 +229,11 @@ cards have got the next classes:
       margin-top: 0;
       flex-wrap: wrap;
       align-items: flex-start;
+
+      & > a {
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
 
       &-img {
         flex: 0 0 50%;
@@ -317,11 +348,10 @@ cards have got the next classes:
       &-title {
         flex: 0 0 58.33%;
         max-width: 58.33%;
-        -ms-word-break: break-all;
-        word-break: break-all;
-        -webkit-hyphens: auto;
-        -moz-hyphens: auto;
-        hyphens: auto;
+        word-wrap: break-word;
+        //-webkit-hyphens: auto;
+        //-moz-hyphens: auto;
+        //hyphens: auto;
       }
     }
 
@@ -333,6 +363,11 @@ cards have got the next classes:
         margin-top: auto;
         flex-wrap: wrap;
         align-items: center;
+
+        & > a {
+          flex-wrap: wrap;
+          align-items: center;
+        }
 
         &-img {
           flex: 0 0 34%;
@@ -356,8 +391,7 @@ cards have got the next classes:
       }
       .m-btn-c-more {
         display: inline-block;
-        right: $spacing-unit;
-        bottom: 1.625rem;
+        padding: 1.625rem $spacing-unit;
       }
     }
 
@@ -370,6 +404,11 @@ cards have got the next classes:
         margin-top: auto;
         flex-wrap: wrap;
         align-items: center;
+
+        & > a {
+          flex-wrap: wrap;
+          align-items: center;
+        }
 
         &-img {
           flex: 0 0 34%;
@@ -397,8 +436,7 @@ cards have got the next classes:
       }
 
       .m-btn-c-more {
-        right: $spacing-unit;
-        bottom: 1.625rem;
+        padding: 1.625rem $spacing-unit;
       }
     }
   }

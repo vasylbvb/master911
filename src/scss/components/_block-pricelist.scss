@@ -186,18 +186,24 @@
 
           }
 
-          .item-append {
-            width: 5%;
+          .item-price {
+            width: 11%;
             text-align: right;
+          }
+
+          .item-append {
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 8px;
             line-height: 1.25;
           }
 
           .item-num {
-            width: 6%;
-            padding-right: 2px;
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 8px;
             font-size: 1.125rem;
             font-weight: 700;
-            text-align: center;
             line-height: 1.1;
           }
 
@@ -206,6 +212,47 @@
             font-size: 0.875rem;
             line-height: 1.43;
             text-align: left;
+
+            span {
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+            span + span {
+              padding-left: 8px;
+              position: relative;
+              overflow: hidden;
+
+              &::before {
+                display: inline-block;
+                content: "/";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+              }
+            }
+          }
+
+          .item-curr-1,
+          .item-curr-2 {
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          .item-curr-1 + .item-curr-2 {
+            padding-left: 8px;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+              display: inline-block;
+              content: "/";
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+            }
           }
 
           .item-btn {
@@ -274,18 +321,24 @@
             }
           }
 
-          .item-append {
-            width: 5%;
+          .item-price {
+            width: 11%;
             text-align: right;
+          }
+
+          .item-append {
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 8px;
             line-height: 1.25;
           }
 
           .item-num {
-            width: 6%;
-            padding-right: 2px;
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 8px;
             font-size: 1.5rem;
             font-weight: 700;
-            text-align: center;
             line-height: 1.25;
           }
 
@@ -294,6 +347,47 @@
             font-size: 1rem;
             line-height: 1.25;
             text-align: left;
+
+            span {
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+            span + span {
+              padding-left: 8px;
+              position: relative;
+              overflow: hidden;
+
+              &::before {
+                display: inline-block;
+                content: "/";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+              }
+            }
+          }
+
+          .item-curr-1,
+          .item-curr-2 {
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          .item-curr-1 + .item-curr-2 {
+            padding-left: 8px;
+            position: relative;
+            overflow: hidden;
+
+            &::before {
+              display: inline-block;
+              content: "/";
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+            }
           }
 
           .item-btn {
@@ -388,13 +482,8 @@
               width: 50%;
             }
 
-            .item-append {
-              width: 10%;
-              padding-right: 0.25rem;
-            }
-
-            .item-num {
-              width: 10%;
+            .item-price {
+              width: 20%;
             }
 
             .item-curr {
@@ -419,13 +508,8 @@
               width: 50%;
             }
 
-            .item-append {
-              width: 10%;
-              padding-right: 0.25rem;
-            }
-
-            .item-num {
-              width: 10%;
+            .item-price {
+              width: 20%;
             }
 
             .item-curr {
@@ -474,19 +558,17 @@
               padding-left: $spacing-unit;
             }
 
-            .item-append {
+            .item-price {
               float: right;
               width: 100%;
-              padding-right: 0;
+            }
+
+            .item-append {
               font-size: 0.875rem;
-              text-align: right;
               line-height: 1.43;
             }
 
             .item-num {
-              float: right;
-              width: 100%;
-              text-align: right;
               padding-right: 0;
               font-size: 1.375rem;
               line-height: 1.36;
@@ -498,6 +580,45 @@
               text-align: right;
               font-size: 0.875rem;
               line-height: 1.43;
+
+              span {
+                width: 100%;
+              }
+
+              span + span {
+                padding-left: 0;
+
+                &::before {
+                  content: "";
+                  width: 8px;
+                  height: 2px;
+                  border-top: 2px solid $m-black;
+                  top: 0;
+                  right: 0;
+                  left: auto;
+                  transform: translateY(0);
+                }
+              }
+            }
+
+            .item-curr-1,
+            .item-curr-2 {
+              width: 100%;
+            }
+
+            .item-curr-1 + .item-curr-2 {
+              padding-left: 0;
+
+              &::before {
+                content: "";
+                width: 8px;
+                height: 2px;
+                border-top: 2px solid $m-black;
+                top: 0;
+                right: 0;
+                left: auto;
+                transform: translateY(0);
+              }
             }
 
             .item-btn {
@@ -536,19 +657,17 @@
               font-size: 1rem;
             }
 
-            .item-append {
+            .item-price {
               float: right;
               width: 100%;
-              padding-right: 0;
+            }
+
+            .item-append {
               font-size: 0.875rem;
-              text-align: right;
               line-height: 1.43;
             }
 
             .item-num {
-              float: right;
-              width: 100%;
-              text-align: right;
               padding-right: 0;
               font-size: 1.375rem;
               line-height: 1.36;
@@ -560,6 +679,45 @@
               text-align: right;
               font-size: 0.875rem;
               line-height: 1.43;
+
+              span {
+                width: 100%;
+              }
+
+              span + span {
+                padding-left: 0;
+
+                &::before {
+                  content: "";
+                  width: 8px;
+                  height: 2px;
+                  border-top: 2px solid $m-black;
+                  top: 0;
+                  right: 0;
+                  left: auto;
+                  transform: translateY(0);
+                }
+              }
+            }
+
+            .item-curr-1,
+            .item-curr-2 {
+              width: 100%;
+            }
+
+            .item-curr-1 + .item-curr-2 {
+              padding-left: 0;
+
+              &::before {
+                content: "";
+                width: 8px;
+                height: 2px;
+                border-top: 2px solid $m-black;
+                top: 0;
+                right: 0;
+                left: auto;
+                transform: translateY(0);
+              }
             }
 
             .item-btn {

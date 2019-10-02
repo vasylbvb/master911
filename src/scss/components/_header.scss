@@ -5,7 +5,7 @@
   top: 0;
   right: 0;
   left: 0;
-  transition: $custom-transition-5, padding-right 0s linear, transform 0s linear;
+  transition: $custom-transition-5, padding-right 0s linear, transform 0s linear, right 0s linear;
   z-index: 1030;
 
   .navbar {
@@ -807,6 +807,10 @@
 }
 
 @include media-breakpoint-up(xl) {
+  body.modal-open .main-nav {
+    right: 16px;
+  }
+
   .promotions {
     .main-nav {
       &:not(.scrolled) {
