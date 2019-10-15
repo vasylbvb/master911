@@ -210,6 +210,7 @@
           .item-curr {
             display: inline-block;
             vertical-align: middle;
+            width: 68px;
             padding-right: 8px;
             font-size: 0.875rem;
             line-height: 1.43;
@@ -347,6 +348,7 @@
           .item-curr {
             display: inline-block;
             vertical-align: middle;
+            width: 68px;
             padding-right: 8px;
             font-size: 1rem;
             line-height: 1.25;
@@ -595,9 +597,9 @@
 
                 &::before {
                   content: "";
-                  width: 8px;
-                  height: 2px;
-                  border-top: 2px solid $m-black;
+                  width: 24px;
+                  height: 1px;
+                  border-top: 1px solid $m-black;
                   top: 0;
                   right: 0;
                   left: auto;
@@ -616,9 +618,9 @@
 
               &::before {
                 content: "";
-                width: 8px;
-                height: 2px;
-                border-top: 2px solid $m-black;
+                width: 24px;
+                height: 1px;
+                border-top: 1px solid $m-black;
                 top: 0;
                 right: 0;
                 left: auto;
@@ -703,9 +705,9 @@
 
                 &::before {
                   content: "";
-                  width: 8px;
-                  height: 2px;
-                  border-top: 2px solid $m-black;
+                  width: 24px;
+                  height: 1px;
+                  border-top: 1px solid $m-black;
                   top: 0;
                   right: 0;
                   left: auto;
@@ -724,9 +726,9 @@
 
               &::before {
                 content: "";
-                width: 8px;
-                height: 2px;
-                border-top: 2px solid $m-black;
+                width: 24px;
+                height: 1px;
+                border-top: 1px solid $m-black;
                 top: 0;
                 right: 0;
                 left: auto;
