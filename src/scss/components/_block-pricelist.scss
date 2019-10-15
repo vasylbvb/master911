@@ -187,7 +187,7 @@
           }
 
           .item-price {
-            width: 11%;
+            width: 19%;
             text-align: right;
           }
 
@@ -208,7 +208,9 @@
           }
 
           .item-curr {
-            width: 8%;
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 8px;
             font-size: 0.875rem;
             line-height: 1.43;
             text-align: left;
@@ -322,7 +324,7 @@
           }
 
           .item-price {
-            width: 11%;
+            width: 19%;
             text-align: right;
           }
 
@@ -343,7 +345,9 @@
           }
 
           .item-curr {
-            width: 8%;
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 8px;
             font-size: 1rem;
             line-height: 1.25;
             text-align: left;
@@ -483,11 +487,7 @@
             }
 
             .item-price {
-              width: 20%;
-            }
-
-            .item-curr {
-              width: 10%;
+              width: 30%;
             }
 
             .item-btn {
@@ -509,11 +509,7 @@
             }
 
             .item-price {
-              width: 20%;
-            }
-
-            .item-curr {
-              width: 10%;
+              width: 30%;
             }
 
             .item-btn {
@@ -564,6 +560,7 @@
             }
 
             .item-append {
+              padding-top: 6px;
               font-size: 0.875rem;
               line-height: 1.43;
             }
@@ -575,8 +572,8 @@
             }
 
             .item-curr {
-              float: right;
-              width: 100%;
+              max-width: 32px;
+              padding-right: 0;
               text-align: right;
               font-size: 0.875rem;
               line-height: 1.43;
@@ -663,6 +660,7 @@
             }
 
             .item-append {
+              padding-top: 6px;
               font-size: 0.875rem;
               line-height: 1.43;
             }
@@ -674,8 +672,8 @@
             }
 
             .item-curr {
-              float: right;
-              width: 100%;
+              max-width: 32px;
+              padding-right: 0;
               text-align: right;
               font-size: 0.875rem;
               line-height: 1.43;

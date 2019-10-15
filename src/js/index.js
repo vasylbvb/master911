@@ -398,13 +398,14 @@ jQuery(function ($) {
     });
 
     //toggle pricelist
-    $(".m-card-vertical-v2").click(function (e) {
+    $(".m-card-vertical-v2 .m-btn-c-more").click(function (e) {
         e.preventDefault();
-        $(".m-card-vertical-v2").not($(this)).removeClass("opened");
-        $(this).toggleClass("opened");
+        var currCard = $(this).parents(".m-card-vertical-v2");
+        $(".m-card-vertical-v2").not(currCard).removeClass("opened");
+        $(currCard).toggleClass("opened");
         var headerHeight = $("header.main-nav").outerHeight();
-        if ($(this).hasClass("opened")) {
-            $('html,body').animate({scrollTop: $(this).siblings(".m-card-table").offset().top - headerHeight * 1.1}, 500);
+        if ($(currCard).hasClass("opened")) {
+            $('html,body').animate({scrollTop: $(currCard).siblings(".m-card-table").offset().top - headerHeight * 1.1}, 500);
         }
     });
 
