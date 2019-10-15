@@ -557,26 +557,34 @@
             .item-price {
               float: right;
               width: 100%;
+              padding-bottom: 10px;
+              white-space: nowrap;
+              text-align: right;
             }
 
             .item-append {
+              vertical-align: bottom;
               padding-top: 6px;
               font-size: 0.875rem;
-              line-height: 1.43;
+              line-height: 1;
             }
 
             .item-num {
+              vertical-align: bottom;
               padding-right: 0;
               font-size: 1.375rem;
-              line-height: 1.36;
+              line-height: 1;
             }
 
             .item-curr {
-              max-width: 32px;
+              vertical-align: bottom;
+              width: 32px;
               padding-right: 0;
               text-align: right;
               font-size: 0.875rem;
-              line-height: 1.43;
+              line-height: 1.4;
+              white-space: normal;
+              transform: translateY(2px);
 
               span {
                 width: 100%;
@@ -657,26 +665,34 @@
             .item-price {
               float: right;
               width: 100%;
+              padding-bottom: 10px;
+              white-space: nowrap;
+              text-align: right;
             }
 
             .item-append {
+              vertical-align: bottom;
               padding-top: 6px;
               font-size: 0.875rem;
-              line-height: 1.43;
+              line-height: 1;
             }
 
             .item-num {
+              vertical-align: bottom;
               padding-right: 0;
               font-size: 1.375rem;
-              line-height: 1.36;
+              line-height: 1;
             }
 
             .item-curr {
-              max-width: 32px;
+              vertical-align: bottom;
+              width: 32px;
               padding-right: 0;
               text-align: right;
               font-size: 0.875rem;
-              line-height: 1.43;
+              line-height: 1.4;
+              white-space: normal;
+              transform: translateY(2px);
 
               span {
                 width: 100%;
