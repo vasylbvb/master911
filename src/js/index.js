@@ -338,12 +338,12 @@ jQuery(function ($) {
     });
 
     //tags section badges functionality
-    $(".tags-section .m-badge").click(function (e) {
+    /*$(".tags-section .m-badge").click(function (e) {
         e.preventDefault();
         var badgeText = $(this).text();
         $("#contactModal").find("#chosen-service").val(badgeText).attr("value", badgeText);
         $("#contactModal").modal("show");
-    });
+    });*/
 
     //services links modal functionality
     var servModalLinks = $(".modal-serv__list--common > li").not(".has-children").find("a");
